@@ -198,7 +198,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
     if (huart->Instance == USART3) {
         // 处理 USART3 的接收数据
-        HAL_UART_Transmit(&huart3, rxBuffer, sizeof(rxBuffer), 100);
         // 重新开启接收中断
         HAL_UART_Receive_IT(&huart3, rxBuffer, sizeof(rxBuffer));
     }

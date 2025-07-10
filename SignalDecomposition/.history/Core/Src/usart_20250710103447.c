@@ -22,7 +22,7 @@
 
 /* USER CODE BEGIN 0 */
 
-uint8_t rxBuffer[50];
+uint
 
 /* USER CODE END 0 */
 
@@ -83,7 +83,7 @@ void MX_USART3_UART_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USART3_Init 2 */
-  HAL_UART_Receive_IT(&huart3, rxBuffer, sizeof(rxBuffer));
+  
   /* USER CODE END USART3_Init 2 */
 
 }
@@ -194,13 +194,5 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 }
 
 /* USER CODE BEGIN 1 */
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
-    if (huart->Instance == USART3) {
-        // 处理 USART3 的接收数据
-        HAL_UART_Transmit(&huart3, rxBuffer, sizeof(rxBuffer), 100);
-        // 重新开启接收中断
-        HAL_UART_Receive_IT(&huart3, rxBuffer, sizeof(rxBuffer));
-    }
-}
+
 /* USER CODE END 1 */

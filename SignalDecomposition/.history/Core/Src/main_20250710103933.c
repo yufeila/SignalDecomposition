@@ -98,7 +98,7 @@ int main(void)
   MX_TIM2_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-  HAL_UART_Transmit(&huart3, (uint8_t *)"Hello, USART3!\r\n", 16, 100);
+  HAL_UART_Transmit(&huart3, (uint8_t *)"Hello, USART3!\r\n", 16, HAL_MAX_DELAY);
   /* USER CODE END 2 */
 
   /* Infinite loop */
