@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,STM32_THREAD_SAFE_STRATEGY=2</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Middlewares/ST/ARM/DSP/Inc</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Middlewares/ST/ARM/DSP/Inc;..\Users</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -567,9 +567,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::CMSIS</GroupName>
-        </Group>
-        <Group>
           <GroupName>Middlewares/Library/DSP Library/DSP Library</GroupName>
           <GroupOption>
             <CommonProperty>
@@ -667,6 +664,34 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>Users</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_ad9833.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Users\ad9833\bsp_ad9833.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_ad9833.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Users\ad9833\bsp_ad9833.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_x9cxxx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Users\x9cxxx\bsp_x9cxxx.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_x9cxxx.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Users\x9cxxx\bsp_x9cxxx.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
+        </Group>
       </Groups>
     </Target>
   </Targets>
@@ -683,5 +708,14 @@
     </components>
     <files/>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>SignalDecomposition</LayName>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>

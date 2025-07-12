@@ -57,6 +57,18 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define AD9833_1_FSYNC_Pin GPIO_PIN_0
+#define AD9833_1_FSYNC_GPIO_Port GPIOC
+#define AD9833_1_SCLK_Pin GPIO_PIN_1
+#define AD9833_1_SCLK_GPIO_Port GPIOC
+#define AD9833_1_SDATA_Pin GPIO_PIN_2
+#define AD9833_1_SDATA_GPIO_Port GPIOC
+#define AD9833_2_FSYNC_Pin GPIO_PIN_0
+#define AD9833_2_FSYNC_GPIO_Port GPIOB
+#define AD9833_2_SCLK_Pin GPIO_PIN_1
+#define AD9833_2_SCLK_GPIO_Port GPIOB
+#define AD9833_2_SDATA_Pin GPIO_PIN_2
+#define AD9833_2_SDATA_GPIO_Port GPIOB
 #define RELAY_Pin GPIO_PIN_12
 #define RELAY_GPIO_Port GPIOB
 #define LCD_BK_Pin GPIO_PIN_15

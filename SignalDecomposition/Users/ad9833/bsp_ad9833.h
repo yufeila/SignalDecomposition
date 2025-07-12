@@ -4,11 +4,11 @@
 #include "stm32f4xx_hal.h"
 
 #define AD9833_1_FSYNC_PORT    GPIOC
-#define AD9833_1_FSYNC_PIN     GPIO_PIN_1
+#define AD9833_1_FSYNC_PIN     GPIO_PIN_0
 #define AD9833_1_SCLK_PORT     GPIOC
-#define AD9833_1_SCLK_PIN      GPIO_PIN_2
+#define AD9833_1_SCLK_PIN      GPIO_PIN_1
 #define AD9833_1_SDATA_PORT    GPIOC
-#define AD9833_1_SDATA_PIN     GPIO_PIN_3
+#define AD9833_1_SDATA_PIN     GPIO_PIN_2
 
 #define AD9833_2_FSYNC_PORT    GPIOB
 #define AD9833_2_FSYNC_PIN     GPIO_PIN_0
@@ -81,6 +81,20 @@ void AD9833_1_SetPhase(unsigned short reg, unsigned short val);									        
 
 void AD9833_1_Setup(unsigned short freq,unsigned short phase,unsigned short type);	                    //选择频率、相位和波形类型
 void AD9833_1_SetFrequencyQuick(float fout,unsigned short type);	                                    //设置频率及波形类型
+
+void AD9833_2_GPIO_Init(void);//初始化IO口
+void AD9833_2_Init(void);//初始化IO口及寄存器，在main函数中调用，可以每次开始前都初始化
+
+void AD9833_2_Reset(void);			//置位AD9833的复位位
+void AD9833_2_ClearReset(void);	//清除AD9833的 复位位
+
+void AD9833_2_SetRegisterValue(unsigned short regValue);												//将值写入寄存器
+void AD9833_2_SetFrequency(unsigned short reg, float fout,unsigned short type);	                        //写入频率寄存器
+void AD9833_2_SetPhase(unsigned short reg, unsigned short val);									        //写入相位寄存器
+
+void AD9833_2_Setup(unsigned short freq,unsigned short phase,unsigned short type);	                    //选择频率、相位和波形类型
+void AD9833_2_SetFrequencyQuick(float fout,unsigned short type);	                                    //设置频率及波形类型
+
 
 
 #endif /* __BSP_AD9833_H */
