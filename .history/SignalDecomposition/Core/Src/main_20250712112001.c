@@ -30,7 +30,6 @@
 #include "./ad9833/bsp_ad9833.h"
 #include "./x9cxxx/bsp_x9cxxx.h"
 #include "./lcd/lcd.h"
-#include <stdio.h>
 
 /* USER CODE END Includes */
 
@@ -105,9 +104,8 @@ int main(void)
   //AD9833_1_Init();
   //AD9833_2_Init();
   LCD_Init();
-  HAL_UART_Transmit(&huart3, (uint8_t *)"Hello, USART3!\r\n", 16, 100);
-  printf("LCD ID:%04X\r\n", lcddev.id);
-  LCD_ShowString(10, 10, 200, 16, 16, (uint8_t*)"Hello LCD!");
+  //HAL_UART_Transmit(&huart3, (uint8_t *)"Hello, USART3!\r\n", 16, 100);
+  
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -115,7 +113,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    
+    LCD_ShowString(10, 10, 200, 16, 16, (uint8_t*)"Hello LCD!");
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
