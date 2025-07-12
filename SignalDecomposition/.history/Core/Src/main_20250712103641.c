@@ -113,7 +113,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    LCD_ShowString(10, 10, 200, 16, 16, (uint8_t*)"Hello LCD!");
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
