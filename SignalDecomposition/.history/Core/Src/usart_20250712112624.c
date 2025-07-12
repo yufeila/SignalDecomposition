@@ -21,7 +21,7 @@
 #include "usart.h"
 
 /* USER CODE BEGIN 0 */
-#include <stdio.h>
+
 uint8_t rxBuffer[50];
 
 /* USER CODE END 0 */
@@ -256,10 +256,5 @@ int fputc(int ch, FILE *f)
   return ch;
 }
 
-int fgetc(FILE* f)
-{
-  uint8_t ch;
-  HAL_UART_Receive(&huart1,&ch,1,1000);
-  return ch;
-}
+int fget
 /* USER CODE END 1 */

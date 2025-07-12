@@ -42,3 +42,9 @@ signaldecomposition\main.o: ../Core/Inc/tim.h
 signaldecomposition\main.o: ../Core/Inc/usart.h
 signaldecomposition\main.o: ../Core/Inc/gpio.h
 signaldecomposition\main.o: ../Core/Inc/fsmc.h
+signaldecomposition\main.o: ..\Users\./ad9833/bsp_ad9833.h
+signaldecomposition\main.o: ..\Users\./x9cxxx/bsp_x9cxxx.h
+signaldecomposition\main.o: ../Drivers/CMSIS/Include/core_cm4.h
+signaldecomposition\main.o: ..\Users\./lcd/lcd.h
+signaldecomposition\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+signaldecomposition\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h

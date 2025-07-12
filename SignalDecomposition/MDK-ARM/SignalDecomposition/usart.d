@@ -37,3 +37,4 @@ signaldecomposition\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_p
 signaldecomposition\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 signaldecomposition\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 signaldecomposition\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+signaldecomposition\usart.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
