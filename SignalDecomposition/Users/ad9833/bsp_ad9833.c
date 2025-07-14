@@ -17,8 +17,8 @@ void AD9833_1_GPIO_Init(void)
 {
     GPIO_InitTypeDef GPIO_InitStruct = {0};
 
-    // 使能GPIOA时钟
-    __HAL_RCC_GPIOA_CLK_ENABLE();
+    // 使能GPIOC时钟
+    __HAL_RCC_GPIOC_CLK_ENABLE();
 
     // 配置FSYNC、SCLK、SDATA为推挽输出
     GPIO_InitStruct.Pin = AD9833_1_FSYNC_PIN | AD9833_1_SCLK_PIN | AD9833_1_SDATA_PIN;

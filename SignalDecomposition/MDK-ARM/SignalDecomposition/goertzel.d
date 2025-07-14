@@ -1,0 +1,10 @@
+signaldecomposition\goertzel.o: ..\Users\goertzel\goertzel.c
+signaldecomposition\goertzel.o: ..\Users\goertzel\goertzel.h
+signaldecomposition\goertzel.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+signaldecomposition\goertzel.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
+signaldecomposition\goertzel.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+signaldecomposition\goertzel.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+signaldecomposition\goertzel.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+signaldecomposition\goertzel.o: D:\Keil5\ARM\ARMCC\Bin\..\include\math.h
+signaldecomposition\goertzel.o: D:\Keil5\ARM\ARMCC\Bin\..\include\float.h
+signaldecomposition\goertzel.o: D:\Keil5\ARM\ARMCC\Bin\..\include\limits.h

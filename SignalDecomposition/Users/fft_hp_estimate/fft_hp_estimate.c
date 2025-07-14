@@ -1,4 +1,4 @@
-#include "fft_hp_estimate.h"
+#include "./fft_hp_estimate/fft_hp_estimate.h"
 
 static float in_buf[N_FFT];   /* N_RAW 数据 + 余下置零 */
 static float mag[N_FFT/2];    /* 幅值平方（实数）      */

@@ -12,6 +12,7 @@
 
 #define KEY_DEBOUNCE_DELAY 10 // ms
 
-extern uint8_t signal_decomposition_flag;
+extern volatile uint8_t signal_decomposition_flag;
+void Detect_KeyPress(void);
 
 #endif /* __KEY_H */

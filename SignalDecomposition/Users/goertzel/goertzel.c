@@ -1,5 +1,6 @@
 #include "goertzel.h"
 #include "arm_math.h"          /* CMSIS-DSP£ºsin¡¢cos¡¢atan2¡¢sqrt */
+#include <math.h>
 
 #define TWO_PI_F 6.283185307179586476f
 
@@ -59,8 +60,8 @@ void goertzel_process_f32(const goertzel_cfg_t *cfg,
     float real_part = s_prev - cfg->cosine * s_prev2;
     float imag_part = cfg->sine * s_prev2;
 
-    *mag   = arm_sqrt_f32(real_part * real_part + imag_part * imag_part);
-    *phase = arm_atan2_f32(imag_part, real_part);
+    arm_sqrt_f32(real_part * real_part + imag_part * imag_part, mag);
+    *phase = atan2f(imag_part, real_part);
 }
 
 /********************  Ö÷¼ÆËã£¨float omega °æ£©  ************************/
@@ -90,6 +91,6 @@ void goertzel_process_f32omega(const goertzel_cfg_fomega_t *cfg,
     float real_part = s_prev - cfg->cosine * s_prev2;
     float imag_part = cfg->sine * s_prev2;
 
-    *mag   = arm_sqrt_f32(real_part * real_part + imag_part * imag_part);
-    *phase = arm_atan2_f32(imag_part, real_part);
+    arm_sqrt_f32(real_part * real_part + imag_part * imag_part,mag);
+    *phase = atan2f(imag_part, real_part);
 }

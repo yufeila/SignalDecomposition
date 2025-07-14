@@ -1,0 +1,10 @@
+signaldecomposition\fft_hp_estimate.o: ..\Users\fft_hp_estimate\fft_hp_estimate.c
+signaldecomposition\fft_hp_estimate.o: ../Users/./fft_hp_estimate/fft_hp_estimate.h
+signaldecomposition\fft_hp_estimate.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
+signaldecomposition\fft_hp_estimate.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+signaldecomposition\fft_hp_estimate.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+signaldecomposition\fft_hp_estimate.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+signaldecomposition\fft_hp_estimate.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+signaldecomposition\fft_hp_estimate.o: D:\Keil5\ARM\ARMCC\Bin\..\include\math.h
+signaldecomposition\fft_hp_estimate.o: D:\Keil5\ARM\ARMCC\Bin\..\include\float.h
+signaldecomposition\fft_hp_estimate.o: D:\Keil5\ARM\ARMCC\Bin\..\include\limits.h

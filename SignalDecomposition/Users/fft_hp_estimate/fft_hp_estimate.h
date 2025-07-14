@@ -10,7 +10,6 @@
 #define __FFT_HP_ESTIMATE_H
 
 #include "arm_math.h"
-#include "arm_const_structs.h"
 
 
 #define N_RAW      2048u                /* 真实采样点               */

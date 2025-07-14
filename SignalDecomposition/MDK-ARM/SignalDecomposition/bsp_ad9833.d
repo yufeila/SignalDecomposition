@@ -1,5 +1,5 @@
 signaldecomposition\bsp_ad9833.o: ..\Users\ad9833\bsp_ad9833.c
-signaldecomposition\bsp_ad9833.o: ..\Users\./ad9833/bsp_ad9833.h
+signaldecomposition\bsp_ad9833.o: ../Users/./ad9833/bsp_ad9833.h
 signaldecomposition\bsp_ad9833.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 signaldecomposition\bsp_ad9833.o: ../Core/Inc/stm32f4xx_hal_conf.h
 signaldecomposition\bsp_ad9833.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h

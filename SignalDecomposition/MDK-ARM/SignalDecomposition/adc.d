@@ -37,3 +37,5 @@ signaldecomposition\adc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr
 signaldecomposition\adc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 signaldecomposition\adc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 signaldecomposition\adc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+signaldecomposition\adc.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+signaldecomposition\adc.o: ../Core/Inc/tim.h

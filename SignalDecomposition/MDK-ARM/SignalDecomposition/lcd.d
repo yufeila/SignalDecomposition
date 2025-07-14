@@ -1,5 +1,5 @@
 signaldecomposition\lcd.o: ..\Users\lcd\lcd.c
-signaldecomposition\lcd.o: ..\Users\./lcd/lcd.h
+signaldecomposition\lcd.o: ../Users/./lcd/lcd.h
 signaldecomposition\lcd.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 signaldecomposition\lcd.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 signaldecomposition\lcd.o: ../Core/Inc/stm32f4xx_hal_conf.h

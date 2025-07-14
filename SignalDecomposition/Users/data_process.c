@@ -2,10 +2,13 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>     // 用于sprintf
+#include "adc.h"
 
 /* 内部静态缓冲区，与 FFT/Goertzel 共用一份 ADC 数据 */
 static float adc_zeroed[BUF_SIZE];     /* 去直流 & 换算电压后的浮点序列 */
 
+extern DMA_HandleTypeDef hdma_adc1;
 void Data_Process(void)
 {
     // 1. 启动本轮ADC+DMA+TIM采集（彻底修复启动时序）
@@ -37,7 +40,6 @@ void Data_Process(void)
         // 超时处理：停止ADC+TIM，返回无新数据
         HAL_ADC_Stop_DMA(&hadc1);
         HAL_TIM_Base_Stop(&htim2);
-        return 0;
     }
 
     // 4. 停止当前轮次的ADC+TIM（为下次启动做准备）
@@ -74,33 +76,32 @@ void analyse_two_signals(const uint16_t *_buf, Signal_t *sig1, Signal_t *sig2)
     fft_top2_hann_zero_interp(adc_zeroed, &f1, &A1, &f2, &A2);
 
     /* --- helper lambda（C99 宏模拟）--- */
-    #define ANALYSE_ONE(_f_base, _A_base, _f_other, _A_other, _sig_out)                
-    do {                                                                               
-        goertzel_cfg_fomega_t g1, g3, g5;                                                 
-        float mag1, ph1, mag3, ph3, mag5, ph5;                                         
-                                                                                        
-        /* -------- 一次性把 1×/3×/5× 幅值算出来 -------- */                          
-        goertzel_init_fomega(&g1, FFT_SIZE, 1.0f * (_f_base),  FS_HZ);                       
-        goertzel_init_fomega(&g3, FFT_SIZE, 3.0f * (_f_base),  FS_HZ);                       
-        goertzel_init_fomega(&g5, FFT_SIZE, 5.0f * (_f_base),  FS_HZ);                       
-        goertzel_process_f32omega(&g1, adc_zeroed, &mag1, &ph1);                           
-        goertzel_process_f32omega(&g3, adc_zeroed, &mag3, &ph3);                           
-        goertzel_process_f32omega(&g5, adc_zeroed, &mag5, &ph5);                           
-                                                                                        
-        /* -------- 若 3× 或 5× 与另一基波重叠，做幅度抵消 -------- */                 
-        const float EPS = 0.4f;   /* half-bin 宽容 */                                  
-        if (fabsf(3.0f*(_f_base) - (_f_other)) < EPS)  mag3 = fabsf(mag3 - _A_other);  
-        float r3 = mag3 / mag1;                                                        
-        float r5 = mag5 / mag1;                                                        
-                                                                                        
-        (_sig_out)->freq = (_f_base);                                                  
-        if (r3 < 0.04f && r5 < 0.02f) {                                                
-            (_sig_out)->wave_form = SINC_WAVE;                                         
-        } else if (fabsf(r3 - 0.1111f) < 0.03f && fabsf(r5 - 0.0400f) < 0.02f) {       
-            (_sig_out)->wave_form = TRIANGLE_WAVE;                                     
-        } else {                                                                       
-            (_sig_out)->wave_form = 0; /* 未知/混合，可 log */                         
-        }                                                                              
+    #define ANALYSE_ONE(_f_base, _A_base, _f_other, _A_other, _sig_out)               \
+    do {                                                                              \
+        goertzel_cfg_fomega_t g1, g3, g5;                                             \
+        float mag1, ph1, mag3, ph3, mag5, ph5;                                        \
+		/* -------- 一次性把 1×/3×/5× 幅值算出来 -------- */                        \
+        goertzel_init_fomega(&g1, FFT_SIZE, 1.0f * (_f_base),  FS_HZ);                \
+        goertzel_init_fomega(&g3, FFT_SIZE, 3.0f * (_f_base),  FS_HZ);                \
+        goertzel_init_fomega(&g5, FFT_SIZE, 5.0f * (_f_base),  FS_HZ);                \
+        goertzel_process_f32omega(&g1, adc_zeroed, &mag1, &ph1);                      \
+        goertzel_process_f32omega(&g3, adc_zeroed, &mag3, &ph3);                      \
+        goertzel_process_f32omega(&g5, adc_zeroed, &mag5, &ph5);                      \
+                                                                                      \
+        /* -------- 若 3× 或 5× 与另一基波重叠，做幅度抵消 -------- */                \
+        const float EPS = 0.4f;   /* half-bin 宽容 */                                  \
+        if (fabsf(3.0f*(_f_base) - (_f_other)) < EPS)  mag3 = fabsf(mag3 - _A_other);  \
+        float r3 = mag3 / mag1;                                                        \
+        float r5 = mag5 / mag1;                                                        \
+                                                                                       \
+        (_sig_out)->freq = (_f_base);                                                  \
+        if (r3 < 0.04f && r5 < 0.02f) {                                                \
+            (_sig_out)->wave_form = SINC_WAVE;                                         \
+        } else if (fabsf(r3 - 0.1111f) < 0.03f && fabsf(r5 - 0.0400f) < 0.02f) {       \
+            (_sig_out)->wave_form = TRIANGLE_WAVE;                                     \
+        } else {                                                                       \
+            (_sig_out)->wave_form = 0; /* 未知/混合，可 log */                         \
+        }                                                                              \
     } while (0)
 
 
@@ -114,15 +115,21 @@ void Signal_Info_Display(Signal_t *sig1, Signal_t *sig2)
 {
     LCD_Display_Title_Center("Signal Info", 10);
     
+	char buf[32];
+	
     // 显示信号1的频率和类型
     LCD_ShowString(10, 30, 200, 16, 16, (uint8_t*)"Signal 1:");
-    LCD_ShowString(10, 50, 200, 16, 16, (uint8_t*)"Frequency: %.2f Hz", sig1->freq);
-    LCD_ShowString(10, 70, 200, 16, 16, (uint8_t*)"Type: %d", sig1->wave_form);
+	sprintf(buf, "Frequency: %.2f Hz", sig1->freq);
+    LCD_ShowString(10, 50, 200, 16, 16, (uint8_t*)buf);
+	sprintf(buf, "Type: %d", sig1->wave_form);
+    LCD_ShowString(10, 70, 200, 16, 16, (uint8_t*)buf);
 
     // 显示信号2的频率和类型
     LCD_ShowString(10, 90, 200, 16, 16, (uint8_t*)"Signal 2:");
-    LCD_ShowString(10, 110, 200, 16, 16, (uint8_t*)"Frequency: %.2f Hz", sig2->freq);
-    LCD_ShowString(10, 130, 200, 16, 16, (uint8_t*)"Type: %d", sig2->wave_form);
+	sprintf(buf, "Frequency: %.2f Hz", sig2->freq);
+    LCD_ShowString(10, 110, 200, 16, 16, (uint8_t*)buf);
+	sprintf(buf, "Type: %d", sig2->wave_form);
+    LCD_ShowString(10, 130, 200, 16, 16, (uint8_t*)buf);
 }
 
 

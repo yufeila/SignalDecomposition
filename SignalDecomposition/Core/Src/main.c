@@ -31,6 +31,7 @@
 #include "./x9cxxx/bsp_x9cxxx.h"
 #include "./lcd/lcd.h"
 #include "./data_process.h"
+#include "./key/key.h"
 #include <stdio.h>
 
 /* USER CODE END Includes */
