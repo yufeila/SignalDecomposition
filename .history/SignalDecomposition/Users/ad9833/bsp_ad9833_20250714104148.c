@@ -134,7 +134,6 @@ void AD9833_1_ClearReset(void)
 void AD9833_1_SetFrequencyQuick(float fout,unsigned short type)
 {
 	AD9833_1_SetFrequency(AD9833_REG_FREQ0, fout,type);
-    AD9833_1_ClearReset();
 }
 
 /*****************************************************************************************
@@ -156,9 +155,6 @@ void AD9833_1_SetFrequency(unsigned short reg, float fout,unsigned short type)
 	AD9833_1_SetRegisterValue(AD9833_B28|type);
 	AD9833_1_SetRegisterValue(freqLo);
 	AD9833_1_SetRegisterValue(freqHi);
-
-    /* <新增> 取消复位并生效 */
-    AD9833_x_ClearReset();
 }
 
 /*****************************************************************************************
@@ -342,8 +338,6 @@ void AD9833_2_ClearReset(void)
 void AD9833_2_SetFrequencyQuick(float fout,unsigned short type)
 {
 	AD9833_2_SetFrequency(AD9833_REG_FREQ0, fout,type);
-    /* <新增> 取消复位并生效 */
-    AD9833_2_ClearReset();
 }
 
 /*****************************************************************************************
@@ -365,9 +359,6 @@ void AD9833_2_SetFrequency(unsigned short reg, float fout,unsigned short type)
 	AD9833_2_SetRegisterValue(AD9833_B28|type);
 	AD9833_2_SetRegisterValue(freqLo);
 	AD9833_2_SetRegisterValue(freqHi);
-
-    /* <新增> 取消复位并生效 */
-    AD9833_2_ClearReset();
 }
 
 /*****************************************************************************************

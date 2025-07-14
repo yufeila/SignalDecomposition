@@ -365,9 +365,6 @@ void AD9833_2_SetFrequency(unsigned short reg, float fout,unsigned short type)
 	AD9833_2_SetRegisterValue(AD9833_B28|type);
 	AD9833_2_SetRegisterValue(freqLo);
 	AD9833_2_SetRegisterValue(freqHi);
-
-    /* <新增> 取消复位并生效 */
-    AD9833_2_ClearReset();
 }
 
 /*****************************************************************************************
