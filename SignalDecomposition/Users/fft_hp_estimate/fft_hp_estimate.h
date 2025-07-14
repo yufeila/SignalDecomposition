@@ -12,8 +12,9 @@
 #include "arm_math.h"
 
 
+
 #define N_RAW      2048u                /* 真实采样点               */
-#define Z_FACTOR   4u                   /* 补零倍率                 */
+#define Z_FACTOR   2u                   /* 补零倍率                 */
 #define N_FFT      (N_RAW * Z_FACTOR)   /* FFT 点数 (必须2的幂)     */
 #define FS_HZ      250000.0f            /* 采样率                   */
 

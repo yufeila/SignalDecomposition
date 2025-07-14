@@ -158,7 +158,7 @@ void AD9833_1_SetFrequency(unsigned short reg, float fout,unsigned short type)
 	AD9833_1_SetRegisterValue(freqHi);
 
     /* <新增> 取消复位并生效 */
-    AD9833_x_ClearReset();
+    AD9833_1_ClearReset();
 }
 
 /*****************************************************************************************
@@ -414,10 +414,26 @@ void AD9833_2_SetWave(unsigned short type)
 	AD9833_2_SetRegisterValue(type);
 }
 
-// 主函数调用方式
-//	AD9833_2_Init();//IO口及AD9833寄存器初始化
-//
-//  频率入口参数为float，可使信号的频率更精确
-//	AD9833_2_SetFrequencyQuick(1000.0,AD9833_OUT_SINUS);//写输出频率1000.0Hz,输出正弦波
-//	AD9833_2_SetFrequencyQuick(1000.0,AD9833_OUT_TRIANGLE);//写输出频率1000.0Hz,输出三角波
-//	AD9833_2_SetFrequencyQuick(1000.0,AD9833_OUT_MSB);//写输出频率1000.0Hz,输出方波
+
+
+void AD9833_1_Config(float fout, uint16_t waveform)
+{
+    uint32_t freq = (uint32_t)(fout * 268435456.0 / FCLK); // 28-bit
+    uint16_t ctrl  = AD9833_B28 | waveform;                // waveform=三角/正弦/方波
+
+    AD9833_1_SetRegisterValue(ctrl | AD9833_RESET);          // 复位 + 设波形
+    AD9833_1_SetRegisterValue(AD9833_REG_FREQ0 | (freq & 0x3FFF));      // LSB
+    AD9833_1_SetRegisterValue(AD9833_REG_FREQ0 | (freq >> 14));         // MSB
+    AD9833_1_SetRegisterValue(ctrl);                         // 清 RESET，开始振荡
+}
+
+void AD9833_2_Config(float fout, uint16_t waveform)
+{
+    uint32_t freq = (uint32_t)(fout * 268435456.0 / FCLK); // 28-bit
+    uint16_t ctrl  = AD9833_B28 | waveform;                // waveform=三角/正弦/方波
+
+    AD9833_2_SetRegisterValue(ctrl | AD9833_RESET);          // 复位 + 设波形
+    AD9833_2_SetRegisterValue(AD9833_REG_FREQ0 | (freq & 0x3FFF));      // LSB
+    AD9833_2_SetRegisterValue(AD9833_REG_FREQ0 | (freq >> 14));         // MSB
+    AD9833_2_SetRegisterValue(ctrl);                         // 清 RESET，开始振荡
+}

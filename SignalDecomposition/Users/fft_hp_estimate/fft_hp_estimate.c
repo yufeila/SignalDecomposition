@@ -2,6 +2,7 @@
 
 static float in_buf[N_FFT];   /* N_RAW 数据 + 余下置零 */
 static float mag[N_FFT/2];    /* 幅值平方（实数）      */
+static uint8_t fft_inited = 1;
 
 // 在对信号做 FFT 变换前，通常会对每个采样点乘以 hann(n, N) 的结果，以减少频谱泄漏，提高频谱分析的准确性。
 static inline float hann(float n, float N)
@@ -113,8 +114,13 @@ void fft_top2_hann_zero_interp(const float *adc,
     for (uint32_t n = N_RAW; n < N_FFT; n++)
         in_buf[n] = 0.0f;
 
-    arm_rfft_fast_instance_f32 cfg;
-    arm_rfft_fast_init_f32(&cfg, N_FFT);
+	static arm_rfft_fast_instance_f32 cfg;
+	if(fft_inited)
+	{	
+		fft_inited = 0;
+		arm_rfft_fast_init_f32(&cfg, N_FFT);
+	}
+
     arm_rfft_fast_f32(&cfg, in_buf, in_buf, 0);
 
     /* ---------- 3) 幅度平方并找第一、第二大 bin ---------- */

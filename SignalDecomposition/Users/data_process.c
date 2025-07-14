@@ -113,6 +113,7 @@ void analyse_two_signals(const uint16_t *_buf, Signal_t *sig1, Signal_t *sig2)
 /* ===== ÏÔÊ¾º¯Êý ===== */
 void Signal_Info_Display(Signal_t *sig1, Signal_t *sig2)
 {
+	LCD_Clear(WHITE);
     LCD_Display_Title_Center("Signal Info", 10);
     
 	char buf[32];
@@ -172,25 +173,25 @@ void LCD_Display_Title_Center(const char* title, uint16_t y_pos)
 
 void DDS_Output(Signal_t *sig1, Signal_t *sig2)
 {
-    AD9833_1_Init();
-    AD9833_2_Init();
+    AD9833_1_GPIO_Init();
+    AD9833_2_GPIO_Init();
 
     if (sig1->wave_form == SINC_WAVE)
     {
-        AD9833_1_SetFrequencyQuick(sig1->freq, AD9833_OUT_SINUS);
+        AD9833_1_Config(sig1->freq, AD9833_OUT_SINUS);
     }
     else if (sig1->wave_form == TRIANGLE_WAVE)
     {
-        AD9833_1_SetFrequencyQuick(sig1->freq, AD9833_OUT_TRIANGLE);
+        AD9833_1_Config(sig1->freq, AD9833_OUT_TRIANGLE);
     }
 
     if (sig2->wave_form == SINC_WAVE)
     {
-        AD9833_2_SetFrequencyQuick(sig2->freq, AD9833_OUT_SINUS);
+        AD9833_2_Config(sig2->freq, AD9833_OUT_SINUS);
     }
     else if (sig2->wave_form == TRIANGLE_WAVE)
     {
-        AD9833_2_SetFrequencyQuick(sig2->freq, AD9833_OUT_TRIANGLE);
+        AD9833_2_Config(sig2->freq, AD9833_OUT_TRIANGLE);
     }
 }
 
