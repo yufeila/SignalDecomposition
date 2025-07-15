@@ -27,14 +27,25 @@ Project File Date:  07/14/2025
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil5\ARM\ARMCC\Bin'
 Build target 'SignalDecomposition'
-compiling fft_hp_estimate.c...
-compiling main.c...
-compiling tim.c...
 compiling data_process.c...
+..\Users\data_process.c(118): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+      ANALYSE_ONE(f1, A1, f2, A2, sig1);
+..\Users\data_process.c(119): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+      ANALYSE_ONE(f2, A2, f1, A1, sig2);
+..\Users\data_process.c: 2 warnings, 0 errors
+compiling goertzel.c...
+..\Users\goertzel\goertzel.c(100): warning:  #1-D: last line of file ends without a newline
+  }
+..\Users\goertzel\goertzel.c: 1 warning, 0 errors
+compiling main.c...
+compiling fft_hp_estimate.c...
+..\Users\fft_hp_estimate\fft_hp_estimate.c(18): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+              win[n] = 0.5f * (1.0f - cosf(2.0f * PI_F * n / (N_RAW-1)));
+..\Users\fft_hp_estimate\fft_hp_estimate.c: 1 warning, 0 errors
 linking...
-Program Size: Code=46636 RO-data=128764 RW-data=4152 ZI-data=34544  
+Program Size: Code=47560 RO-data=128724 RW-data=4152 ZI-data=42736  
 FromELF: creating hex file...
-"SignalDecomposition\SignalDecomposition.axf" - 0 Error(s), 0 Warning(s).
+"SignalDecomposition\SignalDecomposition.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -57,7 +68,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE@6.1.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:02:07
+Build Time Elapsed:  00:02:08
 </pre>
 </body>
 </html>

@@ -1,6 +1,7 @@
 #include "goertzel.h"
 #include "arm_math.h"          /* CMSIS-DSP£ºsin¡¢cos¡¢atan2¡¢sqrt */
 #include <math.h>
+#include "./fft_hp_estimate/fft_hp_estimate.h"
 
 #define TWO_PI_F 6.283185307179586476f
 
@@ -93,4 +94,7 @@ void goertzel_process_f32omega(const goertzel_cfg_fomega_t *cfg,
 
     arm_sqrt_f32(real_part * real_part + imag_part * imag_part,mag);
     *phase = atan2f(imag_part, real_part);
+	
+	float pk_amplitude = 2.0f * (*mag) / (N_RAW); // <-- ¸úÄãµÄ_A_outµÈ¼Û
+	*mag = pk_amplitude;
 }

@@ -69,11 +69,18 @@ void analyse_two_signals(const uint16_t *_buf, Signal_t *sig1, Signal_t *sig2)
 {
     /* 1. 去零偏 & 换算为电压 */
     adc_zero_bias(_buf, adc_zeroed, FFT_SIZE);
+	fft_top5_hann_zero_nointp(adc_zeroed);
 
     /* 2. FFT 找到两个基波 */
     /* 先得到两个基波的频率和幅度 */
     float f1, A1, f2, A2;
     fft_top2_hann_zero_interp(adc_zeroed, &f1, &A1, &f2, &A2);
+	
+	/* 精度各保留 2 位小数，可按需要改成 %.1f、%.3f 等 */
+	printf("F1 = %.2f Hz,  A1 = %.2f,  F2 = %.2f Hz,  A2 = %.2f\r\n",
+    f1, A1, f2, A2);
+
+	#define SINC_BASE_MAG 0.45
 
     /* --- helper lambda（C99 宏模拟）--- */
     #define ANALYSE_ONE(_f_base, _A_base, _f_other, _A_other, _sig_out)               \
@@ -87,17 +94,19 @@ void analyse_two_signals(const uint16_t *_buf, Signal_t *sig1, Signal_t *sig2)
         goertzel_process_f32omega(&g1, adc_zeroed, &mag1, &ph1);                      \
         goertzel_process_f32omega(&g3, adc_zeroed, &mag3, &ph3);                      \
         goertzel_process_f32omega(&g5, adc_zeroed, &mag5, &ph5);                      \
-                                                                                      \
+		printf("f_base = %.4f,f_other = %.4f, delta_f = %.4f\r\n",_f_base, _f_other, 3*_f_base - _f_other);\
+        printf("mag3:%.3f(before half bin cutoff)\r\n", mag3);                            \
         /* -------- 若 3× 或 5× 与另一基波重叠，做幅度抵消 -------- */                \
-        const float EPS = 0.4f;   /* half-bin 宽容 */                                  \
+        const float EPS = 2.0f;   /* half-bin 宽容 */                                  \
         if (fabsf(3.0f*(_f_base) - (_f_other)) < EPS)  mag3 = fabsf(mag3 - _A_other);  \
+		printf("f = %.2f ,mag1 = %.3f ,mag3 = %.3f, mag5 = %.3f\r\n", _f_base,mag1,mag3, mag5);\
         float r3 = mag3 / mag1;                                                        \
         float r5 = mag5 / mag1;                                                        \
-                                                                                       \
+        printf("f = %.2f ,r3 = %.3f, r5 = %.3f\r\n", _f_base,r3, r5);				\
         (_sig_out)->freq = (_f_base);                                                  \
         if (r3 < 0.04f && r5 < 0.02f) {                                                \
             (_sig_out)->wave_form = SINC_WAVE;                                         \
-        } else if (fabsf(r3 - 0.1111f) < 0.03f && fabsf(r5 - 0.0400f) < 0.02f) {       \
+        } else if ((fabsf(r3 - 0.1111f) < 0.03f && fabsf(r5 - 0.0400f) < 0.02f)||_A_base <= SINC_BASE_MAG) {       \
             (_sig_out)->wave_form = TRIANGLE_WAVE;                                     \
         } else {                                                                       \
             (_sig_out)->wave_form = 0; /* 未知/混合，可 log */                         \
@@ -184,6 +193,10 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
     {
         AD9833_1_Config(sig1->freq, AD9833_OUT_TRIANGLE);
     }
+	else
+	{
+		AD9833_1_Reset();
+	}
 
     if (sig2->wave_form == SINC_WAVE)
     {
@@ -193,6 +206,11 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
     {
         AD9833_2_Config(sig2->freq, AD9833_OUT_TRIANGLE);
     }
+	else
+	{
+		AD9833_2_Reset();
+	}
+
 }
 
 /* 串口接收消息模块 */
