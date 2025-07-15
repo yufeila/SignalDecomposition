@@ -129,15 +129,7 @@ void fft_top2_hann_zero_interp(const float *adc,
         }
     }
 
-    /* —— 峰太近时重新找第二峰（可按需求关闭此段） —— */
-    if (fabsf((int32_t)k1 - (int32_t)k2) < 2) {
-        P2 = -1.0f; k2 = 1;
-        for (uint32_t k = 1; k < N_FFT/2; ++k) {
-            if (k == k1) continue;
-            if (mag[k] > P2) { P2 = mag[k]; k2 = k; }
-        }
-    }
-
+?
     /* ---------- 4) 对数抛物线插值 (1 bin 精度 → <0.1 bin) ---------- */
 #define PARABOLA_INTERP(_k, _f_out, _A_out)                          \
     do {                                                             \

@@ -96,7 +96,6 @@ void adc_zero_bias(const uint16_t *adc_raw, float* adc_zeroed, uint32_t len)
         adc_zeroed[i] = ((float)adc_raw[i] - mean) * ADC_LSB_VOLT;
 }
 
-
 void fft_top2_hann_zero_interp(const float *adc,
                                float *f1_est, float *A1_est,
                                float *f2_est, float *A2_est)

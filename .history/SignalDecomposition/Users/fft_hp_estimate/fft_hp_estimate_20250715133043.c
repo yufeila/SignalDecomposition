@@ -2,13 +2,15 @@
 #include "usart.h"
 #include <stdio.h>
 
-static float      win[N_RAW];          // Hann(n)
-static float      buf[N_FFT];          // FFT 输入 & 输出共用
-static float      mag[N_FFT/2];        // 单边功率谱（P = |X|^2）
-static uint8_t    win_ready = 0;
-static uint8_t    fft_ready = 0;
-static arm_rfft_fast_instance_f32 cfg;
+static float in_buf[N_FFT];   /* N_RAW 数据 + 余下置零 */
+static float mag[N_FFT/2];    /* 幅值平方（实数）      */
+static uint8_t fft_inited = 1;
 
+// 在对信号做 FFT 变换前，通常会对每个采样点乘以 hann(n, N) 的结果，以减少频谱泄漏，提高频谱分析的准确性。
+static inline float hann(float n, float N)
+{
+    return 0.5f * (1.0f - arm_cos_f32(2.0f * PI * n / N));
+}
 
 static inline void init_hann_fft(void)
 {
@@ -22,7 +24,6 @@ static inline void init_hann_fft(void)
         fft_ready = 1;
     }
 }
-
 /* Hann 窗的 **coherent gain** = 0.5；用于幅值还原 */
 #define HANN_CG   0.5f
 
@@ -96,67 +97,92 @@ void adc_zero_bias(const uint16_t *adc_raw, float* adc_zeroed, uint32_t len)
         adc_zeroed[i] = ((float)adc_raw[i] - mean) * ADC_LSB_VOLT;
 }
 
-
+/**
+ * @brief 对输入信号进行FFT分析，估算前两大频率分量及其幅值（汉宁窗+零填充+抛物线插值）。
+ *
+ * 此函数对输入的ADC采样数据进行如下处理：
+ * 1. 乘以汉宁窗并进行零填充；
+ * 2. 进行实数快速傅里叶变换（FFT）；
+ * 3. 计算每个频率bin的幅度平方，寻找幅值最大的两个bin；
+ *    - 若两峰落在相邻bin，则对较小峰重新寻找；
+ * 4. 对每个峰进行抛物线插值，精确估算频率和幅值。
+ *
+ * @param[in]  adc     输入的ADC采样数据数组，长度为N_RAW
+ * @param[out] f1_est  第一大频率分量的估算频率（Hz）
+ * @param[out] A1_est  第一大频率分量的估算幅值
+ * @param[out] f2_est  第二大频率分量的估算频率（Hz）
+ * @param[out] A2_est  第二大频率分量的估算幅值
+ *
+ * @note
+ * - 使用汉宁窗减少频谱泄漏，HANN_CG为窗的校正系数；
+ * - 频率估算采用抛物线插值提高精度；
+ * - 需保证输入数组adc长度为N_RAW，输出指针有效。
+ */
 void fft_top2_hann_zero_interp(const float *adc,
                                float *f1_est, float *A1_est,
                                float *f2_est, float *A2_est)
 {
-    init_hann_fft();                          /* 懒加载 */
+    /* ---------- 与旧函数相同：1) 加窗 + 0 补，2) 实 FFT ---------- */
+    for (uint32_t n = 0; n < N_RAW; n++)
+        in_buf[n] = adc[n] * hann(n, N_RAW-1);
+    for (uint32_t n = N_RAW; n < N_FFT; n++)
+        in_buf[n] = 0.0f;
 
-    /* ---------- 1) 乘 Hann 窗 + 0 补 ---------- */
-    for (uint32_t n = 0; n < N_RAW; ++n)
-        buf[n] = adc[n] * win[n];
-    memset(&buf[N_RAW], 0, (N_FFT - N_RAW) * sizeof(float));
+	static arm_rfft_fast_instance_f32 cfg;
+	if(fft_inited)
+	{	
+		fft_inited = 0;
+		arm_rfft_fast_init_f32(&cfg, N_FFT);
+	}
 
-    /* ---------- 2) 实数 FFT ---------- */
-    arm_rfft_fast_f32(&cfg, buf, buf, 0);     /* 原地复用 */
+    arm_rfft_fast_f32(&cfg, in_buf, in_buf, 0);
 
-    /* ---------- 3) 单边功率谱 & 找 top-2 ---------- */
-    float P1 = -1.0f, P2 = -1.0f;
-    uint32_t k1 = 1,   k2 = 1;
+    /* ---------- 3) 幅度平方并找第一、第二大 bin ---------- */
+    float P1 = 0.0f, P2 = 0.0f;
+    uint32_t k1 = 1, k2 = 1;
 
-    for (uint32_t k = 1; k < N_FFT/2; ++k) {  /* 跳过 DC */
-        float re = buf[2*k];                  /* CMSIS: 实部在偶，下标=2k */
-        float im = buf[2*k+1];                /*          虚部在奇，下标=2k+1 */
-        float P  = re*re + im*im;             /* 幅度平方 = 功率谱 */
-        mag[k] = P;                           /* 存入数组便于后面插值 */
+    for (uint32_t k = 1; k < N_FFT/2; k++)
+    {
+        float re = in_buf[2*k];
+        float im = in_buf[2*k+1];
+        float P  = re*re + im*im;
+        mag[k] = P;
 
-        if (P > P1) {                         /* 更新第一名，顺推第二名 */
+        if (P > P1) {                 /* 更新第一名、顺推第二名 */
             P2 = P1;  k2 = k1;
             P1 = P;   k1 = k;
-        } else if (P > P2) {                  /* 只更新第二名 */
+        } else if (P > P2) {          /* 只更新第二名 */
             P2 = P;   k2 = k;
         }
     }
 
-    /* —— 峰太近时重新找第二峰（可按需求关闭此段） —— */
+    /* 若两峰落在相邻 bin，可根据需要再加一个排除带 */
     if (fabsf((int32_t)k1 - (int32_t)k2) < 2) {
-        P2 = -1.0f; k2 = 1;
-        for (uint32_t k = 1; k < N_FFT/2; ++k) {
-            if (k == k1) continue;
+        /* 简单做法：把较小峰再向下寻找一个新峰 */
+        P2 = 0.0f; k2 = 1;
+        for (uint32_t k = 1; k < N_FFT/2; k++) {
+            if (k==k1) continue;
             if (mag[k] > P2) { P2 = mag[k]; k2 = k; }
         }
     }
 
-    /* ---------- 4) 对数抛物线插值 (1 bin 精度 → <0.1 bin) ---------- */
-#define PARABOLA_INTERP(_k, _f_out, _A_out)                          \
-    do {                                                             \
-        uint32_t km1 = (_k==0U)?_k : _k-1U;                          \
-        uint32_t kp1 = (_k==N_FFT/2-1U)?_k : _k+1U;                  \
-        float a = logf(mag[km1]);                                    \
-        float b = logf(mag[_k]);                                     \
-        float c = logf(mag[kp1]);                                    \
-        float delta = 0.5f * (c - a) / (2.0f*b - a - c);             \
-        float k_ref = (float)_k + delta;                             \
-        *(_f_out) = k_ref * (FS_HZ / (float)N_FFT);                  \
-        /* 幅值补偿：pk_corr = exp(b - 0.25*(c-a)*delta)            */ \
-        float pk_corr = expf(b - 0.25f*(c - a)*delta);               \
-        *(_A_out) = 2.0f * sqrtf(pk_corr) / ((float)N_RAW * HANN_CG);\
+    /* ---------- 4) 对每个峰做抛物线插值 ---------- */
+    /* --- helper 宏 --- */
+   /* --- helper 宏 --- */
+    #define PARABOLA_INTERP(_k, _f_out, _A_out)                    \
+    do {                                                           \
+        uint32_t km1 = (_k==0)?_k:_k-1, kp1 = (_k==N_FFT/2-1)?_k:_k+1; \
+        float a = logf(mag[km1]), b = logf(mag[_k]), c = logf(mag[kp1]);\
+        float delta = 0.5f * (c - a) / (2.0f * b - a - c);        \
+        float k_ref = (float)_k + delta;                           \
+        *(_f_out) = k_ref * FS_HZ / N_FFT;                         \
+        float pk_corr = expf(b - 0.25f * (c - a) * delta);         \
+        *(_A_out) = 2.0f * sqrtf(pk_corr) / (N_RAW * HANN_CG);     \
+		printf("k = %lu delta = %f   f = %f\r\n", k1, delta , *f1_est);\
     } while(0)
-
-    /* 先保证按频率升序输出 */
-    if (k1 > k2) { uint32_t kt=k1; k1=k2; k2=kt; float Pt=P1; P1=P2; P2=Pt; }
 
     PARABOLA_INTERP(k1, f1_est, A1_est);
     PARABOLA_INTERP(k2, f2_est, A2_est);
+	
+	
 }
