@@ -1,11 +1,3 @@
-/*
- * @Author: yyf 17786321727@163.com
- * @Date: 2025-07-10 10:32:39
- * @LastEditors: yyf 17786321727@163.com
- * @LastEditTime: 2025-07-13 15:26:59
- * @FilePath: /code/SignalDecomposition/Core/Inc/usart.h
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************

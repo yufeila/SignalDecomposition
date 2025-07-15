@@ -1,4 +1,6 @@
 #include "./fft_hp_estimate/fft_hp_estimate.h"
+#include "usart.h"
+#include <stdio.h>
 
 static float in_buf[N_FFT];   /* N_RAW 数据 + 余下置零 */
 static float mag[N_FFT/2];    /* 幅值平方（实数）      */
@@ -154,23 +156,21 @@ void fft_top2_hann_zero_interp(const float *adc,
 
     /* ---------- 4) 对每个峰做抛物线插值 ---------- */
     /* --- helper 宏 --- */
-    #define PARABOLA_INTERP(_k, _kp, _f_out, _A_out)         \
-        do {                                                 \
-            uint32_t _km1 = (_k==0) ? _k : _k-1;             \
-            uint32_t _kp1 = (_k==N_FFT/2-1) ? _k : _k+1;     \
-            float a = mag[_km1], b = mag[_k], c = mag[_kp1]; \
-            float d = 0.5f*(a - c) / (a - 2.0f*b + c);       \
-            float k_ref = (float)(_k) + d;                   \
-            *(_f_out) = k_ref * FS_HZ / N_FFT;               \
-            float pk_corr = b - 0.25f*(a - c)*d;             \
-            *(_A_out) = 2.0f * sqrtf(pk_corr) / (N_RAW * HANN_CG); \
-        } while(0)
+   /* --- helper 宏 --- */
+    #define PARABOLA_INTERP(_k, _f_out, _A_out)                    \
+    do {                                                           \
+        uint32_t km1 = (_k==0)?_k:_k-1, kp1 = (_k==N_FFT/2-1)?_k:_k+1; \
+        float a = logf(mag[km1]), b = logf(mag[_k]), c = logf(mag[kp1]);\
+        float delta = 0.5f * (c - a) / (2.0f * b - a - c);        \
+        float k_ref = (float)_k + delta;                           \
+        *(_f_out) = k_ref * FS_HZ / N_FFT;                         \
+        float pk_corr = expf(b - 0.25f * (c - a) * delta);         \
+        *(_A_out) = 2.0f * sqrtf(pk_corr) / (N_RAW * HANN_CG);     \
+		printf("k = %lu delta = %f   f = %f\r\n", k1, delta , *f1_est);\
+    } while(0)
 
-    if (P1 >= P2) {
-        PARABOLA_INTERP(k1, k2, f1_est, A1_est);
-        PARABOLA_INTERP(k2, k1, f2_est, A2_est);
-    } else { /* 理论上不会进，但保险起见 */
-        PARABOLA_INTERP(k2, k1, f1_est, A1_est);
-        PARABOLA_INTERP(k1, k2, f2_est, A2_est);
-    }
+    PARABOLA_INTERP(k1, f1_est, A1_est);
+    PARABOLA_INTERP(k2, f2_est, A2_est);
+	
+	
 }

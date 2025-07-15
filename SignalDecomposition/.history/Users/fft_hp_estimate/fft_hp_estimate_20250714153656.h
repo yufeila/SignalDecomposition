@@ -19,7 +19,7 @@
 #define PSC         (TIM2-> PSC)
 #define ARR         (TIM2-> ARR)
 #define TIMCLK      84000000.0f         /* APB × 2或实际值         */
-#define FS_HZ      700000.0f           /* 采样率                  */
+#define FS_HZ      (TIMCLK / ((PSC + 1u) * (ARR + 1u)))           /* 采样率                  */
 
 #define ADC_LSB_VOLT            0.0008058f  // ADC的LSB电压值 (3.3V / 4096 = 0.0008058V)
 

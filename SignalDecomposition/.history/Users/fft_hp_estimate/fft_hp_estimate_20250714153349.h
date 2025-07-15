@@ -10,7 +10,7 @@
 #define __FFT_HP_ESTIMATE_H
 
 #include "arm_math.h"
-#include "tim.h"
+
 
 
 #define N_RAW      2048u                /* 真实采样点               */
@@ -19,7 +19,7 @@
 #define PSC         (TIM2-> PSC)
 #define ARR         (TIM2-> ARR)
 #define TIMCLK      84000000.0f         /* APB × 2或实际值         */
-#define FS_HZ      700000.0f           /* 采样率                  */
+#define FS_HZ      250000.0f            /* 采样率                  */
 
 #define ADC_LSB_VOLT            0.0008058f  // ADC的LSB电压值 (3.3V / 4096 = 0.0008058V)
 
