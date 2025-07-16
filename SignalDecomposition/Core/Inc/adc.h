@@ -34,6 +34,10 @@ extern "C" {
 
 extern ADC_HandleTypeDef hadc1;
 
+extern ADC_HandleTypeDef hadc2;
+
+extern ADC_HandleTypeDef hadc3;
+
 /* USER CODE BEGIN Private defines */
 #define BUFFER_READY_FLAG_NONE      0
 #define BUFFER_READY_FLAG_FULL      1
@@ -45,6 +49,8 @@ extern ADC_HandleTypeDef hadc1;
 /* USER CODE END Private defines */
 
 void MX_ADC1_Init(void);
+void MX_ADC2_Init(void);
+void MX_ADC3_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 extern ADC_HandleTypeDef hadc1;

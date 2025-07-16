@@ -415,7 +415,7 @@ void AD9833_2_SetWave(unsigned short type)
 }
 
 
-
+// ÆµÂÊµ¥Î»£ºHz
 void AD9833_1_Config(float fout, uint16_t waveform)
 {
     uint32_t freq = (uint32_t)(fout * 268435456.0 / FCLK); // 28-bit

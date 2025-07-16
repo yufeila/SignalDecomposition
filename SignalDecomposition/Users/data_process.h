@@ -22,6 +22,7 @@
 
 #define SINC_WAVE 1
 #define TRIANGLE_WAVE 2
+#define FREQ_TUNNING 10
 
 typedef struct{
     float freq;

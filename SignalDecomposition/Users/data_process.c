@@ -187,11 +187,11 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
 
     if (sig1->wave_form == SINC_WAVE)
     {
-        AD9833_1_Config(sig1->freq, AD9833_OUT_SINUS);
+        AD9833_1_Config(sig1->freq + FREQ_TUNNING, AD9833_OUT_SINUS);
     }
     else if (sig1->wave_form == TRIANGLE_WAVE)
     {
-        AD9833_1_Config(sig1->freq, AD9833_OUT_TRIANGLE);
+        AD9833_1_Config(sig1->freq + FREQ_TUNNING, AD9833_OUT_TRIANGLE);
     }
 	else
 	{
@@ -200,11 +200,11 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
 
     if (sig2->wave_form == SINC_WAVE)
     {
-        AD9833_2_Config(sig2->freq, AD9833_OUT_SINUS);
+        AD9833_2_Config(sig2->freq + FREQ_TUNNING, AD9833_OUT_SINUS);
     }
     else if (sig2->wave_form == TRIANGLE_WAVE)
     {
-        AD9833_2_Config(sig2->freq, AD9833_OUT_TRIANGLE);
+        AD9833_2_Config(sig2->freq + FREQ_TUNNING, AD9833_OUT_TRIANGLE);
     }
 	else
 	{

@@ -103,6 +103,9 @@ int main(void)
   MX_FSMC_Init();
   MX_TIM2_Init();
   MX_USART3_UART_Init();
+  MX_ADC2_Init();
+  MX_ADC3_Init();
+  MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
   //AD9833_1_Init();
   //AD9833_2_Init();
@@ -132,7 +135,7 @@ int main(void)
 		Data_Process();
 	  }
     /* USER CODE END WHILE */
-	
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
