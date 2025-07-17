@@ -30,11 +30,11 @@
 //#define FS            600000.0f          /* 采样率 */
 #define CALIBRATION_SAMPLE_FREQ 600000.0f /* 采样率 */
 #define MAVG          30                 /* 用 30 周期平均（进一步增加） */
-#define FREQ_FILTER_ALPHA_EXTERNAL 0.85f /* 外部信号源滤波系数（更强滤波） */
+#define FREQ_FILTER_ALPHA_EXTERNAL 1.0f /* 外部信号源滤波系数（更强滤波） */
 #define FREQ_FILTER_ALPHA_DDS 0.0f       /* DDS信号滤波系数（较轻滤波） */
-#define KP            0.005f             /* PI 比例系数（更保守） */
-#define KI            0.0002f            /* PI 积分系数（更保守） */
-#define TOL_HZ        1.0f               /* 判断锁定阈值 */
+#define KP            0.0001f             /* PI 比例系数（更保守） */
+#define KI            0.00002f            /* PI 积分系数（更保守） */
+#define TOL_HZ        15.0f               /* 判断锁定阈值 */
 #define ADCLK         25000000.0f        /* AD9833 时钟 (Hz) */
 
 typedef struct{

@@ -412,7 +412,7 @@ void Calibration_Frequency(void)
 	printf("Frequency errors: dfA = %.3f Hz, dfB = %.3f Hz\r\n", dfA, dfB);
 	
 	/* 死区控制：频差太小时不调节（避免追踪噪声） */
-	const float DEAD_ZONE = 5.0f; // 5Hz死区（针对外部信号源噪声增加死区）
+	const float DEAD_ZONE = 8.0f; // 5Hz死区（针对外部信号源噪声增加死区）
 
     /* ---- 通道 A ---- */
 	/* 死区控制 */
@@ -424,14 +424,14 @@ void Calibration_Frequency(void)
 
 	/* 积分并限幅 ±50 Hz（进一步减小积分限幅） */
 	pllA_int += KI * dfA;
-	if (pllA_int > 50) pllA_int = 50;
-	if (pllA_int < -50) pllA_int = -50;
+	if (pllA_int > 15) pllA_int = 15;
+	if (pllA_int < -15) pllA_int = -15;
 
 	float stepA = KP * dfA + pllA_int;
 
 	/* 限幅：一次最大改 ±20 Hz（进一步减小步进限制） */
-	if (stepA > 20)  stepA = 20;
-	if (stepA < -20) stepA = -20;
+	if (stepA > 10)  stepA = 10;
+	if (stepA < -10) stepA = -10;
 
     if(fabsf(dfA) > TOL_HZ){                     /* 还没锁定 */
         int32_t dFTW = (int32_t)(stepA * 268435456.0f / ADCLK);
