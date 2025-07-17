@@ -298,14 +298,6 @@ void StartSampling(void)
     HAL_TIM_Base_Start(&htim8);                // TIM8 已配置触发一次 N 点
 }
 
-// 声明新的控制器函数和状态变量
-static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_t *controller, float f_nominal);
-
-// 为通道A和B分别定义控制器状态
-static FLL_PI_Controller_t fll_controller_A;
-static FLL_PI_Controller_t fll_controller_B;
-
-
 void Calibration_Frequency(void)
 {
 	// 1. 启动本轮ADC+DMA+TIM采集（彻底修复启动时序）
@@ -393,22 +385,76 @@ void Calibration_Frequency(void)
     float fBpr = 1.0f/Tbp;
 	
 	/* 频率测量低通滤波（减少噪声） */
-    // [!!!] 注意：这里的滤波被移除了，因为 MAVG 已经提供了足够的平滑。
-    // 如果需要，可以重新引入，但MAVG是更稳定的方法。
+	if (!filter_init) {
+		fA_filtered = fA;
+		fApr_filtered = fApr;
+		fB_filtered = fB;
+		fBpr_filtered = fBpr;
+		filter_init = 1;
+	} else {
+		/* 外部信号源(A,B)使用更强滤波，DDS信号源(Apr,Bpr)使用较轻滤波 */
+		fA_filtered = FREQ_FILTER_ALPHA_EXTERNAL * fA_filtered + (1.0f - FREQ_FILTER_ALPHA_EXTERNAL) * fA;
+		fApr_filtered = FREQ_FILTER_ALPHA_DDS * fApr_filtered + (1.0f - FREQ_FILTER_ALPHA_DDS) * fApr;
+		fB_filtered = FREQ_FILTER_ALPHA_EXTERNAL * fB_filtered + (1.0f - FREQ_FILTER_ALPHA_EXTERNAL) * fB;
+		fBpr_filtered = FREQ_FILTER_ALPHA_DDS * fBpr_filtered + (1.0f - FREQ_FILTER_ALPHA_DDS) * fBpr;
+	}
 	
-	printf("freq_A = %.2f Hz, freq_Apr = %.2f Hz, freq_B = %.2f Hz, freq_Bpr = %.2f Hz\r\n", 
-           fA, fApr, fB, fBpr);
+	printf("freq_A = %.2f Hz(raw:%.2f), freq_Apr = %.2f Hz(raw:%.2f), freq_B = %.2f Hz(raw:%.2f), freq_Bpr = %.2f Hz(raw:%.2f)\r\n", 
+           fA_filtered, fA, fApr_filtered, fApr, fB_filtered, fB, fBpr_filtered, fBpr);
 	printf("Zero crossings: na=%d, nap=%d, nb=%d, nbp=%d\r\n", na, nap, nb, nbp);
 
-    /* 3. 频差计算 */
-    float dfA = fA - fApr;
-    float dfB = fB - fBpr;
+
+
+    /* 3. 频差 & FLL调节（按离散控制理论重新设计） */
+    float dfA = fA_filtered - fApr_filtered;
+    float dfB = fB_filtered - fBpr_filtered;
 	
 	printf("Frequency errors: dfA = %.3f Hz, dfB = %.3f Hz\r\n", dfA, dfB);
+
+    /* ---- 通道 A FLL控制器 ---- */
+	/* 死区控制 */
+	float freq_error_A = (fabsf(dfA) < DEAD_ZONE_HZ) ? 0.0f : dfA;
 	
-    /* 4. 调用新的FLL控制器 */
-    FLL_Controller_Update(dfA, &FTW1_cur, &fll_controller_A, fA);
-    FLL_Controller_Update(dfB, &FTW2_cur, &fll_controller_B, fB);
+	/* PI控制器（带并行Anti-wind-up） */
+	float u_A = KP * freq_error_A + pllA_int;  // 比例项 + 积分项
+	
+	/* 统一限幅（积分限幅 = 输出限幅） */
+	float u_A_sat = (u_A > MAX_FTW_STEP) ? MAX_FTW_STEP : 
+	                (u_A < -MAX_FTW_STEP) ? -MAX_FTW_STEP : u_A;
+	
+	/* Anti-wind-up反馈更新积分器 */
+	pllA_int += KI * freq_error_A + K_AW * (u_A_sat - u_A);
+
+    if(fabsf(dfA) > TOL_HZ){  /* 还没锁定才调整 */
+        FTW1_cur += (int32_t)u_A_sat;
+        AD9833_WriteFTW1(FTW1_cur);
+    }
+
+	/* ---- 通道 B FLL控制器 ---- */
+	/* 死区控制 */
+	float freq_error_B = (fabsf(dfB) < DEAD_ZONE_HZ) ? 0.0f : dfB;
+	
+	/* PI控制器（带并行Anti-wind-up） */
+	float u_B = KP * freq_error_B + pllB_int;  // 比例项 + 积分项
+	
+	/* 统一限幅（积分限幅 = 输出限幅） */
+	float u_B_sat = (u_B > MAX_FTW_STEP) ? MAX_FTW_STEP : 
+	                (u_B < -MAX_FTW_STEP) ? -MAX_FTW_STEP : u_B;
+	
+	/* Anti-wind-up反馈更新积分器 */
+	pllB_int += KI * freq_error_B + K_AW * (u_B_sat - u_B);
+
+	if (fabsf(dfB) > TOL_HZ) {  /* 还没锁定才调整 */
+		FTW2_cur += (int32_t)u_B_sat;
+		AD9833_WriteFTW2(FTW2_cur);
+	}
+
+	/* 调试输出 */
+	printf("FLL Debug: u_A=%.1f(%.1f), u_B=%.1f(%.1f), intA=%.1f, intB=%.1f\r\n", 
+		   u_A, u_A_sat, u_B, u_B_sat, pllA_int, pllB_int);
+	printf("FLL Params: KP=%.6f, KI=%.6f, K_AW=%.1f, MAX_STEP=%.1f\r\n", 
+		   KP, KI, K_AW, MAX_FTW_STEP);
+
 }
 
 /**
@@ -489,64 +535,4 @@ static inline void AD9833_WriteFTW2(uint32_t ftw)
 
     AD9833_2_SetRegisterValue(freq0_lsb);
     AD9833_2_SetRegisterValue(freq0_msb);
-}
-
-/**
- * @brief FLL PI控制器核心更新函数 (带Anti-Windup)
- * @param error 当前频率误差 (df)
- * @param ftw   指向当前DDS频率字的指针
- * @param controller 指向控制器状态的指针
- * @param f_nominal 标称频率 (用于计算环路更新周期)
- */
-static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_t *controller, float f_nominal)
-{
-    /* 1. 死区判断 */
-    if (fabsf(error) < FLL_DEAD_ZONE_HZ) {
-        // 在死区内，但为了防止积分漂移，我们仍然需要处理积分器
-        error = 0.0f; 
-    }
-
-    /* 2. 动态计算环路参数 */
-    // 环路更新周期 Ts 是不固定的，取决于当前信号频率
-    const float Ts = (float)MAVG / f_nominal; 
-    
-    // 从连续域参数计算离散域KP和KI
-    const float omega_n = 2.0f * 3.1415926f * FLL_BANDWIDTH_HZ;
-    const float kp = 2.0f * FLL_DAMPING_RATIO * omega_n; // Kp在离散化中不变
-    const float ki = omega_n * omega_n * Ts;            // Ki需要乘以采样周期
-    
-    /* 3. 计算 PI 输出 */
-    // P_out + I_out
-    float output = kp * error + controller->integrator;
-    
-    /* 4. 输出限幅 (饱和) */
-    float output_saturated = output;
-    if (output_saturated > FLL_MAX_STEP_HZ) {
-        output_saturated = FLL_MAX_STEP_HZ;
-    }
-    if (output_saturated < -FLL_MAX_STEP_HZ) {
-        output_saturated = -FLL_MAX_STEP_HZ;
-    }
-    
-    /* 5. 积分器更新 (带 Anti-Windup) */
-    // Anti-windup系数, Kaw ≈ 1/Kp 在某些设计中效果更好
-    const float k_aw = 1.0f / kp; 
-    
-    // 只有当输出没有被限幅时，积分器才完全累加
-    // 如果被限幅，积分器会减去超出的部分(output - output_saturated)
-    controller->integrator += ki * error + k_aw * (output_saturated - output);
-
-    /* 6. 更新 DDS 频率字 */
-    int32_t dFTW = (int32_t)(output_saturated * (268435456.0f / ADCLK));
-    *ftw += dFTW;
-    
-    // 根据是哪个通道的控制器来调用对应的写函数
-    if (controller == &fll_controller_A) {
-        AD9833_WriteFTW1(*ftw);
-    } else {
-        AD9833_WriteFTW2(*ftw);
-    }
-
-    printf("FLL_Update: err=%.2f, Ts=%.4f, Kp=%.2f, Ki=%.2f, out=%.2f, sat_out=%.2f, int=%.2f\n",
-           error, Ts, kp, ki, output, output_saturated, controller->integrator);
 }
