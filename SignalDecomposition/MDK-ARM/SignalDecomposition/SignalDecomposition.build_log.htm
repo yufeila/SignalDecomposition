@@ -27,7 +27,17 @@ Project File Date:  07/17/2025
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil5\ARM\ARMCC\Bin'
 Build target 'SignalDecomposition'
-"SignalDecomposition\SignalDecomposition.axf" - 0 Error(s), 0 Warning(s).
+compiling main.c...
+compiling data_process.c...
+..\Users\data_process.c(139): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+      ANALYSE_ONE(f1, A1, f2, A2, sig1);
+..\Users\data_process.c(140): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+      ANALYSE_ONE(f2, A2, f1, A1, sig2);
+..\Users\data_process.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=57104 RO-data=128804 RW-data=4188 ZI-data=67140  
+FromELF: creating hex file...
+"SignalDecomposition\SignalDecomposition.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -50,7 +60,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE@6.1.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:10
 </pre>
 </body>
 </html>
