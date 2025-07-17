@@ -29,6 +29,9 @@ static void DemuxADCData(const uint16_t *src,
 int find_zero_crossings(const float *x, int N, float *zc_idx, int max_zc);
 static inline void AD9833_WriteFTW1(uint32_t ftw);
 static inline void AD9833_WriteFTW2(uint32_t ftw);
+static int find_zc_parabola(const float *x, int N, float fs,
+                             float *zc_time, int max_zc);
+static float freq_from_zc(const float *t, int n);
 
 void Data_Process(void)
 {

@@ -29,6 +29,9 @@ static void DemuxADCData(const uint16_t *src,
 int find_zero_crossings(const float *x, int N, float *zc_idx, int max_zc);
 static inline void AD9833_WriteFTW1(uint32_t ftw);
 static inline void AD9833_WriteFTW2(uint32_t ftw);
+static int find_zc_parabola(const float *x, int N, float fs,
+                             float *zc_time, int max_zc);
+static float freq_from_zc(const float *t, int n);
 
 void Data_Process(void)
 {
@@ -353,32 +356,23 @@ void Calibration_Frequency(void)
     DemuxADCData((const uint16_t *)calibration_buffer_B, buf_B, buf_Bpr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE);
 
 
-    // 6. 零交检测
-    float zc_idx_A[MAX_ZC];
-    float zc_idx_Apr[MAX_ZC];
-    float zc_idx_B[MAX_ZC];
-    float zc_idx_Bpr[MAX_ZC];
+	// 6. 零交检测：抛物线+多周期
+	float zc_time_A[ZC_BUF_MAX], zc_time_Apr[ZC_BUF_MAX], zc_time_B[ZC_BUF_MAX], zc_time_Bpr[ZC_BUF_MAX];
+	int nA   = find_zc_parabola(buf_A,   CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, CALIBRATION_SAMPLE_FREQ, zc_time_A,   ZC_BUF_MAX);
+	int nApr = find_zc_parabola(buf_Apr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, CALIBRATION_SAMPLE_FREQ, zc_time_Apr, ZC_BUF_MAX);
+	int nB   = find_zc_parabola(buf_B,   CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, CALIBRATION_SAMPLE_FREQ, zc_time_B,   ZC_BUF_MAX);
+	int nBpr = find_zc_parabola(buf_Bpr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, CALIBRATION_SAMPLE_FREQ, zc_time_Bpr, ZC_BUF_MAX);
 
-    uint16_t na = find_zero_crossings(buf_A, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, zc_idx_A, MAX_ZC);
-    uint16_t nap = find_zero_crossings(buf_Apr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, zc_idx_Apr, MAX_ZC);
-    uint16_t nb = find_zero_crossings(buf_B, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, zc_idx_B, MAX_ZC);
-    uint16_t nbp = find_zero_crossings(buf_Bpr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, zc_idx_Bpr, MAX_ZC);
+	// 数据不足不做
+	if(nA <= K_PERIOD || nApr <= K_PERIOD || nB <= K_PERIOD || nBpr <= K_PERIOD) return;
 
-	if(na <= MAVG || nap <= MAVG || nb <= MAVG || nbp <= MAVG) return; /* 数据不足 */
+	// 多周期拟合法求频率，抗抖动更强
+	float fA   = freq_from_zc(zc_time_A,   nA);
+	float fApr = freq_from_zc(zc_time_Apr, nApr);
+	float fB   = freq_from_zc(zc_time_B,   nB);
+	float fBpr = freq_from_zc(zc_time_Bpr, nBpr);
 
-    /* 2. 频率计算：平均 MAVG 周期 */
-	float Ta   = (zc_idx_A [na-1]  - zc_idx_A [na-1-MAVG ]) / MAVG / CALIBRATION_SAMPLE_FREQ;
-    float Tap  = (zc_idx_Apr[nap-1]- zc_idx_Apr[nap-1-MAVG]) / MAVG / CALIBRATION_SAMPLE_FREQ;
-	float Tb  = (zc_idx_B [nb-1]  - zc_idx_B [nb-1-MAVG ]) / MAVG / CALIBRATION_SAMPLE_FREQ;
-	float Tbp = (zc_idx_Bpr[nbp-1]- zc_idx_Bpr[nbp-1-MAVG]) / MAVG / CALIBRATION_SAMPLE_FREQ;
-
-    float fA   = 1.0f/Ta;
-    float fApr = 1.0f/Tap;
-    float fB   = 1.0f/Tb;
-    float fBpr = 1.0f/Tbp;
-	
 	printf("freq_A = %.2f Hz, freq_Apr = %.2f Hz, freq_B = %.2f Hz, freq_Bpr = %.2f Hz\r\n", fA, fApr, fB, fBpr);
-
 
 
     /* 3. 频差 & PI 调节 */

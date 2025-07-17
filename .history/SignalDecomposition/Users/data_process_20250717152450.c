@@ -29,6 +29,9 @@ static void DemuxADCData(const uint16_t *src,
 int find_zero_crossings(const float *x, int N, float *zc_idx, int max_zc);
 static inline void AD9833_WriteFTW1(uint32_t ftw);
 static inline void AD9833_WriteFTW2(uint32_t ftw);
+static int find_zc_parabola(const float *x, int N, float fs,
+                             float *zc_time, int max_zc);
+static float freq_from_zc(const float *t, int n);
 
 void Data_Process(void)
 {
@@ -353,7 +356,7 @@ void Calibration_Frequency(void)
     DemuxADCData((const uint16_t *)calibration_buffer_B, buf_B, buf_Bpr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE);
 
 
-    // 6. ¡„ΩªºÏ≤‚
+  // 6. ¡„ΩªºÏ≤‚
     float zc_idx_A[MAX_ZC];
     float zc_idx_Apr[MAX_ZC];
     float zc_idx_B[MAX_ZC];
