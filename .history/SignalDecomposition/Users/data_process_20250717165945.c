@@ -412,7 +412,7 @@ void Calibration_Frequency(void)
 	printf("Frequency errors: dfA = %.3f Hz, dfB = %.3f Hz\r\n", dfA, dfB);
 	
 	/* 死区控制：频差太小时不调节（避免追踪噪声） */
-	const float DEAD_ZONE = 5.0f; // 5Hz死区（针对外部信号源噪声增加死区）
+	const float DEAD_ZONE = 2.0f; // 2Hz死区
 
     /* ---- 通道 A ---- */
 	/* 死区控制 */

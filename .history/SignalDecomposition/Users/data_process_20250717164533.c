@@ -384,54 +384,33 @@ void Calibration_Frequency(void)
     float fB   = 1.0f/Tb;
     float fBpr = 1.0f/Tbp;
 	
-	/* 频率测量低通滤波（减少噪声） */
-	if (!filter_init) {
-		fA_filtered = fA;
-		fApr_filtered = fApr;
-		fB_filtered = fB;
-		fBpr_filtered = fBpr;
-		filter_init = 1;
-	} else {
-		/* 外部信号源(A,B)使用更强滤波，DDS信号源(Apr,Bpr)使用较轻滤波 */
-		fA_filtered = FREQ_FILTER_ALPHA_EXTERNAL * fA_filtered + (1.0f - FREQ_FILTER_ALPHA_EXTERNAL) * fA;
-		fApr_filtered = FREQ_FILTER_ALPHA_DDS * fApr_filtered + (1.0f - FREQ_FILTER_ALPHA_DDS) * fApr;
-		fB_filtered = FREQ_FILTER_ALPHA_EXTERNAL * fB_filtered + (1.0f - FREQ_FILTER_ALPHA_EXTERNAL) * fB;
-		fBpr_filtered = FREQ_FILTER_ALPHA_DDS * fBpr_filtered + (1.0f - FREQ_FILTER_ALPHA_DDS) * fBpr;
-	}
-	
-	printf("freq_A = %.2f Hz(raw:%.2f), freq_Apr = %.2f Hz(raw:%.2f), freq_B = %.2f Hz(raw:%.2f), freq_Bpr = %.2f Hz(raw:%.2f)\r\n", 
-           fA_filtered, fA, fApr_filtered, fApr, fB_filtered, fB, fBpr_filtered, fBpr);
+	printf("freq_A = %.2f Hz, freq_Apr = %.2f Hz, freq_B = %.2f Hz, freq_Bpr = %.2f Hz\r\n", fA, fApr, fB, fBpr);
 	printf("Zero crossings: na=%d, nap=%d, nb=%d, nbp=%d\r\n", na, nap, nb, nbp);
 
 
 
     /* 3. 频差 & PI 调节 */
-    float dfA = fA_filtered - fApr_filtered;
-    float dfB = fB_filtered - fBpr_filtered;
+    float dfA = fA - fApr;
+    float dfB = fB - fBpr;
 	
 	printf("Frequency errors: dfA = %.3f Hz, dfB = %.3f Hz\r\n", dfA, dfB);
 	
-	/* 死区控制：频差太小时不调节（避免追踪噪声） */
-	const float DEAD_ZONE = 5.0f; // 5Hz死区（针对外部信号源噪声增加死区）
-
-    /* ---- 通道 A ---- */
-	/* 死区控制 */
-	if (fabsf(dfA) < DEAD_ZONE) dfA = 0;
 	
+    /* ---- 通道 A ---- */
 	/* Anti-wind-up：当极性翻转时清积分 */
 	if ((pllA_int > 0 && dfA < 0) || (pllA_int < 0 && dfA > 0))
 		 pllA_int = 0;
 
-	/* 积分并限幅 ±50 Hz（进一步减小积分限幅） */
+	/* 积分并限幅 ±100 Hz（减小积分限幅） */
 	pllA_int += KI * dfA;
-	if (pllA_int > 50) pllA_int = 50;
-	if (pllA_int < -50) pllA_int = -50;
+	if (pllA_int > 100) pllA_int = 100;
+	if (pllA_int < -100) pllA_int = -100;
 
 	float stepA = KP * dfA + pllA_int;
 
-	/* 限幅：一次最大改 ±20 Hz（进一步减小步进限制） */
-	if (stepA > 20)  stepA = 20;
-	if (stepA < -20) stepA = -20;
+	/* 限幅：一次最大改 ±50 Hz（减小步进限制） */
+	if (stepA > 50)  stepA = 50;
+	if (stepA < -50) stepA = -50;
 
     if(fabsf(dfA) > TOL_HZ){                     /* 还没锁定 */
         int32_t dFTW = (int32_t)(stepA * 268435456.0f / ADCLK);
@@ -440,23 +419,20 @@ void Calibration_Frequency(void)
     }
 
 	/* ---- 通道 B ---- */
-	/* 死区控制 */
-	if (fabsf(dfB) < DEAD_ZONE) dfB = 0;
-	
 	/* Anti-wind-up：当极性翻转时清积分 */
 	if ((pllB_int > 0 && dfB < 0) || (pllB_int < 0 && dfB > 0))
 		pllB_int = 0;
 
-	/* 积分并限幅 ±50 Hz（进一步减小积分限幅） */
+	/* 积分并限幅 ±100 Hz（减小积分限幅） */
 	pllB_int += KI * dfB;
-	if (pllB_int > 50)  pllB_int = 50;
-	if (pllB_int < -50) pllB_int = -50;
+	if (pllB_int > 100)  pllB_int = 100;
+	if (pllB_int < -100) pllB_int = -100;
 
 	float stepB = KP * dfB + pllB_int;
 
-	/* 限幅：一次最大改 ±20 Hz（进一步减小步进限制） */
-	if (stepB > 20)  stepB = 20;
-	if (stepB < -20) stepB = -20;
+	/* 限幅：一次最大改 ±50 Hz（减小步进限制） */
+	if (stepB > 50)  stepB = 50;
+	if (stepB < -50) stepB = -50;
 
 	if (fabsf(dfB) > TOL_HZ) {
 		int32_t dFTW = (int32_t)(stepB * 268435456.0f / ADCLK);

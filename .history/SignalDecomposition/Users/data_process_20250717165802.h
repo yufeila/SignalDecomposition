@@ -2,7 +2,7 @@
  * @Author: yyf 17786321727@163.com
  * @Date: 2025-07-12 15:11:29
  * @LastEditors: yyf 17786321727@163.com
- * @LastEditTime: 2025-07-17 16:58:54
+ * @LastEditTime: 2025-07-17 16:45:33
  * @FilePath: /SignalDecomposition/Users/data_process.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -31,7 +31,7 @@
 #define CALIBRATION_SAMPLE_FREQ 600000.0f /* 采样率 */
 #define MAVG          30                 /* 用 30 周期平均（进一步增加） */
 #define FREQ_FILTER_ALPHA_EXTERNAL 0.85f /* 外部信号源滤波系数（更强滤波） */
-#define FREQ_FILTER_ALPHA_DDS 0.0f       /* DDS信号滤波系数（较轻滤波） */
+#define FREQ_FILTER_ALPHA_DDS 0.5f       /* DDS信号滤波系数（较轻滤波） */
 #define KP            0.005f             /* PI 比例系数（更保守） */
 #define KI            0.0002f            /* PI 积分系数（更保守） */
 #define TOL_HZ        1.0f               /* 判断锁定阈值 */

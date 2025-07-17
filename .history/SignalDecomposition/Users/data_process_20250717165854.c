@@ -392,11 +392,10 @@ void Calibration_Frequency(void)
 		fBpr_filtered = fBpr;
 		filter_init = 1;
 	} else {
-		/* 外部信号源(A,B)使用更强滤波，DDS信号源(Apr,Bpr)使用较轻滤波 */
-		fA_filtered = FREQ_FILTER_ALPHA_EXTERNAL * fA_filtered + (1.0f - FREQ_FILTER_ALPHA_EXTERNAL) * fA;
-		fApr_filtered = FREQ_FILTER_ALPHA_DDS * fApr_filtered + (1.0f - FREQ_FILTER_ALPHA_DDS) * fApr;
-		fB_filtered = FREQ_FILTER_ALPHA_EXTERNAL * fB_filtered + (1.0f - FREQ_FILTER_ALPHA_EXTERNAL) * fB;
-		fBpr_filtered = FREQ_FILTER_ALPHA_DDS * fBpr_filtered + (1.0f - FREQ_FILTER_ALPHA_DDS) * fBpr;
+		fA_filtered = FREQ_FILTER_ALPHA * fA_filtered + (1.0f - FREQ_FILTER_ALPHA) * fA;
+		fApr_filtered = FREQ_FILTER_ALPHA * fApr_filtered + (1.0f - FREQ_FILTER_ALPHA) * fApr;
+		fB_filtered = FREQ_FILTER_ALPHA * fB_filtered + (1.0f - FREQ_FILTER_ALPHA) * fB;
+		fBpr_filtered = FREQ_FILTER_ALPHA * fBpr_filtered + (1.0f - FREQ_FILTER_ALPHA) * fBpr;
 	}
 	
 	printf("freq_A = %.2f Hz(raw:%.2f), freq_Apr = %.2f Hz(raw:%.2f), freq_B = %.2f Hz(raw:%.2f), freq_Bpr = %.2f Hz(raw:%.2f)\r\n", 
@@ -412,7 +411,7 @@ void Calibration_Frequency(void)
 	printf("Frequency errors: dfA = %.3f Hz, dfB = %.3f Hz\r\n", dfA, dfB);
 	
 	/* 死区控制：频差太小时不调节（避免追踪噪声） */
-	const float DEAD_ZONE = 5.0f; // 5Hz死区（针对外部信号源噪声增加死区）
+	const float DEAD_ZONE = 2.0f; // 2Hz死区
 
     /* ---- 通道 A ---- */
 	/* 死区控制 */
