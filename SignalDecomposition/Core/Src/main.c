@@ -38,8 +38,9 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-extern uint16_t calibration_flag_A;      /* 频率校准标志位(Channel A) */
-extern uint16_t calibration_flag_B;      /* 频率校准标志位(Channel B) */
+extern uint32_t FTW1_cur;
+extern uint32_t FTW2_cur;
+uint16_t output_ready = 0;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -134,11 +135,13 @@ int main(void)
 	  {
 		signal_decomposition_flag = 0;
 		Data_Process();
+		output_ready = 1; 
 	  }
-	  if(!calibration_flag_A || !calibration_flag_B)
+	  if(output_ready)
 	  {
-		  Calibration_Frequency();
+		Calibration_Frequency();
 	  }
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

@@ -5,11 +5,13 @@
 #include <stdio.h>     // 用于sprintf
 #include "adc.h"
 
+
+/* ------------ 全局/静态 ------------------- */
 /* 内部静态缓冲区，与 FFT/Goertzel 共用一份 ADC 数据 */
 static float adc_zeroed[BUF_SIZE];     /* 去直流 & 换算电压后的浮点序列 */
-uint16_t calibration_flag_A = 0;      /* 频率校准标志位(Channel A) */
-uint16_t calibration_flag_B = 0;      /* 频率校准标志位(Channel B) */
 Signal_t sig1, sig2;
+uint32_t FTW1_cur = 0, FTW2_cur = 0;
+static float    pllA_int = 0, pllB_int = 0;
 
 extern DMA_HandleTypeDef hdma_adc1;
 extern DMA_HandleTypeDef hdma_adc2;
@@ -19,6 +21,17 @@ extern volatile uint16_t calibration_buffer_A[CALIBRATION_BUF_SIZE];
 extern volatile uint8_t calibration_buffer_A_ready;
 extern volatile uint16_t calibration_buffer_B[CALIBRATION_BUF_SIZE];
 extern volatile uint8_t calibration_buffer_B_ready;
+
+static void DemuxADCData(const uint16_t *src,
+                  float *buf1,
+                  float *buf2,
+                  uint16_t len);
+int find_zero_crossings(const float *x, int N, float *zc_idx, int max_zc);
+static inline void AD9833_WriteFTW1(uint32_t ftw);
+static inline void AD9833_WriteFTW2(uint32_t ftw);
+static int find_zc_parabola(const float *x, int N, float fs,
+                             float *zc_time, int max_zc);
+static float freq_from_zc(const float *t, int n);
 
 void Data_Process(void)
 {
@@ -196,6 +209,7 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
     AD9833_1_GPIO_Init();
     AD9833_2_GPIO_Init();
 
+	/* ------- 通道 1 ------- */
     if (sig1->wave_form == SINC_WAVE)
     {
         AD9833_1_Config(sig1->freq + FREQ_TUNNING, AD9833_OUT_SINUS);
@@ -208,7 +222,10 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
 	{
 		AD9833_1_Reset();
 	}
+	/* 计算初始 FTW1 */
+	FTW1_cur = (uint32_t)((sig1->freq + FREQ_TUNNING) * 268435456.0f / ADCLK);
 
+	/* ------- 通道 2 ------- */
     if (sig2->wave_form == SINC_WAVE)
     {
         AD9833_2_Config(sig2->freq + FREQ_TUNNING, AD9833_OUT_SINUS);
@@ -221,6 +238,7 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
 	{
 		AD9833_2_Reset();
 	}
+	FTW2_cur = (uint32_t)((sig2->freq + FREQ_TUNNING) * 268435456.0f / ADCLK);
 
 }
 
@@ -262,6 +280,20 @@ void config_digital_potentiometer(uint16_t deg)
     X9C503_SetResistance(r2_503);
 }
 
+void StartSampling(void)
+{
+    /* 1. 清 DMA 标志 */
+    __HAL_DMA_CLEAR_FLAG(&hdma_adc2, DMA_FLAG_TCIF0_4);
+    __HAL_DMA_CLEAR_FLAG(&hdma_adc3, DMA_FLAG_TCIF0_4);
+
+    /* 2. 启动 ADC+DMA (NORMAL) */
+    HAL_ADC_Start_DMA(&hadc2, (uint32_t*)calibration_buffer_A, CALIBRATION_BUF_SIZE);
+    HAL_ADC_Start_DMA(&hadc3, (uint32_t*)calibration_buffer_B, CALIBRATION_BUF_SIZE);
+
+    /* 3. 让 TIM8 产生一次 TRGO 序列 */
+    HAL_TIM_Base_Start(&htim8);                // TIM8 已配置触发一次 N 点
+}
+
 void Calibration_Frequency(void)
 {
 	// 1. 启动本轮ADC+DMA+TIM采集（彻底修复启动时序）
@@ -284,11 +316,15 @@ void Calibration_Frequency(void)
     }       
 
     // 启动定时器，第一次TRGO将在完整周期后发生
-    HAL_TIM_Base_Start(&htim8);
+    /* 停 TIM, 清 CNT, 再启 */
+	HAL_TIM_Base_Stop(&htim8);
+	__HAL_TIM_SET_COUNTER(&htim8, 0);   // 关键：把 CNT 清零
+	HAL_TIM_Base_Start(&htim8);         // 下一帧从 0 开始
+
 
     // 2. 等待本轮数据采集完成
     uint32_t timeout = 0;
-    while (calibration_buffer_A_ready != 1 && calibration_buffer_B_ready != 1 && timeout < 1000)
+    while (!(calibration_buffer_A_ready && calibration_buffer_B_ready) && timeout < 1000)
     {
         HAL_Delay(1);  // 短暂延时，避免CPU占用过高
         timeout++;
@@ -312,55 +348,81 @@ void Calibration_Frequency(void)
     htim8.Instance->CR1 &= ~TIM_CR1_URS;
 
     // 5. 处理本轮采集的数据
-    static float buf_A[CALIBRATION_BUF_SIZE];
-    static float buf_Apr[CALIBRATION_BUF_SIZE];
-    static float buf_B[CALIBRATION_BUF_SIZE];
-    static float buf_Bpr[CALIBRATION_BUF_SIZE];
-    DemuxADCData(calibration_buffer_A, buf_A, buf_Apr, CALIBRATION_BUF_SIZE);
-    DemuxADCData(calibration_buffer_B, buf_B, buf_Bpr, CALIBRATION_BUF_SIZE);
+    static float buf_A[CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE];
+    static float buf_Apr[CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE];
+    static float buf_B[CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE];
+    static float buf_Bpr[CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE];
+    DemuxADCData((const uint16_t *)calibration_buffer_A, buf_A, buf_Apr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE);
+    DemuxADCData((const uint16_t *)calibration_buffer_B, buf_B, buf_Bpr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE);
 
-    // 6. 零交检测
-    float zc_idx_A[MAX_ZC];
-    float zc_idx_Apr[MAX_ZC];
-    float zc_idx_B[MAX_ZC];
-    float zc_idx_Bpr[MAX_ZC];
 
-    uint16_t zc_count_A = find_zero_crossings(buf_A, CALIBRATION_BUF_SIZE, zc_idx_A, MAX_ZC);
-    uint16_t zc_count_Apr = find_zero_crossings(buf_Apr, CALIBRATION_BUF_SIZE, zc_idx_Apr, MAX_ZC);
-    uint16_t zc_count_B = find_zero_crossings(buf_B, CALIBRATION_BUF_SIZE, zc_idx_B, MAX_ZC);
-    uint16_t zc_count_Bpr = find_zero_crossings(buf_Bpr, CALIBRATION_BUF_SIZE, zc_idx_Bpr, MAX_ZC);
+	// 6. 零交检测：抛物线+多周期
+	float zc_time_A[ZC_BUF_MAX], zc_time_Apr[ZC_BUF_MAX], zc_time_B[ZC_BUF_MAX], zc_time_Bpr[ZC_BUF_MAX];
+	int nA   = find_zc_parabola(buf_A,   CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, CALIBRATION_SAMPLE_FREQ, zc_time_A,   ZC_BUF_MAX);
+	int nApr = find_zc_parabola(buf_Apr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, CALIBRATION_SAMPLE_FREQ, zc_time_Apr, ZC_BUF_MAX);
+	int nB   = find_zc_parabola(buf_B,   CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, CALIBRATION_SAMPLE_FREQ, zc_time_B,   ZC_BUF_MAX);
+	int nBpr = find_zc_parabola(buf_Bpr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, CALIBRATION_SAMPLE_FREQ, zc_time_Bpr, ZC_BUF_MAX);
 
-    // 7. 计算频率
-    float freq_A = 0;
-    float freq_Apr = 0;
-    float freq_B = 0;
-    float freq_Bpr = 0;
+	// 数据不足不做
+	if(nA <= K_PERIOD || nApr <= K_PERIOD || nB <= K_PERIOD || nBpr <= K_PERIOD) return;
 
-    freq_A = 1 / (zc_idx_A[1] - zc_idx_A[0]);
-    freq_Apr = 1 / (zc_idx_Apr[1] - zc_idx_Apr[0]);
-    freq_B = 1 / (zc_idx_B[1] - zc_idx_B[0]);
-    freq_Bpr = 1 / (zc_idx_Bpr[1] - zc_idx_Bpr[0]);
+	// 多周期拟合法求频率，抗抖动更强
+	float fA   = freq_from_zc(zc_time_A,   nA);
+	float fApr = freq_from_zc(zc_time_Apr, nApr);
+	float fB   = freq_from_zc(zc_time_B,   nB);
+	float fBpr = freq_from_zc(zc_time_Bpr, nBpr);
 
-    printf("freq_A = %.2f Hz, freq_Apr = %.2f Hz, freq_B = %.2f Hz, freq_Bpr = %.2f Hz\r\n", freq_A, freq_Apr, freq_B, freq_Bpr);
+	printf("freq_A = %.2f Hz, freq_Apr = %.2f Hz, freq_B = %.2f Hz, freq_Bpr = %.2f Hz\r\n", fA, fApr, fB, fBpr);
 
-    // 8. 调整DDS频率
-    if( fabsf(freq_A - freq_Apr) <= 1e-3 )
-    {
-        calibration_flag_A = 1;
-        AD9833_1_Config(freq_A, sig1->wave_form);
+
+    /* 3. 频差 & PI 调节 */
+    float dfA = fA - fApr;
+    float dfB = fB - fBpr;
+	
+	
+    /* ---- 通道 A ---- */
+	/* Anti-wind-up：当极性翻转时清积分 */
+	if ((pllA_int > 0 && dfA < 0) || (pllA_int < 0 && dfA > 0))
+		 pllA_int = 0;
+
+	/* 积分并限幅 ±500 Hz */
+	pllA_int += KI * dfA;
+	if (pllA_int > 500) pllA_int = 500;
+	if (pllA_int < -500) pllA_int = -500;
+
+	float stepA = KP * dfA + pllA_int;
+
+	/* 限幅：一次最大改 ±200 Hz */
+	if (stepA > 200)  stepA = 200;
+	if (stepA < -200) stepA = -200;
+
+    if(fabsf(dfA) > TOL_HZ){                     /* 还没锁定 */
+        int32_t dFTW = (int32_t)(stepA * 268435456.0f / ADCLK);
+        FTW1_cur += dFTW;
+        AD9833_WriteFTW1(FTW1_cur);
     }
-    else
-    {
-        calibration_flag_A = 0;
-    }
-    if( fabsf(freq_B - freq_Bpr) <= 1e-3 )
-    {
-        calibration_flag_B = 1;
-    }
-    else
-    {
-        AD9833_2_Config(freq_B, sig2->wave_form);
-    }
+
+	/* ---- 通道 B ---- */
+	/* Anti-wind-up：当极性翻转时清积分 */
+	if ((pllB_int > 0 && dfB < 0) || (pllB_int < 0 && dfB > 0))
+		pllB_int = 0;
+
+	/* 积分并限幅 ±500 Hz */
+	pllB_int += KI * dfB;
+	if (pllB_int > 500)  pllB_int = 500;
+	if (pllB_int < -500) pllB_int = -500;
+
+	float stepB = KP * dfB + pllB_int;
+
+	/* 限幅：一次最大改 ±200 Hz */
+	if (stepB > 200)  stepB = 200;
+	if (stepB < -200) stepB = -200;
+
+	if (fabsf(dfB) > TOL_HZ) {
+		int32_t dFTW = (int32_t)(stepB * 268435456.0f / ADCLK);
+		FTW2_cur += dFTW;
+		AD9833_WriteFTW2(FTW2_cur);
+	}
 
 }
 
@@ -410,13 +472,81 @@ static void DemuxADCData(const uint16_t *src,
 // zc_idx: 用户提供的零交输出buffer
 // max_zc: buffer长度上限
 // 返回：实际检测到的零交数量
-int find_zero_crossings(const float *x, int N, float *zc_idx, int max_zc) {
+int find_zero_crossings(const float *x, int N, float *zc_idx, int max_zc)
+{
     int count = 0;
     for (int i = 0; i < N - 1 && count < max_zc; ++i) {
         if (x[i] < 0 && x[i+1] >= 0) { // 从负到正
             float frac = x[i] / (x[i] - x[i+1]);
-            zc_idx[count++] = (i + frac) / CALIBRATION_SAMPLE_FREQ; // 分数采样点
+            zc_idx[count++] = i + frac; // 分数采样点
         }
     }
     return count;
+}
+
+//输入参数 ftw（Frequency Tuning Word）是 AD9833 的 28 位频率控制字
+static inline void AD9833_WriteFTW1(uint32_t ftw)
+{
+    // FREQ0 低14位
+    uint16_t freq0_lsb = AD9833_REG_FREQ0 | (ftw & 0x3FFF);
+    // FREQ0 高14位
+    uint16_t freq0_msb = AD9833_REG_FREQ0 | ((ftw >> 14) & 0x3FFF);
+
+    AD9833_1_SetRegisterValue(freq0_lsb);
+    AD9833_1_SetRegisterValue(freq0_msb);
+}
+//输入参数 ftw（Frequency Tuning Word）是 AD9833 的 28 位频率控制字
+static inline void AD9833_WriteFTW2(uint32_t ftw)
+{
+    uint16_t freq0_lsb = AD9833_REG_FREQ0 | (ftw & 0x3FFF);
+    uint16_t freq0_msb = AD9833_REG_FREQ0 | ((ftw >> 14) & 0x3FFF);
+
+    AD9833_2_SetRegisterValue(freq0_lsb);
+    AD9833_2_SetRegisterValue(freq0_msb);
+}
+
+static int find_zc_parabola(const float *x, int N, float fs,
+                             float *zc_time, int max_zc)
+{
+    int cnt = 0, last_i = -MIN_SPACING;
+    /* 1. 粗判定 + 滞回过滤 */
+    for (int i = 1; i < N-1 && cnt < max_zc; ++i)
+    {
+        if (x[i-1] < -ZC_HYST && x[i] >=  ZC_HYST &&
+            (i-last_i) >= MIN_SPACING)
+        {
+            /* 2. 抛物线插值：  y = ax^2+bx+c  取 y=0 求根 */
+            float y1 = x[i-1], y2 = x[i], y3 = x[i+1];
+            float denom = (y1 - 2*y2 + y3);
+            float frac  = (denom == 0) ? 0.0f : (y1 - y3) / (2*denom);
+            zc_time[cnt++] = (i + frac) / fs;   /* 秒 */
+            last_i = i;
+        }
+    }
+    return cnt;
+}
+
+/* ------ 频率估计：K 周期线性拟合 ------ */
+static float freq_from_zc(const float *t, int n)
+{
+    if (n < K_PERIOD+1) return 0;          /* 数据不足 */
+    /* 拿最后 K_PERIOD+1 个点:  t[k] ≈ t0 + k·T  → 斜率即周期 */
+    int start = n - (K_PERIOD+1);
+    float sum_k  = 0, sum_t  = 0;
+    for (int k = 0; k <= K_PERIOD; ++k){
+        sum_k += k;
+        sum_t += t[start+k];
+    }
+    float avg_k = sum_k / (K_PERIOD+1);
+    float avg_t = sum_t / (K_PERIOD+1);
+
+    /* 计算斜率 = Σ(k-avg_k)(t-avg_t)/Σ(k-avg_k)^2 */
+    float num = 0, den = 0;
+    for (int k = 0; k <= K_PERIOD; ++k){
+        float dk = k - avg_k;
+        num += dk * (t[start+k] - avg_t);
+        den += dk * dk;
+    }
+    float T = num / den;                 /* 周期(s) */
+    return 1.0f / T;                     /* 频率(Hz) */
 }

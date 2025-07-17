@@ -22,10 +22,24 @@
 
 #define SINC_WAVE 1
 #define TRIANGLE_WAVE 2
-#define FREQ_TUNNING 10
+#define FREQ_TUNNING 0
 #define MAX_ZC 32
-#define CALIBRATION_SAMPLE_FREQ 60e3
 
+
+/* ------------ 用户可调参数 ---------------- */
+//#define FS            600000.0f          /* 采样率 */
+#define CALIBRATION_SAMPLE_FREQ 600000.0f /* 采样率 */
+#define MAVG          15                 /* 用 10 周期平均 */
+#define KP            0.04f              /* PI 比例系数 */
+#define KI            0.008f             /* PI 积分系数 */
+#define TOL_HZ        0.5f              /* 判断锁定阈值 */
+#define ADCLK         25000000.0f        /* AD9833 时钟 (Hz) */
+
+/* --------- 可配置宏 --------- */
+#define ZC_HYST      0.02f        /* 滞回：±2 % Vpp */
+#define MIN_SPACING       4       /* 零交点最少间隔 sample */
+#define ZC_BUF_MAX      128
+#define K_PERIOD        20        /* 用 20 周期做拟合 */
 
 typedef struct{
     float freq;
