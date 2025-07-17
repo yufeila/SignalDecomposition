@@ -378,15 +378,12 @@ void Calibration_Frequency(void)
     float fBpr = 1.0f/Tbp;
 	
 	printf("freq_A = %.2f Hz, freq_Apr = %.2f Hz, freq_B = %.2f Hz, freq_Bpr = %.2f Hz\r\n", fA, fApr, fB, fBpr);
-	printf("Zero crossings: na=%d, nap=%d, nb=%d, nbp=%d\r\n", na, nap, nb, nbp);
 
 
 
     /* 3. 频差 & PI 调节 */
     float dfA = fA - fApr;
     float dfB = fB - fBpr;
-	
-	printf("Frequency errors: dfA = %.3f Hz, dfB = %.3f Hz\r\n", dfA, dfB);
 	
 	
     /* ---- 通道 A ---- */

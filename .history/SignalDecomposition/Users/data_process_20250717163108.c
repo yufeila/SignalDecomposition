@@ -386,8 +386,6 @@ void Calibration_Frequency(void)
     float dfA = fA - fApr;
     float dfB = fB - fBpr;
 	
-	printf("Frequency errors: dfA = %.3f Hz, dfB = %.3f Hz\r\n", dfA, dfB);
-	
 	
     /* ---- 通道 A ---- */
 	/* Anti-wind-up：当极性翻转时清积分 */
