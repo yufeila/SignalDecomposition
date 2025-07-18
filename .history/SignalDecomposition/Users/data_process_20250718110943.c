@@ -299,7 +299,7 @@ void StartSampling(void)
 }
 
 // 声明新的控制器函数和状态变量
-static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_t *controller);
+static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_t *controller, float f_nominal);
 
 // 为通道A和B分别定义控制器状态
 static FLL_PI_Controller_t fll_controller_A;
@@ -417,8 +417,8 @@ void Calibration_Frequency(void)
 	printf("Frequency errors: dfA = %.3f Hz, dfB = %.3f Hz\r\n", dfA, dfB);
 	
     /* 4. 调用新的FLL控制器 */
-    FLL_Controller_Update(dfA, &FTW1_cur, &fll_controller_A);
-    FLL_Controller_Update(dfB, &FTW2_cur, &fll_controller_B);
+    FLL_Controller_Update(dfA, &FTW1_cur, &fll_controller_A, fA);
+    FLL_Controller_Update(dfB, &FTW2_cur, &fll_controller_B, fB);
 }
 
 /**
@@ -502,38 +502,51 @@ static inline void AD9833_WriteFTW2(uint32_t ftw)
 }
 
 /**
- * @brief FLL PI控制器核心更新函数 (带Anti-Windup) - 重构版
+ * @brief FLL PI控制器核心更新函数 (带Anti-Windup)
  * @param error 当前频率误差 (df)
  * @param ftw   指向当前DDS频率字的指针
  * @param controller 指向控制器状态的指针
+ * @param f_nominal 标称频率 (用于计算环路更新周期)
  */
-static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_t *controller)
+static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_t *controller, float f_nominal)
 {
-    float p_term = FLL_KP * error; // 计算比例项
-
-    /* 1. 死区判断：在死区内，禁用比例(P)项，但保留积分(I)项继续消除稳态误差 */
+    /* 1. 死区判断 */
     if (fabsf(error) < FLL_DEAD_ZONE_HZ) {
-        p_term = 0.0f;
+        // 在死区内，但为了防止积分漂移，我们仍然需要处理积分器
+        error = 0.0f; 
     }
+
+    /* 2. 动态计算环路参数 */
+    // 环路更新周期 Ts 是不固定的，取决于当前信号频率
+    const float Ts = (float)MAVG / f_nominal; 
     
-    /* 2. 计算 PI 输出 */
-    float output = p_term + controller->integrator;
+    // 从连续域参数计算离散域KP和KI
+    const float omega_n = 2.0f * 3.1415926f * FLL_BANDWIDTH_HZ;
+    const float kp = 2.0f * FLL_DAMPING_RATIO * omega_n; // Kp在离散化中不变
+    const float ki = omega_n * omega_n * Ts;            // Ki需要乘以采样周期
     
-    /* 3. 输出限幅 (饱和) */
+    /* 3. 计算 PI 输出 */
+    // P_out + I_out
+    float output = kp * error + controller->integrator;
+    
+    /* 4. 输出限幅 (饱和) */
     float output_saturated = output;
     if (output_saturated > FLL_MAX_STEP_HZ) {
         output_saturated = FLL_MAX_STEP_HZ;
-    } else if (output_saturated < -FLL_MAX_STEP_HZ) {
+    }
+    if (output_saturated < -FLL_MAX_STEP_HZ) {
         output_saturated = -FLL_MAX_STEP_HZ;
     }
     
-    /* 4. 积分器更新 (带 Anti-Windup) */
-    // 积分器持续累积原始误差(FLL_KI * error)。
-    // 如果输出被限幅，抗饱和项会减去超出的部分(output - output_saturated)，
-    // 从而防止积分器在饱和状态下继续累积。
-    controller->integrator += FLL_KI * error + FLL_ANTI_WINDUP_GAIN * (output_saturated - output);
+    /* 5. 积分器更新 (带 Anti-Windup) */
+    // Anti-windup系数, Kaw ≈ 1/Kp 在某些设计中效果更好
+    const float k_aw = 1.0f / kp; 
+    
+    // 只有当输出没有被限幅时，积分器才完全累加
+    // 如果被限幅，积分器会减去超出的部分(output - output_saturated)
+    controller->integrator += ki * error + k_aw * (output_saturated - output);
 
-    /* 5. 更新 DDS 频率字 */
+    /* 6. 更新 DDS 频率字 */
     int32_t dFTW = (int32_t)(output_saturated * (268435456.0f / ADCLK));
     *ftw += dFTW;
     
@@ -544,6 +557,6 @@ static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_
         AD9833_WriteFTW2(*ftw);
     }
 
-    printf("FLL_Update: err=%.2f, Kp=%.2f, Ki=%.2f, out=%.2f, sat_out=%.2f, int=%.2f\n",
-           error, FLL_KP, FLL_KI, output, output_saturated, controller->integrator);
+    printf("FLL_Update: err=%.2f, Ts=%.4f, Kp=%.2f, Ki=%.2f, out=%.2f, sat_out=%.2f, int=%.2f\n",
+           error, Ts, kp, ki, output, output_saturated, controller->integrator);
 }

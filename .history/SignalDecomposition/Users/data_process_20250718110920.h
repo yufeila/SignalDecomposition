@@ -27,24 +27,23 @@
 
 
 /* ------------ 用户可调参数 ---------------- */
-#define CALIBRATION_SAMPLE_FREQ 600000.0f /* ADC采样率 (硬件固定) */
+#define CALIBRATION_SAMPLE_FREQ 1200000.0f /* ADC采样率 (硬件固定) - 根据TIM8配置修正 */
 #define ADCLK                   25000000.0f /* AD9833 时钟 (Hz) */
-#define MAVG                    20          /* 增加周期数以提高频率估算平滑度 */
-#define MAX_ZC                  100         
+#define MAVG                    20          /* 减少到15个周期，确保在新窗口下有足够数据 */
+#define MAX_ZC                  100         /* 增加到200，适应更长的数据窗口 */
+
+/* 新增：频率估算低通滤波系数 (0.0-1.0), 越小越平滑 */
+#define FREQ_ESTIMATE_FILTER_ALPHA 0.6f
 
 /* FLL (锁频环) 控制器设计参数 */
-#define FLL_LOOP_UPDATE_RATE_HZ 20.0f   /* FLL环路更新频率(Hz)，用于计算固定的Ts */
-#define FLL_BANDWIDTH_HZ        8.0f    /* 环路带宽(Hz): 适当降低，使响应更平稳 */
+#define FLL_LOOP_UPDATE_RATE_HZ 20.0f   /* FLL环路更新频率(Hz)，用于计算固定Ts */
+#define FLL_BANDWIDTH_HZ        5.0f    /* 环路带宽(Hz): 从12Hz降低到5Hz，使响应更平缓 */
 #define FLL_DAMPING_RATIO       0.9f    /* 阻尼比: 保持0.9以抑制过冲 */
-#define FLL_MAX_STEP_HZ         5.0f    /* 单次最大调节步进(Hz): 保持5Hz，避免剧烈跳变 */
+#define FLL_MAX_STEP_HZ         5.0f    /* 单次最大调节步进(Hz): 避免剧烈跳变 */
 #define FLL_DEAD_ZONE_HZ        0.1f    /* 死区(Hz): 大幅减小，让积分器可以消除小的稳态误差 */
 
 /* FLL PI控制器离散化后的固定参数 */
 #define FLL_TS                  (1.0f / FLL_LOOP_UPDATE_RATE_HZ)
-#define FLL_OMEGA_N             (2.0f * 3.1415926f * FLL_BANDWIDTH_HZ)
-#define FLL_KP                  (2.0f * FLL_DAMPING_RATIO * FLL_OMEGA_N)
-#define FLL_KI                  (FLL_OMEGA_N * FLL_OMEGA_N * FLL_TS)
-#define FLL_ANTI_WINDUP_GAIN    (1.0f / FLL_KP)
 
 
 typedef struct{

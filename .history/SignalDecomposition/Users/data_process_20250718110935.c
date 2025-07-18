@@ -502,14 +502,14 @@ static inline void AD9833_WriteFTW2(uint32_t ftw)
 }
 
 /**
- * @brief FLL PI控制器核心更新函数 (带Anti-Windup) - 重构版
+ * @brief FLL PI控制器核心更新函数 (带Anti-Windup)
  * @param error 当前频率误差 (df)
  * @param ftw   指向当前DDS频率字的指针
  * @param controller 指向控制器状态的指针
  */
 static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_t *controller)
 {
-    float p_term = FLL_KP * error; // 计算比例项
+    float p_term = FLL_KP * error; // 比例项
 
     /* 1. 死区判断：在死区内，禁用比例(P)项，但保留积分(I)项继续消除稳态误差 */
     if (fabsf(error) < FLL_DEAD_ZONE_HZ) {
@@ -528,9 +528,8 @@ static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_
     }
     
     /* 4. 积分器更新 (带 Anti-Windup) */
-    // 积分器持续累积原始误差(FLL_KI * error)。
-    // 如果输出被限幅，抗饱和项会减去超出的部分(output - output_saturated)，
-    // 从而防止积分器在饱和状态下继续累积。
+    // 如果输出被限幅，积分器会减去超出的部分(output - output_saturated)
+    // 从而防止积分器在饱和状态下继续累积
     controller->integrator += FLL_KI * error + FLL_ANTI_WINDUP_GAIN * (output_saturated - output);
 
     /* 5. 更新 DDS 频率字 */
@@ -544,6 +543,6 @@ static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_
         AD9833_WriteFTW2(*ftw);
     }
 
-    printf("FLL_Update: err=%.2f, Kp=%.2f, Ki=%.2f, out=%.2f, sat_out=%.2f, int=%.2f\n",
-           error, FLL_KP, FLL_KI, output, output_saturated, controller->integrator);
+    printf("FLL_Update: err=%.2f, Ts=%.4f, Kp=%.2f, Ki=%.2f, out=%.2f, sat_out=%.2f, int=%.2f\n",
+           error, Ts, kp, ki, output, output_saturated, controller->integrator);
 }
