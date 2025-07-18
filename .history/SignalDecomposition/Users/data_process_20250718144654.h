@@ -2,7 +2,7 @@
  * @Author: yyf 17786321727@163.com
  * @Date: 2025-07-12 15:11:29
  * @LastEditors: yyf 17786321727@163.com
- * @LastEditTime: 2025-07-18 14:47:16
+ * @LastEditTime: 2025-07-18 14:46:37
  * @FilePath: /SignalDecomposition/Users/data_process.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -88,8 +88,5 @@ void Calibration_Frequency(void);
 
 /* 新增：精确频率测量函数 */
 float precise_frequency_measurement(const float *signal_data, int N, float target_freq, Phase_Tracker_t *tracker);
-
-/* 新增：多帧频率平均函数 */
-uint8_t add_frequency_measurement(Freq_Averager_t *averager, float new_freq);
 
 #endif /* __DATA_PROCESS_H */

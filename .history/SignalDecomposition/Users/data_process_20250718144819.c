@@ -453,7 +453,6 @@ void Calibration_Frequency(void)
         HAL_ADC_Stop_DMA(&hadc2);
         HAL_ADC_Stop_DMA(&hadc3);
         HAL_TIM_Base_Stop(&htim8);
-        return;
     }
 
     // 4. 停止当前轮次的ADC+TIM（为下次启动做准备）
@@ -519,44 +518,16 @@ void Calibration_Frequency(void)
     printf("Precise freq: fA=%.3f, fApr=%.3f, fB=%.3f, fBpr=%.3f Hz\r\n", 
            fA_precise, fApr_precise, fB_precise, fBpr_precise);
 	printf("Zero crossings: na=%d, nap=%d, nb=%d, nbp=%d\r\n", na, nap, nb, nbp);
-    
-    /* 4. 将频率测量值添加到多帧平均缓冲区 */
-    uint8_t avgA_ready   = add_frequency_measurement(&freq_averager_A,   fA_precise);
-    uint8_t avgApr_ready = add_frequency_measurement(&freq_averager_Apr, fApr_precise);
-    uint8_t avgB_ready   = add_frequency_measurement(&freq_averager_B,   fB_precise);
-    uint8_t avgBpr_ready = add_frequency_measurement(&freq_averager_Bpr, fBpr_precise);
-    
-    frame_counter++;
-    printf("Frame %lu: Collected frequency data\r\n", frame_counter);
 
-    /* 5. 只有当所有通道的平均缓冲区都已满时，才进行FLL控制器更新 */
-    if (avgA_ready && avgApr_ready && avgB_ready && avgBpr_ready) {
-        
-        /* 使用平均后的频率值 */
-        float fA_avg   = freq_averager_A.averaged_freq;
-        float fApr_avg = freq_averager_Apr.averaged_freq;
-        float fB_avg   = freq_averager_B.averaged_freq;
-        float fBpr_avg = freq_averager_Bpr.averaged_freq;
-        
-        printf("=== AVERAGED FREQUENCIES (Frame %lu) ===\r\n", frame_counter);
-        printf("Averaged freq: fA=%.4f, fApr=%.4f, fB=%.4f, fBpr=%.4f Hz\r\n", 
-               fA_avg, fApr_avg, fB_avg, fBpr_avg);
-
-        /* 6. 频差计算：使用平均后的频率 */
-        float dfA = fA_avg - fApr_avg;
-        float dfB = fB_avg - fBpr_avg;
-        
-        printf("Averaged frequency errors: dfA = %.5f Hz, dfB = %.5f Hz\r\n", dfA, dfB);
-        
-        /* 7. 调用FLL控制器 */
-        FLL_Controller_Update(dfA, &FTW1_cur, &fll_controller_A);
-        FLL_Controller_Update(dfB, &FTW2_cur, &fll_controller_B);
-        
-        printf("=== FLL CONTROLLER UPDATED ===\r\n");
-    } else {
-        printf("Collecting data... A:%d Apr:%d B:%d Bpr:%d\r\n", 
-               avgA_ready, avgApr_ready, avgB_ready, avgBpr_ready);
-    }
+    /* 4. 频差计算：使用精确测量结果 */
+    float dfA = fA_precise - fApr_precise;
+    float dfB = fB_precise - fBpr_precise;
+	
+	printf("Precise frequency errors: dfA = %.4f Hz, dfB = %.4f Hz\r\n", dfA, dfB);
+	
+    /* 5. 调用FLL控制器 */
+    FLL_Controller_Update(dfA, &FTW1_cur, &fll_controller_A);
+    FLL_Controller_Update(dfB, &FTW2_cur, &fll_controller_B);
 	
 	printf("\r\n");
 }

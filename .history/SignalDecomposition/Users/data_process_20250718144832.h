@@ -89,7 +89,4 @@ void Calibration_Frequency(void);
 /* 新增：精确频率测量函数 */
 float precise_frequency_measurement(const float *signal_data, int N, float target_freq, Phase_Tracker_t *tracker);
 
-/* 新增：多帧频率平均函数 */
-uint8_t add_frequency_measurement(Freq_Averager_t *averager, float new_freq);
-
 #endif /* __DATA_PROCESS_H */
