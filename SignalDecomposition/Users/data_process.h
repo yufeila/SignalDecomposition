@@ -23,18 +23,17 @@
 #define SINC_WAVE 1
 #define TRIANGLE_WAVE 2
 #define FREQ_TUNNING 0
-#define MAX_ZC 32
 
 
 /* ------------ 用户可调参数 ---------------- */
 #define CALIBRATION_SAMPLE_FREQ 600000.0f /* ADC采样率 (硬件固定) */
 #define ADCLK                   25000000.0f /* AD9833 时钟 (Hz) */
 #define MAVG                    20          /* 增加周期数以提高频率估算平滑度 */
-#define MAX_ZC                  100         
+#define MAX_ZC                  60         
 
 /* FLL (锁频环) 控制器设计参数 */
 #define FLL_LOOP_UPDATE_RATE_HZ 20.0f   /* FLL环路更新频率(Hz)，用于计算固定的Ts */
-#define FLL_BANDWIDTH_HZ        8.0f    /* 环路带宽(Hz): 适当降低，使响应更平稳 */
+#define FLL_BANDWIDTH_HZ        0.05f    /* 环路带宽(Hz): 适当降低，使响应更平稳 */
 #define FLL_DAMPING_RATIO       0.9f    /* 阻尼比: 保持0.9以抑制过冲 */
 #define FLL_MAX_STEP_HZ         5.0f    /* 单次最大调节步进(Hz): 保持5Hz，避免剧烈跳变 */
 #define FLL_DEAD_ZONE_HZ        0.1f    /* 死区(Hz): 大幅减小，让积分器可以消除小的稳态误差 */

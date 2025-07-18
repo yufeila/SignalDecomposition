@@ -1,0 +1,259 @@
+ freq: fA=40052.60, fApr=40027.92, fB=69966.12, fBpr=69904.90 Hz
+Precise freq: fA=40035.172, fApr=40009.078, fB=69935.156, fBpr=69863.078 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 26.0938 Hz, dfB = 72.0781 Hz
+FLL_Update: err=26.09, Kp=0.57, Ki=0.00, out=22.31, sat_out=5.00, int=-22.93
+FLL_Update: err=72.08, Kp=0.57, Ki=0.00, out=-6.30, sat_out=-5.00, int=-44.40
+
+Coarse freq: fA=40028.73, fApr=40028.58, fB=70033.88, fBpr=69912.01 Hz
+Precise freq: fA=39962.707, fApr=39963.406, fB=70032.023, fBpr=69945.078 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = -0.6992 Hz, dfB = 86.9453 Hz
+FLL_Update: err=-0.70, Kp=0.57, Ki=0.00, out=-23.33, sat_out=-5.00, int=9.47
+FLL_Update: err=86.95, Kp=0.57, Ki=0.00, out=4.76, sat_out=4.76, int=-43.97
+
+Coarse freq: fA=40057.24, fApr=40028.23, fB=69981.02, fBpr=69899.35 Hz
+Precise freq: fA=40022.445, fApr=39992.039, fB=70011.586, fBpr=69808.516 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 30.4063 Hz, dfB = 203.0703 Hz
+FLL_Update: err=30.41, Kp=0.57, Ki=0.00, out=26.67, sat_out=5.00, int=-28.69
+FLL_Update: err=203.07, Kp=0.57, Ki=0.00, out=70.86, sat_out=5.00, int=-159.44
+
+Coarse freq: fA=40055.68, fApr=40029.22, fB=69994.36, fBpr=69882.45 Hz
+Precise freq: fA=40009.422, fApr=39982.691, fB=69896.250, fBpr=69933.734 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 26.7305 Hz, dfB = -37.4844 Hz
+FLL_Update: err=26.73, Kp=0.57, Ki=0.00, out=-13.58, sat_out=-5.00, int=-13.39
+FLL_Update: err=-37.48, Kp=0.57, Ki=0.00, out=-180.63, sat_out=-5.00, int=150.97
+
+Coarse freq: fA=40027.61, fApr=40025.37, fB=70077.84, fBpr=69900.98 Hz
+Precise freq: fA=40043.223, fApr=40042.438, fB=70039.563, fBpr=69829.984 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 0.7852 Hz, dfB = 209.5781 Hz
+FLL_Update: err=0.79, Kp=0.57, Ki=0.00, out=-12.95, sat_out=-5.00, int=0.67
+FLL_Update: err=209.58, Kp=0.57, Ki=0.00, out=269.48, sat_out=5.00, int=-315.70
+
+Coarse freq: fA=40073.15, fApr=40027.02, fB=70008.68, fBpr=69914.59 Hz
+Precise freq: fA=40060.293, fApr=40012.199, fB=70012.172, fBpr=69928.531 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 48.0938 Hz, dfB = 83.6406 Hz
+FLL_Update: err=48.09, Kp=0.57, Ki=0.00, out=27.86, sat_out=5.00, int=-39.53
+FLL_Update: err=83.64, Kp=0.57, Ki=0.00, out=-268.41, sat_out=-5.00, int=150.51
+
+Coarse freq: fA=40076.43, fApr=40030.42, fB=69976.05, fBpr=69899.09 Hz
+Precise freq: fA=40046.180, fApr=39999.523, fB=70059.547, fBpr=69988.461 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 46.6563 Hz, dfB = 71.0859 Hz
+FLL_Update: err=46.66, Kp=0.57, Ki=0.00, out=-13.14, sat_out=-5.00, int=-24.90
+FLL_Update: err=71.09, Kp=0.57, Ki=0.00, out=190.71, sat_out=5.00, int=-177.55
+
+Coarse freq: fA=39976.89, fApr=40025.31, fB=70018.77, fBpr=69919.46 Hz
+Precise freq: fA=40000.020, fApr=40053.367, fB=70113.430, fBpr=69998.719 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = -53.3477 Hz, dfB = 114.7109 Hz
+FLL_Update: err=-53.35, Kp=0.57, Ki=0.00, out=-55.06, sat_out=-5.00, int=63.37
+FLL_Update: err=114.71, Kp=0.57, Ki=0.00, out=-112.68, sat_out=-5.00, int=13.44
+
+Coarse freq: fA=40101.49, fApr=40028.31, fB=69965.66, fBpr=69906.08 Hz
+Precise freq: fA=40131.156, fApr=40053.004, fB=69973.484, fBpr=70018.039 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 78.1523 Hz, dfB = -44.5547 Hz
+FLL_Update: err=78.15, Kp=0.57, Ki=0.00, out=107.57, sat_out=5.00, int=-117.62
+FLL_Update: err=-44.55, Kp=0.57, Ki=0.00, out=-11.76, sat_out=-5.00, int=25.17
+
+Coarse freq: fA=40035.03, fApr=40027.84, fB=70017.89, fBpr=69932.13 Hz
+Precise freq: fA=39991.328, fApr=39985.770, fB=69958.922, fBpr=69861.570 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 5.5586 Hz, dfB = 97.3516 Hz
+FLL_Update: err=5.56, Kp=0.57, Ki=0.00, out=-114.48, sat_out=-5.00, int=76.00
+FLL_Update: err=97.35, Kp=0.57, Ki=0.00, out=80.22, sat_out=5.00, int=-107.37
+
+Coarse freq: fA=40016.84, fApr=40018.13, fB=69999.10, fBpr=69907.04 Hz
+Precise freq: fA=39942.355, fApr=39944.824, fB=70054.477, fBpr=69973.172 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = -2.4688 Hz, dfB = 81.3047 Hz
+FLL_Update: err=-2.47, Kp=0.57, Ki=0.00, out=74.61, sat_out=5.00, int=-47.10
+FLL_Update: err=81.30, Kp=0.57, Ki=0.00, out=-61.39, sat_out=-5.00, int=-7.25
+
+Coarse freq: fA=40051.17, fApr=40031.64, fB=69940.90, fBpr=69926.73 Hz
+Precise freq: fA=40062.758, fApr=40042.266, fB=69870.891, fBpr=69901.250 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 20.4922 Hz, dfB = -30.3594 Hz
+FLL_Update: err=20.49, Kp=0.57, Ki=0.00, out=-35.51, sat_out=-5.00, int=6.96
+FLL_Update: err=-30.36, Kp=0.57, Ki=0.00, out=-24.41, sat_out=-5.00, int=26.93
+
+Coarse freq: fA=40002.98, fApr=40028.35, fB=69972.80, fBpr=69908.77 Hz
+Precise freq: fA=40018.727, fApr=40046.617, fB=69887.805, fBpr=69835.492 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = -27.8906 Hz, dfB = 52.3125 Hz
+FLL_Update: err=-27.89, Kp=0.57, Ki=0.00, out=-8.81, sat_out=-5.00, int=13.56
+FLL_Update: err=52.31, Kp=0.57, Ki=0.00, out=56.52, sat_out=5.00, int=-63.91
+
+Coarse freq: fA=39985.74, fApr=40017.16, fB=70009.91, fBpr=69928.15 Hz
+Precise freq: fA=40006.480, fApr=40038.766, fB=69967.445, fBpr=69911.719 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = -32.2852 Hz, dfB = 55.7266 Hz
+FLL_Update: err=-32.29, Kp=0.57, Ki=0.00, out=-4.69, sat_out=-4.69, int=13.40
+FLL_Update: err=55.73, Kp=0.57, Ki=0.00, out=-32.40, sat_out=-5.00, int=-15.19
+
+Coarse freq: fA=39959.57, fApr=40015.18, fB=69924.72, fBpr=69917.10 Hz
+Precise freq: fA=39906.113, fApr=39963.199, fB=70039.992, fBpr=69816.938 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = -57.0859 Hz, dfB = 223.0547 Hz
+FLL_Update: err=-57.09, Kp=0.57, Ki=0.00, out=-18.88, sat_out=-5.00, int=37.66
+FLL_Update: err=223.05, Kp=0.57, Ki=0.00, out=110.95, sat_out=5.00, int=-201.44
+
+Coarse freq: fA=40012.61, fApr=40004.93, fB=70012.34, fBpr=69904.70 Hz
+Precise freq: fA=39908.207, fApr=39897.367, fB=70034.227, fBpr=69784.203 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 10.8398 Hz, dfB = 250.0234 Hz
+FLL_Update: err=10.84, Kp=0.57, Ki=0.00, out=43.79, sat_out=5.00, int=-30.88
+FLL_Update: err=250.02, Kp=0.57, Ki=0.00, out=-60.06, sat_out=-5.00, int=-102.85
+
+Coarse freq: fA=40013.02, fApr=40012.36, fB=69913.02, fBpr=69906.79 Hz
+Precise freq: fA=39940.180, fApr=39939.250, fB=70003.000, fBpr=69918.695 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 0.9297 Hz, dfB = 84.3047 Hz
+FLL_Update: err=0.93, Kp=0.57, Ki=0.00, out=-30.36, sat_out=-5.00, int=13.96
+FLL_Update: err=84.30, Kp=0.57, Ki=0.00, out=-55.17, sat_out=-5.00, int=-13.71
+
+Coarse freq: fA=39976.72, fApr=40013.04, fB=70018.61, fBpr=69909.13 Hz
+Precise freq: fA=39994.621, fApr=40032.438, fB=69919.875, fBpr=70007.195 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = -37.8164 Hz, dfB = -87.3203 Hz
+FLL_Update: err=-37.82, Kp=0.57, Ki=0.00, out=-7.42, sat_out=-5.00, int=18.06
+FLL_Update: err=-87.32, Kp=0.57, Ki=0.00, out=-63.08, sat_out=-5.00, int=88.58
+
+
+Coarse freq: fA=40014.06, fApr=39997.47, fB=70001.19, fBpr=69904.55 Hz
+Precise freq: fA=39943.223, fApr=39925.281, fB=69993.695, fBpr=69918.125 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 17.9414 Hz, dfB = 75.5703 Hz
+
+FLL_Update: err=17.94, Kp=0.57, Ki=0.00, out=28.20, sat_out=5.00, int=-22.89
+FLL_Update: err=75.57, Kp=0.57, Ki=0.00, out=131.31, sat_out=5.00, int=-134.42
+
+Coarse freq: fA=40013.42, fApr=40007.52, fB=69969.50, fBpr=69904.66 Hz
+Precise freq: fA=40041.695, fApr=40035.285, fB=69935.547, fBpr=69872.422 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 6.4102 Hz, dfB = 63.1250 Hz
+FLL_Update: err=6.41, Kp=0.57, Ki=0.00, out=-19.26, sat_out=-5.00, int=2.37
+FLL_Update: err=63.13, Kp=0.57, Ki=0.00, out=-98.72, sat_out=-5.00, int=31.63
+
+Coarse freq: fA=40026.39, fApr=39999.46, fB=70031.99, fBpr=69921.13 Hz
+Precise freq: fA=40079.918, fApr=40051.027, fB=69936.500, fBpr=69904.969 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 28.8906 Hz, dfB = 31.5313 Hz
+FLL_Update: err=28.89, Kp=0.57, Ki=0.00, out=18.70, sat_out=5.00, int=-21.72
+FLL_Update: err=31.53, Kp=0.57, Ki=0.00, out=49.46, sat_out=5.00, int=-46.84
+
+Coarse freq: fA=39970.97, fApr=40006.55, fB=69995.68, fBpr=69930.95 Hz
+Precise freq: fA=40031.523, fApr=40070.242, fB=69941.523, fBpr=69938.766 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = -38.7188 Hz, dfB = 2.7578 Hz
+FLL_Update: err=-38.72, Kp=0.57, Ki=0.00, out=-43.62, sat_out=-5.00, int=46.38
+FLL_Update: err=2.76, Kp=0.57, Ki=0.00, out=-45.28, sat_out=-5.00, int=24.40
+
+Coarse freq: fA=40024.89, fApr=40000.00, fB=69981.68, fBpr=69907.20 Hz
+Precise freq: fA=40094.488, fApr=40067.941, fB=69982.313, fBpr=69942.523 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 26.5469 Hz, dfB = 39.7891 Hz
+FLL_Update: err=26.55, Kp=0.57, Ki=0.00, out=61.39, sat_out=5.00, int=-53.21
+FLL_Update: err=39.79, Kp=0.57, Ki=0.00, out=46.90, sat_out=5.00, int=-49.50
+
+Coarse freq: fA=40027.14, fApr=40004.33, fB=70024.20, fBpr=69901.02 Hz
+Precise freq: fA=39978.316, fApr=39954.688, fB=69983.859, fBpr=69929.297 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 23.6289 Hz, dfB = 54.5625 Hz
+FLL_Update: err=23.63, Kp=0.57, Ki=0.00, out=-39.85, sat_out=-5.00, int=8.53
+FLL_Update: err=54.56, Kp=0.57, Ki=0.00, out=-18.65, sat_out=-5.00, int=-25.10
+
+Coarse freq: fA=40021.46, fApr=39993.68, fB=69928.59, fBpr=69898.06 Hz
+Precise freq: fA=40053.699, fApr=40025.777, fB=69926.813, fBpr=69937.992 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 27.9219 Hz, dfB = -11.1797 Hz
+FLL_Update: err=27.92, Kp=0.57, Ki=0.00, out=24.32, sat_out=5.00, int=-25.50
+FLL_Update: err=-11.18, Kp=0.57, Ki=0.00, out=-31.42, sat_out=-5.00, int=21.57
+
+Coarse freq: fA=39956.45, fApr=40006.20, fB=70048.13, fBpr=69899.43 Hz
+Precise freq: fA=40000.645, fApr=40054.293, fB=69927.570, fBpr=69998.461 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = -53.6484 Hz, dfB = -70.8906 Hz
+FLL_Update: err=-53.65, Kp=0.57, Ki=0.00, out=-55.84, sat_out=-5.00, int=64.13
+FLL_Update: err=-70.89, Kp=0.57, Ki=0.00, out=-18.52, sat_out=-5.00, int=45.13
+
+Coarse freq: fA=40013.89, fApr=39998.33, fB=69933.77, fBpr=69904.23 Hz
+Precise freq: fA=40013.004, fApr=39994.836, fB=69834.922, fBpr=70033.297 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 18.1680 Hz, dfB = -198.3750 Hz
+FLL_Update: err=18.17, Kp=0.57, Ki=0.00, out=74.41, sat_out=5.00, int=-58.52
+FLL_Update: err=-198.38, Kp=0.57, Ki=0.00, out=-67.05, sat_out=-5.00, int=153.88
+
+Coarse freq: fA=40015.12, fApr=40001.08, fB=69991.20, fBpr=69913.91 Hz
+Precise freq: fA=40072.082, fApr=40057.328, fB=69989.984, fBpr=69898.922 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 14.7539 Hz, dfB = 91.0625 Hz
+FLL_Update: err=14.75, Kp=0.57, Ki=0.00, out=-50.17, sat_out=-5.00, int=21.44
+FLL_Update: err=91.06, Kp=0.57, Ki=0.00, out=205.37, sat_out=5.00, int=-200.01
+
+Coarse freq: fA=40005.93, fApr=40005.36, fB=70017.97, fBpr=69914.18 Hz
+Precise freq: fA=40004.285, fApr=40004.098, fB=69912.164, fBpr=69990.813 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 0.1875 Hz, dfB = -78.6484 Hz
+FLL_Update: err=0.19, Kp=0.57, Ki=0.00, out=21.55, sat_out=5.00, int=-7.82
+FLL_Update: err=-78.65, Kp=0.57, Ki=0.00, out=-244.49, sat_out=-5.00, int=223.10
+
+Coarse freq: fA=39978.73, fApr=40014.72, fB=69976.06, fBpr=69910.25 Hz
+Precise freq: fA=40058.633, fApr=40097.051, fB=69920.797, fBpr=69935.570 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = -38.4180 Hz, dfB = -14.7734 Hz
+FLL_Update: err=-38.42, Kp=0.57, Ki=0.00, out=-29.54, sat_out=-5.00, int=35.39
+FLL_Update: err=-14.77, Kp=0.57, Ki=0.00, out=214.75, sat_out=5.00, int=-147.89
+
+Coarse freq: fA=40006.06, fApr=40003.85, fB=70072.37, fBpr=69913.02 Hz
+Precise freq: fA=40061.191, fApr=40057.289, fB=70108.906, fBpr=69893.352 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 3.9023 Hz, dfB = 215.5547 Hz
+FLL_Update: err=3.90, Kp=0.57, Ki=0.00, out=37.60, sat_out=5.00, int=-22.24
+FLL_Update: err=215.55, Kp=0.57, Ki=0.00, out=-25.99, sat_out=-5.00, int=-109.70
+
+Coarse freq: fA=40010.46, fApr=40002.25, fB=70029.77, fBpr=69910.28 Hz
+Precise freq: fA=40008.438, fApr=39999.922, fB=70099.219, fBpr=69962.141 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 8.5156 Hz, dfB = 137.0781 Hz
+FLL_Update: err=8.52, Kp=0.57, Ki=0.00, out=-17.42, sat_out=-5.00, int=-0.23
+FLL_Update: err=137.08, Kp=0.57, Ki=0.00, out=-32.18, sat_out=-5.00, int=-60.95
+
+Coarse freq: fA=40061.51, fApr=40008.71, fB=69936.32, fBpr=69918.78 Hz
+Precise freq: fA=40111.934, fApr=40057.121, fB=69916.797, fBpr=69905.266 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 54.8125 Hz, dfB = 11.5313 Hz
+FLL_Update: err=54.81, Kp=0.57, Ki=0.00, out=30.77, sat_out=5.00, int=-45.52
+FLL_Update: err=11.53, Kp=0.57, Ki=0.00, out=-54.43, sat_out=-5.00, int=26.52
+
+Coarse freq: fA=40008.05, fApr=40009.01, fB=70039.13, fBpr=69909.93 Hz
+Precise freq: fA=40136.543, fApr=39929.023, fB=69974.266, fBpr=69885.000 Hz
+
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 207.5195 Hz, dfB = 89.2656 Hz
+FLL_Update: err=207.52, Kp=0.57, Ki=0.00, out=71.82, sat_out=5.00, int=-162.67
+FLL_Update: err=89.27, Kp=0.57, Ki=0.00, out=77.00, sat_out=5.00, int=-100.36
+
+Coarse freq: fA=40038.55, fApr=40012.93, fB=69992.46, fBpr=69909.96 Hz
+Precise freq: fA=40069.777, fApr=39980.469, fB=70017.102, fBpr=69928.219 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 89.3086 Hz, dfB = 88.8828 Hz
+FLL_Update: err=89.31, Kp=0.57, Ki=0.00, out=-112.17, sat_out=-5.00, int=27.29
+FLL_Update: err=88.88, Kp=0.57, Ki=0.00, out=-50.10, sat_out=-5.00, int=-20.17
+
+Coarse freq: fA=40010.18, fApr=40006.66, fB=69988.22, fBpr=69924.81 Hz
+Precise freq: fA=39949.184, fApr=39927.742, fB=70052.570, fBpr=69942.891 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA = 21.4414 Hz, dfB = 109.6797 Hz
+FLL_Update: err=21.44, Kp=0.57, Ki=0.00, out=39.41, sat_out=5.00, int=-33.46
+FLL_Update: err=109.68, Kp=0.57, Ki=0.00, out=41.85, sat_out=5.00, int=-84.80
+
+Coarse freq: fA=40035.03, fApr=40002.36, fB=69961.27, fBpr=69906.45 Hz
+Precise freq: fA=39929.340, fApr=39889.375, fB=69898.398, fBpr=69855.789 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Precise frequency errors: dfA 

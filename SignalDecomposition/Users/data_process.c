@@ -90,6 +90,8 @@ void Data_Process(void)
     // 8. DDS模块生成信号
     DDS_Output(&sig1, &sig2);
 
+	printf("\r\n");
+
 }
 
 /* _buf: ADC 原始 uint16[]，长度至少 FFT_SIZE */
@@ -145,6 +147,8 @@ void analyse_two_signals(const uint16_t *_buf, Signal_t *sig1, Signal_t *sig2)
     /* 最大峰记为 sig1，第二峰记为 sig2 */
     ANALYSE_ONE(f1, A1, f2, A2, sig1);
     ANALYSE_ONE(f2, A2, f1, A1, sig2);
+	
+	
 }
 
 /* ===== 显示函数 ===== */
@@ -487,6 +491,8 @@ void Calibration_Frequency(void)
     /* 5. 调用FLL控制器 */
     FLL_Controller_Update(dfA, &FTW1_cur, &fll_controller_A);
     FLL_Controller_Update(dfB, &FTW2_cur, &fll_controller_B);
+	
+	printf("\r\n");
 }
 
 /**
