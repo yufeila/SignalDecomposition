@@ -2,7 +2,7 @@
  * @Author: yyf 17786321727@163.com
  * @Date: 2025-07-12 15:11:29
  * @LastEditors: yyf 17786321727@163.com
- * @LastEditTime: 2025-07-18 15:45:16
+ * @LastEditTime: 2025-07-18 15:23:47
  * @FilePath: /SignalDecomposition/Users/data_process.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -57,7 +57,7 @@
 /* 新增：积分器保护参数 */
 #define FLL_INTEGRATOR_MAX      100.0f   /* 积分器最大值 (Hz) */
 #define FLL_INTEGRATOR_MIN      (-100.0f) /* 积分器最小值 (Hz) */
-#define FLL_RESET_THRESHOLD_HZ  0.005f    /* 误差小于此值时重置积分器 (Hz) - 调整得更小 */
+#define FLL_RESET_THRESHOLD_HZ  0.01f    /* 误差小于此值时重置积分器 (Hz) */
 
 
 typedef struct{
