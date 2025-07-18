@@ -1,0 +1,1475 @@
+=0.11, Ki=0.00, out=-6171598037532488800000000.00, sat_out=-5.00, int=48397311250270112000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40004.36, fApr=40026.16, fB=70010.31, fBpr=69903.99 Hz
+Precise freq: fA=39946.555, fApr=39963.391, fB=69976.703, fBpr=69929.766 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 85: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39999.22, fApr=40023.32, fB=70038.28, fBpr=69902.93 Hz
+Precise freq: fA=39988.266, fApr=40010.953, fB=70077.742, fBpr=70000.172 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 86: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40026.15, fApr=40027.00, fB=70032.52, fBpr=69925.54 Hz
+Precise freq: fA=40042.008, fApr=40041.117, fB=69991.836, fBpr=69924.203 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 87: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 87) ===
+Averaged freq: fA=39992.2773, fApr=40005.1523, fB=70015.4297, fBpr=69951.3828 Hz
+Averaged frequency errors: dfA = -12.87500 Hz, dfB = 64.04688 Hz
+FLL_Update: err=-12.88, Kp=0.11, Ki=0.00, out=57543622656.00, sat_out=5.00, int=-451253731328.00
+FLL_Update: err=64.05, Kp=0.11, Ki=0.00, out=48397311250270112000000000.00, sat_out=5.00, int=-379528883489210560000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40029.59, fApr=40035.17, fB=70019.11, fBpr=69934.68 Hz
+Precise freq: fA=40030.813, fApr=40036.113, fB=70111.203, fBpr=69982.500 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 88: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39991.42, fApr=40035.44, fB=69997.98, fBpr=69930.34 Hz
+Precise freq: fA=40086.848, fApr=40132.570, fB=70019.406, fBpr=69894.297 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 89: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40014.62, fApr=40037.50, fB=70057.82, fBpr=69917.21 Hz
+Precise freq: fA=40008.156, fApr=40030.820, fB=70072.898, fBpr=69842.750 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 90: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 90) ===
+Averaged freq: fA=40041.9375, fApr=40066.5039, fB=70067.8359, fBpr=69906.5156 Hz
+Averaged frequency errors: dfA = -24.56641 Hz, dfB = 161.32031 Hz
+FLL_Update: err=-24.57, Kp=0.11, Ki=0.00, out=-451253731328.00, sat_out=-5.00, int=3538705711104.00
+FLL_Update: err=161.32, Kp=0.11, Ki=0.00, out=-379528883489210560000000000.00, sat_out=-5.00, int=2976243436777602000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40015.14, fApr=40027.79, fB=69994.04, fBpr=69922.28 Hz
+Precise freq: fA=39956.020, fApr=39968.078, fB=70075.859, fBpr=69918.883 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 91: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40036.10, fApr=40030.85, fB=69987.82, fBpr=69923.17 Hz
+Precise freq: fA=39960.422, fApr=39953.805, fB=69947.078, fBpr=69902.664 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 92: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40052.33, fApr=40028.53, fB=70060.91, fBpr=69912.76 Hz
+Precise freq: fA=40081.738, fApr=40056.660, fB=70058.258, fBpr=69931.117 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 93: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 93) ===
+Averaged freq: fA=39999.3906, fApr=39992.8477, fB=70027.0625, fBpr=69917.5547 Hz
+Averaged frequency errors: dfA = 6.54297 Hz, dfB = 109.50781 Hz
+FLL_Update: err=6.54, Kp=0.11, Ki=0.00, out=3538705711104.00, sat_out=5.00, int=-27750324764672.00
+FLL_Update: err=109.51, Kp=0.11, Ki=0.00, out=2976243436777602000000000000.00, sat_out=5.00, int=-23339528957029756000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40045.58, fApr=40028.41, fB=69952.95, fBpr=69924.38 Hz
+Precise freq: fA=40112.555, fApr=40095.359, fB=69939.844, fBpr=69934.422 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+
+Frame 94: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40030.28, fApr=40039.79, fB=69977.58, fBpr=69920.54 Hz
+Precise freq: fA=40120.117, fApr=40130.703, fB=70013.000, fBpr=69899.039 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 95: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40075.94, fApr=40037.62, fB=70011.25, fBpr=69912.31 Hz
+Precise freq: fA=40021.578, fApr=39981.414, fB=69920.102, fBpr=69976.203 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 96: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 96) ===
+Averaged freq: fA=40084.7500, fApr=40069.1602, fB=69957.6484, fBpr=69936.5547 Hz
+Averaged frequency errors: dfA = 15.58984 Hz, dfB = 21.09375 Hz
+FLL_Update: err=15.59, Kp=0.11, Ki=0.00, out=-27750324764672.00, sat_out=-5.00, int=217616429875200.00
+FLL_Update: err=21.09, Kp=0.11, Ki=0.00, out=-23339528957029756000000000000.00, sat_out=-5.00, int=183027232296615880000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40071.88, fApr=40027.62, fB=69979.44, fBpr=69900.10 Hz
+Precise freq: fA=39970.066, fApr=39924.578, fB=70055.313, fBpr=69882.383 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 97: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39992.61, fApr=40024.85, fB=69963.05, fBpr=69912.21 Hz
+Precise freq: fA=39938.930, fApr=39974.824, fB=70080.031, fBpr=69815.430 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 98: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40066.44, fApr=40029.02, fB=69912.70, fBpr=69916.30 Hz
+Precise freq: fA=40071.719, fApr=40031.926, fB=69893.313, fBpr=69856.891 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+
+Frame 99: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 99) ===
+Averaged freq: fA=39993.5742, fApr=39977.1094, fB=70009.5547, fBpr=69851.5703 Hz
+Averaged frequency errors: dfA = 16.46484 Hz, dfB = 157.98438 Hz
+FLL_Update: err=16.46, Kp=0.11, Ki=0.00, out=217616429875200.00, sat_out=5.00, int=-1706535327629312.00
+FLL_Update: err=157.98, Kp=0.11, Ki=0.00, out=183027232296615880000000000000.00, sat_out=5.00, int=-1435288867972458600000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40008.03, fApr=40030.18, fB=70033.03, fBpr=69897.92 Hz
+Precise freq: fA=39930.305, fApr=39954.914, fB=70023.148, fBpr=69926.008 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 100: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40034.02, fApr=40035.93, fB=69992.06, fBpr=69911.73 Hz
+Precise freq: fA=39915.828, fApr=39917.383, fB=69978.250, fBpr=69826.648 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 101: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40008.11, fApr=40037.79, fB=70041.49, fBpr=69942.37 Hz
+Precise freq: fA=40011.844, fApr=40042.914, fB=70115.688, fBpr=69914.172 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 102: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 102) ===
+Averaged freq: fA=39952.6602, fApr=39971.7383, fB=70039.0313, fBpr=69888.9453 Hz
+Averaged frequency errors: dfA = -19.07813 Hz, dfB = 150.08594 Hz
+FLL_Update: err=-19.08, Kp=0.11, Ki=0.00, out=-1706535327629312.00, sat_out=-5.00, int=13382551158652928.00
+FLL_Update: err=150.09, Kp=0.11, Ki=0.00, out=-1435288867972458600000000000000.00, sat_out=-5.00, int=11255452386951526000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40050.56, fApr=40031.93, fB=69901.36, fBpr=69901.44 Hz
+
+Precise freq: fA=39993.168, fApr=39972.430, fB=70001.680, fBpr=69982.680 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 103: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40067.32, fApr=40029.20, fB=70039.94, fBpr=69902.89 Hz
+
+Precise freq: fA=40041.703, fApr=40002.082, fB=70069.594, fBpr=69922.031 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 104: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40024.58, fApr=40028.34, fB=70081.40, fBpr=69932.67 Hz
+Precise freq: fA=39968.016, fApr=39973.371, fB=70020.656, fBpr=69871.703 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 105: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 105) ===
+
+Averaged freq: fA=40000.9648, fApr=39982.6289, fB=70030.6484, fBpr=69925.4766 Hz
+
+Averaged frequency errors: dfA = 18.33594 Hz, dfB = 105.17188 Hz
+FLL_Update: err=18.34, Kp=0.11, Ki=0.00, out=13382551158652928.00, sat_out=5.00, int=-104945189415550980.00
+FLL_Update: err=105.17, Kp=0.11, Ki=0.00, out=11255452386951526000000000000000.00, sat_out=5.00, int=-88264602545093536000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40044.84, fApr=40040.11, fB=70010.73, fBpr=69919.45 Hz
+Precise freq: fA=39988.648, fApr=39983.965, fB=69948.773, fBpr=69911.922 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 106: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40043.04, fApr=40029.19, fB=69987.29, fBpr=69925.84 Hz
+Precise freq: fA=39929.023, fApr=39914.703, fB=69957.469, fBpr=69830.250 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 107: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39998.50, fApr=40046.37, fB=69976.77, fBpr=69928.77 Hz
+Precise freq: fA=40074.789, fApr=39915.676, fB=69956.469, fBpr=69804.422 Hz
+
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 108: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 108) ===
+Averaged freq: fA=39997.4883, fApr=39938.1133, fB=69954.2422, fBpr=69848.8672 Hz
+Averaged frequency errors: dfA = 59.37500 Hz, dfB = 105.37500 Hz
+FLL_Update: err=59.38, Kp=0.11, Ki=0.00, out=-104945189415550980.00, sat_out=-5.00, int=822974008029872160.00
+FLL_Update: err=105.38, Kp=0.11, Ki=0.00, out=-88264602545093536000000000000000.00, sat_out=-5.00, int=692165932459274160000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+
+Coarse freq: fA=40030.98, fApr=40025.84, fB=69990.31, fBpr=69923.23 Hz
+Precise freq: fA=40049.984, fApr=39980.086, fB=70079.109, fBpr=69933.172 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 109: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40029.59, fApr=40019.75, fB=70028.37, fBpr=69868.42 Hz
+Precise freq: fA=40016.727, fApr=39987.160, fB=69942.688, fBpr=69987.516 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 110: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+
+Coarse freq: fA=40043.82, fApr=40029.26, fB=70059.41, fBpr=69896.84 Hz
+Precise freq: fA=39959.328, fApr=39938.590, fB=70113.977, fBpr=70018.125 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 111: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 111) ===
+Averaged freq: fA=40008.6797, fApr=39968.6133, fB=70045.2578, fBpr=69979.6016 Hz
+Averaged frequency errors: dfA = 40.06641 Hz, dfB = 65.65625 Hz
+FLL_Update: err=40.07, Kp=0.11, Ki=0.00, out=822974008029872160.00, sat_out=5.00, int=-6453714341114937600.00
+FLL_Update: err=65.66, Kp=0.11, Ki=0.00, out=692165932459274160000000000000000.00, sat_out=5.00, int=-5427925127672368000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40065.47, fApr=40031.67, fB=70051.11, fBpr=69914.29 Hz
+
+Precise freq: fA=40110.594, fApr=40074.020, fB=70054.617, fBpr=69944.438 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 112: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40085.02, fApr=40034.32, fB=69984.59, fBpr=69960.21 Hz
+Precise freq: fA=40003.785, fApr=39951.344, fB=69974.375, fBpr=69879.891 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 113: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40046.36, fApr=40036.52, fB=69989.30, fBpr=69900.20 Hz
+Precise freq: fA=40099.234, fApr=40090.746, fB=69918.391, fBpr=69931.977 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 114: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 114) ===
+
+Averaged freq: fA=40071.2031, fApr=40038.7031, fB=69982.4609, fBpr=69918.7734 Hz
+
+Averaged frequency errors: dfA = 32.50000 Hz, dfB = 63.68750 Hz
+FLL_Update: err=32.50, Kp=0.11, Ki=0.00, out=-6453714341114937600.00, sat_out=-5.00, int=50609649413320080000.00
+FLL_Update: err=63.69, Kp=0.11, Ki=0.00, out=-5427925127672368000000000000000000.00, sat_out=-5.00, int=42565473911833072000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40037.66, fApr=40037.60, fB=70029.69, fBpr=69927.80 Hz
+Precise freq: fA=40115.203, fApr=40116.094, fB=69895.828, fBpr=69840.281 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 115: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39992.25, fApr=40031.81, fB=69979.80, fBpr=69912.01 Hz
+Precise freq: fA=40002.637, fApr=40044.414, fB=69927.750, fBpr=69877.109 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 116: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40027.46, fApr=40028.48, fB=70006.39, fBpr=69901.91 Hz
+Precise freq: fA=40024.039, fApr=40024.031, fB=69986.719, fBpr=69887.484 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 117: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 117) ===
+Averaged freq: fA=40047.2930, fApr=40061.5117, fB=69936.7656, fBpr=69868.2891 Hz
+Averaged frequency errors: dfA = -14.21875 Hz, dfB = 68.47656 Hz
+
+FLL_Update: err=-14.22, Kp=0.11, Ki=0.00, out=50609649413320080000.00, sat_out=5.00, int=-396877922759048400000.00
+FLL_Update: err=68.48, Kp=0.11, Ki=0.00, out=42565473911833072000000000000000000.00, sat_out=5.00, int=-333795973418440800000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40029.13, fApr=40033.99, fB=70042.70, fBpr=69917.62 Hz
+Precise freq: fA=40039.199, fApr=40043.973, fB=70035.391, fBpr=69937.086 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 118: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40101.64, fApr=40034.46, fB=69952.97, fBpr=69896.77 Hz
+Precise freq: fA=40142.578, fApr=40071.594, fB=69922.688, fBpr=69816.039 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 119: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39947.23, fApr=40036.21, fB=69891.48, fBpr=69931.95 Hz
+Precise freq: fA=40027.879, fApr=40123.684, fB=69806.492, fBpr=69963.797 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 120: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 120) ===
+Averaged freq: fA=40069.8867, fApr=40079.7500, fB=69921.5234, fBpr=69905.6406 Hz
+Averaged frequency errors: dfA = -9.86328 Hz, dfB = 15.88281 Hz
+FLL_Update: err=-9.86, Kp=0.11, Ki=0.00, out=-396877922759048400000.00, sat_out=-5.00, int=3112293587287674000000.00
+FLL_Update: err=15.88, Kp=0.11, Ki=0.00, out=-333795973418440800000000000000000000.00, sat_out=-5.00, int=2617608644735002400000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40006.45, fApr=40030.38, fB=70007.23, fBpr=69968.85 Hz
+Precise freq: fA=40050.719, fApr=40073.254, fB=69951.734, fBpr=69865.172 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 121: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39997.84, fApr=40031.07, fB=69981.00, fBpr=69948.78 Hz
+Precise freq: fA=39965.254, fApr=39998.480, fB=69893.617, fBpr=69850.648 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 122: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40018.73, fApr=40029.92, fB=70022.85, fBpr=69915.62 Hz
+Precise freq: fA=40000.180, fApr=40010.434, fB=69990.602, fBpr=69878.359 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 123: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 123) ===
+Averaged freq: fA=40005.3828, fApr=40027.3906, fB=69945.3125, fBpr=69864.7266 Hz
+Averaged frequency errors: dfA = -22.00781 Hz, dfB = 80.58594 Hz
+FLL_Update: err=-22.01, Kp=0.11, Ki=0.00, out=3112293587287674000000.00, sat_out=5.00, int=-24406425014603340000000.00
+FLL_Update: err=80.59, Kp=0.11, Ki=0.00, out=2617608644735002400000000000000000000.00, sat_out=5.00, int=-20527135890278732000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40076.34, fApr=40027.96, fB=69965.85, fBpr=69918.04 Hz
+Precise freq: fA=40132.578, fApr=40080.945, fB=69877.313, fBpr=69915.359 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 124: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40071.03, fApr=40029.26, fB=70029.60, fBpr=69917.70 Hz
+Precise freq: fA=40048.250, fApr=40005.664, fB=70066.063, fBpr=69919.914 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 125: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40013.92, fApr=40039.66, fB=69992.39, fBpr=69919.38 Hz
+Precise freq: fA=40082.844, fApr=40112.137, fB=69933.570, fBpr=69978.547 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 126: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 126) ===
+Averaged freq: fA=40087.8906, fApr=40066.2500, fB=69958.9766, fBpr=69937.9453 Hz
+Averaged frequency errors: dfA = 21.64063 Hz, dfB = 21.03125 Hz
+FLL_Update: err=21.64, Kp=0.11, Ki=0.00, out=-24406425014603340000000.00, sat_out=-5.00, int=191393760791209240000000.00
+FLL_Update: err=21.03, Kp=0.11, Ki=0.00, out=-20527135890278732000000000000000000000.00, sat_out=-5.00, int=160972601328776900000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40042.57, fApr=40041.54, fB=69997.86, fBpr=69922.87 Hz
+Precise freq: fA=40137.195, fApr=40135.707, fB=69986.258, fBpr=69921.906 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 127: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40034.84, fApr=40034.24, fB=70014.97, fBpr=69917.36 Hz
+Precise freq: fA=40011.211, fApr=40010.398, fB=70051.094, fBpr=69980.789 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 128: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40053.79, fApr=40027.24, fB=69968.80, fBpr=69911.37 Hz
+Precise freq: fA=40001.121, fApr=39973.203, fB=69906.078, fBpr=69862.484 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 129: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 129) ===
+Averaged freq: fA=40049.8438, fApr=40039.7695, fB=69981.1406, fBpr=69921.7266 Hz
+Averaged frequency errors: dfA = 10.07422 Hz, dfB = 59.41406 Hz
+FLL_Update: err=10.07, Kp=0.11, Ki=0.00, out=191393760791209240000000.00, sat_out=5.00, int=-1500898723085482800000000.00
+FLL_Update: err=59.41, Kp=0.11, Ki=0.00, out=160972601328776900000000000000000000000.00, sat_out=5.00, int=-340282366920938480000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40046.96, fApr=40039.71, fB=69983.66, fBpr=69919.56 Hz
+Precise freq: fA=40031.121, fApr=40024.344, fB=70020.156, fBpr=69948.125 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 130: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40029.81, fApr=40038.25, fB=69968.41, fBpr=69894.74 Hz
+Precise freq: fA=40018.883, fApr=40028.531, fB=69887.953, fBpr=69961.953 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 131: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40034.89, fApr=40035.66, fB=70013.79, fBpr=69921.30 Hz
+Precise freq: fA=39937.781, fApr=39938.590, fB=69987.000, fBpr=69854.406 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 132: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 132) ===
+Averaged freq: fA=39995.9258, fApr=39997.1563, fB=69965.0391, fBpr=69921.4922 Hz
+Averaged frequency errors: dfA = -1.23047 Hz, dfB = 43.54688 Hz
+FLL_Update: err=-1.23, Kp=0.11, Ki=0.00, out=-1500898723085482800000000.00, sat_out=-5.00, int=11769961197131444000000000.00
+FLL_Update: err=43.55, Kp=0.11, Ki=0.00, out=-340282366920938480000000000000000000000.00, sat_out=-5.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=39979.20, fApr=40030.35, fB=69893.87, fBpr=69909.30 Hz
+Precise freq: fA=40055.539, fApr=39898.910, fB=69830.828, fBpr=69933.633 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 133: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39988.59, fApr=40028.88, fB=70032.64, fBpr=69908.93 Hz
+Precise freq: fA=39967.566, fApr=39945.102, fB=69953.016, fBpr=69852.344 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 134: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40036.45, fApr=40022.10, fB=70032.89, fBpr=69933.09 Hz
+Precise freq: fA=39984.727, fApr=39948.738, fB=69935.359, fBpr=69847.109 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 135: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 135) ===
+Averaged freq: fA=40002.6133, fApr=39930.9180, fB=69906.3984, fBpr=69877.6953 Hz
+Averaged frequency errors: dfA = 71.69531 Hz, dfB = 28.70313 Hz
+FLL_Update: err=71.70, Kp=0.11, Ki=0.00, out=11769961197131444000000000.00, sat_out=5.00, int=-92299344660589984000000000.00
+FLL_Update: err=28.70, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40018.93, fApr=40026.30, fB=70004.15, fBpr=69887.15 Hz
+Precise freq: fA=40079.578, fApr=40081.617, fB=69894.375, fBpr=69770.922 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 136: Collected frequency data
+
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40045.74, fApr=40039.40, fB=69963.27, fBpr=69916.35 Hz
+Precise freq: fA=39955.594, fApr=40157.023, fB=69868.344, fBpr=69856.672 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 137: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40116.16, fApr=40032.75, fB=70003.40, fBpr=69948.24 Hz
+Precise freq: fA=39998.355, fApr=39973.109, fB=69971.352, fBpr=69927.813 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 138: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 138) ===
+Averaged freq: fA=40011.1758, fApr=40070.5820, fB=69911.3516, fBpr=69851.8047 Hz
+Averaged frequency errors: dfA = -59.40625 Hz, dfB = 59.54688 Hz
+FLL_Update: err=-59.41, Kp=0.11, Ki=0.00, out=-92299344660589984000000000.00, sat_out=-5.00, int=723806112840538560000000000.00
+FLL_Update: err=59.55, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40050.90, fApr=40030.77, fB=69995.72, fBpr=69917.78 Hz
+Precise freq: fA=39957.188, fApr=39957.891, fB=69956.359, fBpr=70008.477 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 139: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40086.21, fApr=40032.94, fB=70007.91, fBpr=69953.90 Hz
+Precise freq: fA=39976.719, fApr=39928.039, fB=70072.547, fBpr=70063.969 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 140: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40065.98, fApr=40028.63, fB=70028.85, fBpr=69891.70 Hz
+Precise freq: fA=39987.625, fApr=39952.469, fB=69981.508, fBpr=69857.438 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 141: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 141) ===
+Averaged freq: fA=39973.8438, fApr=39946.1328, fB=70003.4688, fBpr=69976.6250 Hz
+Averaged frequency errors: dfA = 27.71094 Hz, dfB = 26.84375 Hz
+FLL_Update: err=27.71, Kp=0.11, Ki=0.00, out=723806112840538560000000000.00, sat_out=5.00, int=-5676045442606118400000000000.00
+FLL_Update: err=26.84, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40003.87, fApr=40031.84, fB=69949.00, fBpr=69921.37 Hz
+Precise freq: fA=39903.871, fApr=39935.660, fB=69860.133, fBpr=69988.133 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 142: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40041.99, fApr=40033.27, fB=69940.05, fBpr=69919.69 Hz
+Precise freq: fA=39989.352, fApr=39980.035, fB=69816.961, fBpr=69842.016 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 143: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40039.98, fApr=40032.92, fB=69976.58, fBpr=69892.06 Hz
+Precise freq: fA=40093.008, fApr=40085.859, fB=69977.266, fBpr=69928.063 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 144: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 144) ===
+Averaged freq: fA=39995.4102, fApr=40000.5195, fB=69884.7891, fBpr=69919.4063 Hz
+Averaged frequency errors: dfA = -5.10938 Hz, dfB = -34.61719 Hz
+FLL_Update: err=-5.11, Kp=0.11, Ki=0.00, out=-5676045442606118400000000000.00, sat_out=-5.00, int=44511217801166336000000000000.00
+FLL_Update: err=-34.62, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=39995.76, fApr=40023.74, fB=70023.60, fBpr=69927.37 Hz
+Precise freq: fA=40050.750, fApr=40080.656, fB=69955.391, fBpr=69917.648 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 145: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40027.30, fApr=40028.94, fB=70032.20, fBpr=69927.23 Hz
+Precise freq: fA=40061.734, fApr=40062.563, fB=70017.398, fBpr=69960.969 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 146: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40007.64, fApr=40030.21, fB=70032.36, fBpr=69913.33 Hz
+Precise freq: fA=39969.156, fApr=39992.695, fB=69954.570, fBpr=69853.078 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 147: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 147) ===
+
+Averaged freq: fA=40027.2148, fApr=40045.3047, fB=69975.7813, fBpr=69910.5703 Hz
+Averaged frequency errors: dfA = -18.08984 Hz, dfB = 65.21094 Hz
+FLL_Update: err=-18.09, Kp=0.11, Ki=0.00, out=44511217801166336000000000000.00, sat_out=5.00, int=-349054398602083360000000000000.00
+FLL_Update: err=65.21, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40059.73, fApr=40031.34, fB=70000.04, fBpr=69921.09 Hz
+Precise freq: fA=40113.063, fApr=40081.992, fB=70015.797, fBpr=69971.672 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 148: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40016.69, fApr=40036.04, fB=70002.24, fBpr=69928.25 Hz
+Precise freq: fA=39968.195, fApr=39989.469, fB=70056.805, fBpr=69993.648 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 149: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40008.70, fApr=40036.97, fB=69987.95, fBpr=69926.68 Hz
+Precise freq: fA=40036.242, fApr=40065.410, fB=70082.797, fBpr=70030.680 Hz
+
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 150: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 150) ===
+Averaged freq: fA=40039.1680, fApr=40045.6250, fB=70051.7969, fBpr=69998.6641 Hz
+Averaged frequency errors: dfA = -6.45703 Hz, dfB = 53.13281 Hz
+FLL_Update: err=-6.46, Kp=0.11, Ki=0.00, out=-349054398602083360000000000000.00, sat_out=-5.00, int=2737264347881278800000000000000.00
+FLL_Update: err=53.13, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40005.60, fApr=40031.04, fB=70034.39, fBpr=69927.65 Hz
+Precise freq: fA=40038.344, fApr=40063.773, fB=70148.570, fBpr=70051.078 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 151: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40063.97, fApr=40029.57, fB=69982.77, fBpr=69898.02 Hz
+Precise freq: fA=40028.941, fApr=39991.695, fB=69941.250, fBpr=69864.109 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 152: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40052.02, fApr=40029.65, fB=70012.26, fBpr=69920.70 Hz
+Precise freq: fA=39996.445, fApr=39973.672, fB=69933.219, fBpr=69847.203 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 153: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 153) ===
+Averaged freq: fA=40021.2422, fApr=40009.7148, fB=70007.6797, fBpr=69920.7969 Hz
+Averaged frequency errors: dfA = 11.52734 Hz, dfB = 86.88281 Hz
+FLL_Update: err=11.53, Kp=0.11, Ki=0.00, out=2737264347881278800000000000000.00, sat_out=5.00, int=-21465466828578184000000000000000.00
+FLL_Update: err=86.88, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40039.48, fApr=40035.93, fB=70063.48, fBpr=69780.38 Hz
+Precise freq: fA=39993.773, fApr=39991.031, fB=70103.266, fBpr=69803.320 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 154: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40039.90, fApr=40031.47, fB=70018.63, fBpr=69925.54 Hz
+Precise freq: fA=40069.430, fApr=40061.078, fB=70109.281, fBpr=69815.625 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 155: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39969.79, fApr=40032.14, fB=70035.82, fBpr=69909.05 Hz
+Precise freq: fA=40054.059, fApr=40120.148, fB=69995.695, fBpr=69810.828 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 156: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 156) ===
+Averaged freq: fA=40039.0898, fApr=40057.4180, fB=70069.4141, fBpr=69809.9219 Hz
+
+Averaged frequency errors: dfA = -18.32813 Hz, dfB = 259.49219 Hz
+FLL_Update: err=-18.33, Kp=0.11, Ki=0.00, out=-21465466828578184000000000000000.00, sat_out=-5.00, int=168330927837206540000000000000000.00
+FLL_Update: err=259.49, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40073.38, fApr=40031.34, fB=69928.15, fBpr=69873.75 Hz
+Precise freq: fA=40128.156, fApr=40081.664, fB=69851.773, fBpr=69848.906 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 157: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40010.08, fApr=40036.56, fB=70019.17, fBpr=69933.89 Hz
+Precise freq: fA=39942.855, fApr=39971.625, fB=69871.234, fBpr=69805.563 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 158: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40023.54, fApr=40031.37, fB=69926.95, fBpr=69944.40 Hz
+Precise freq: fA=39959.219, fApr=39966.953, fB=69810.164, fBpr=69841.922 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 159: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 159) ===
+Averaged freq: fA=40010.0781, fApr=40006.7461, fB=69844.3828, fBpr=69832.1328 Hz
+Averaged frequency errors: dfA = 3.33203 Hz, dfB = 12.25000 Hz
+FLL_Update: err=3.33, Kp=0.11, Ki=0.00, out=168330927837206540000000000000000.00, sat_out=5.00, int=-1320041305888321000000000000000000.00
+FLL_Update: err=12.25, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40095.50, fApr=40037.24, fB=69981.62, fBpr=69923.37 Hz
+Precise freq: fA=39950.828, fApr=40099.012, fB=69888.344, fBpr=69992.148 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 160: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40049.91, fApr=40036.17, fB=69966.56, fBpr=69908.50 Hz
+Precise freq: fA=40035.492, fApr=40085.781, fB=69909.094, fBpr=69926.461 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 161: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40020.20, fApr=40034.27, fB=70024.48, fBpr=69916.80 Hz
+Precise freq: fA=40093.344, fApr=40128.320, fB=69942.000, fBpr=69858.492 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 162: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 162) ===
+Averaged freq: fA=40026.5547, fApr=40104.3711, fB=69913.1484, fBpr=69925.6953 Hz
+Averaged frequency errors: dfA = -77.81641 Hz, dfB = -12.54688 Hz
+FLL_Update: err=-77.82, Kp=0.11, Ki=0.00, out=-1320041305888321000000000000000000.00, sat_out=-5.00, int=10351686794945372000000000000000000.00
+FLL_Update: err=-12.55, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40010.31, fApr=40032.39, fB=70045.89, fBpr=69906.10 Hz
+Precise freq: fA=39969.297, fApr=39997.879, fB=70052.453, fBpr=69901.797 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 163: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40006.43, fApr=40031.49, fB=70016.49, fBpr=69911.51 Hz
+Precise freq: fA=39981.758, fApr=40009.039, fB=70004.727, fBpr=69900.172 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 164: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40005.36, fApr=40020.50, fB=69983.93, fBpr=69929.54 Hz
+Precise freq: fA=39953.305, fApr=39968.684, fB=69911.281, fBpr=69862.914 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 165: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 165) ===
+Averaged freq: fA=39968.1211, fApr=39991.8711, fB=69989.4922, fBpr=69888.2891 Hz
+Averaged frequency errors: dfA = -23.75000 Hz, dfB = 101.20313 Hz
+FLL_Update: err=-23.75, Kp=0.11, Ki=0.00, out=10351686794945372000000000000000000.00, sat_out=5.00, int=-81177323864919952000000000000000000.00
+FLL_Update: err=101.20, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40051.61, fApr=40037.07, fB=70044.95, fBpr=69900.98 Hz
+Precise freq: fA=39948.227, fApr=39931.996, fB=70056.063, fBpr=69893.156 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 166: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40033.61, fApr=40037.10, fB=70040.96, fBpr=69925.03 Hz
+Precise freq: fA=39940.355, fApr=39944.297, fB=70095.125, fBpr=69974.938 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 167: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40023.78, fApr=40031.22, fB=70014.71, fBpr=69943.59 Hz
+Precise freq: fA=40037.188, fApr=40045.289, fB=70108.641, fBpr=70043.797 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 168: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 168) ===
+Averaged freq: fA=39975.2539, fApr=39973.8633, fB=70086.6094, fBpr=69970.6328 Hz
+Averaged frequency errors: dfA = 1.39063 Hz, dfB = 115.97656 Hz
+FLL_Update: err=1.39, Kp=0.11, Ki=0.00, out=-81177323864919952000000000000000000.00, sat_out=-5.00, int=636587827684662080000000000000000000.00
+FLL_Update: err=115.98, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40034.09, fApr=40030.96, fB=70096.39, fBpr=69927.86 Hz
+Precise freq: fA=40007.781, fApr=40004.031, fB=70160.703, fBpr=70015.578 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 169: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40008.25, fApr=40026.68, fB=69974.38, fBpr=69886.91 Hz
+Precise freq: fA=39908.059, fApr=39927.523, fB=69959.281, fBpr=69909.438 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 170: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40039.87, fApr=40027.17, fB=70002.74, fBpr=69918.84 Hz
+Precise freq: fA=39966.672, fApr=39952.684, fB=69931.516, fBpr=69862.547 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 171: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 171) ===
+Averaged freq: fA=39960.8398, fApr=39961.4102, fB=70017.1641, fBpr=69929.1875 Hz
+Averaged frequency errors: dfA = -0.57031 Hz, dfB = 87.97656 Hz
+FLL_Update: err=-0.57, Kp=0.11, Ki=0.00, out=636587827684662080000000000000000000.00, sat_out=5.00, int=-4992084439647431200000000000000000000.00
+FLL_Update: err=87.98, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40050.45, fApr=40040.14, fB=69958.28, fBpr=69931.34 Hz
+Precise freq: fA=40103.582, fApr=40092.832, fB=70004.531, fBpr=69991.508 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 172: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40037.71, fApr=40032.67, fB=70080.38, fBpr=69937.04 Hz
+Precise freq: fA=40016.586, fApr=40011.813, fB=69956.094, fBpr=70051.023 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 173: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40024.66, fApr=40035.94, fB=70028.31, fBpr=69907.57 Hz
+Precise freq: fA=40093.398, fApr=40105.414, fB=69914.422, fBpr=69869.719 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 174: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 174) ===
+Averaged freq: fA=40071.1914, fApr=40070.0195, fB=69958.3516, fBpr=69970.7500 Hz
+Averaged frequency errors: dfA = 1.17188 Hz, dfB = -12.39844 Hz
+FLL_Update: err=1.17, Kp=0.11, Ki=0.00, out=-4992084439647431200000000000000000000.00, sat_out=-5.00, int=39147636542272192000000000000000000000.00
+FLL_Update: err=-12.40, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=39985.89, fApr=40025.69, fB=70137.76, fBpr=69912.27 Hz
+Precise freq: fA=40072.016, fApr=40113.633, fB=70103.578, fBpr=69844.742 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 175: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40050.66, fApr=40032.00, fB=69951.10, fBpr=69927.38 Hz
+Precise freq: fA=40032.828, fApr=40011.758, fB=70069.734, fBpr=69839.273 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 176: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40051.82, fApr=40035.41, fB=69967.53, fBpr=69913.70 Hz
+Precise freq: fA=40002.871, fApr=39985.766, fB=69937.289, fBpr=69823.695 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 177: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 177) ===
+Averaged freq: fA=40035.9063, fApr=40037.0508, fB=70036.8672, fBpr=69835.9063 Hz
+Averaged frequency errors: dfA = -1.14453 Hz, dfB = 200.96094 Hz
+FLL_Update: err=-1.14, Kp=0.11, Ki=0.00, out=39147636542272192000000000000000000000.00, sat_out=5.00, int=-340282366920938480000000000000000000000.00
+FLL_Update: err=200.96, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40087.62, fApr=40031.45, fB=70094.29, fBpr=69876.23 Hz
+Precise freq: fA=39989.578, fApr=39930.996, fB=70002.109, fBpr=69857.297 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 178: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40031.06, fApr=40031.63, fB=70023.78, fBpr=69873.08 Hz
+Precise freq: fA=39996.359, fApr=39999.453, fB=70117.109, fBpr=69810.180 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 179: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40110.43, fApr=40039.67, fB=70011.50, fBpr=69891.29 Hz
+Precise freq: fA=40008.164, fApr=39934.359, fB=70030.539, fBpr=69866.578 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+
+Frame 180: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 180) ===
+Averaged freq: fA=39998.0352, fApr=39954.9375, fB=70049.9141, fBpr=69844.6797 Hz
+Averaged frequency errors: dfA = 43.09766 Hz, dfB = 205.23438 Hz
+FLL_Update: err=43.10, Kp=0.11, Ki=0.00, out=-340282366920938480000000000000000000000.00, sat_out=-5.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=205.23, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40074.63, fApr=40033.52, fB=70000.88, fBpr=69929.85 Hz
+Precise freq: fA=40005.195, fApr=39964.633, fB=70062.875, fBpr=69831.289 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 181: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40047.11, fApr=40033.71, fB=70022.12, fBpr=69951.30 Hz
+Precise freq: fA=40014.520, fApr=40002.949, fB=70032.906, fBpr=69915.742 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 182: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39970.30, fApr=40024.95, fB=69999.00, fBpr=69917.77 Hz
+Precise freq: fA=39911.625, fApr=39970.445, fB=69932.969, fBpr=69840.602 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 183: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 183) ===
+Averaged freq: fA=39977.1133, fApr=39979.3398, fB=70009.5859, fBpr=69862.5391 Hz
+Averaged frequency errors: dfA = -2.22656 Hz, dfB = 147.04688 Hz
+FLL_Update: err=-2.23, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=147.05, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=39991.58, fApr=40030.54, fB=70013.24, fBpr=69928.52 Hz
+Precise freq: fA=40007.172, fApr=40046.332, fB=69898.422, fBpr=70005.203 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 184: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40020.79, fApr=40031.79, fB=69931.15, fBpr=69920.16 Hz
+Precise freq: fA=39935.953, fApr=39945.543, fB=69864.047, fBpr=69940.766 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 185: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40012.09, fApr=40032.14, fB=70018.14, fBpr=69911.17 Hz
+Precise freq: fA=39975.789, fApr=39995.969, fB=69993.289, fBpr=69909.625 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 186: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 186) ===
+Averaged freq: fA=39972.9727, fApr=39995.9492, fB=69918.5859, fBpr=69951.8672 Hz
+Averaged frequency errors: dfA = -22.97656 Hz, dfB = -33.28125 Hz
+FLL_Update: err=-22.98, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=-33.28, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40018.16, fApr=40030.54, fB=70019.33, fBpr=69906.76 Hz
+Precise freq: fA=39948.137, fApr=39960.008, fB=69940.969, fBpr=69993.023 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 187: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40031.04, fApr=40038.73, fB=69992.75, fBpr=69879.14 Hz
+Precise freq: fA=40024.453, fApr=40031.594, fB=69968.703, fBpr=69936.453 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 188: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40036.45, fApr=40030.79, fB=70018.36, fBpr=69880.39 Hz
+Precise freq: fA=39990.984, fApr=39984.477, fB=69945.742, fBpr=69834.828 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 189: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 189) ===
+Averaged freq: fA=39987.8594, fApr=39992.0273, fB=69951.8047, fBpr=69921.4297 Hz
+Averaged frequency errors: dfA = -4.16797 Hz, dfB = 30.37500 Hz
+FLL_Update: err=-4.17, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=30.38, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40030.39, fApr=40023.94, fB=69910.45, fBpr=69919.67 Hz
+Precise freq: fA=40052.438, fApr=40045.961, fB=69908.016, fBpr=69956.484 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 190: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40068.72, fApr=40030.63, fB=69989.09, fBpr=69916.77 Hz
+Precise freq: fA=39997.516, fApr=39957.602, fB=69863.453, fBpr=70014.328 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 191: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39998.77, fApr=40032.31, fB=70000.37, fBpr=69900.11 Hz
+Precise freq: fA=39929.078, fApr=39965.742, fB=69895.211, fBpr=69863.867 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 192: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 192) ===
+
+Averaged freq: fA=39993.0117, fApr=39989.7695, fB=69888.8984, fBpr=69944.8984 Hz
+Averaged frequency errors: dfA = 3.24219 Hz, dfB = -56.00000 Hz
+FLL_Update: err=3.24, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=-56.00, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=39954.50, fApr=40033.12, fB=69992.60, fBpr=69915.48 Hz
+Precise freq: fA=39967.891, fApr=40050.090, fB=69986.273, fBpr=69954.734 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 193: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39971.13, fApr=40012.38, fB=69920.01, fBpr=69914.47 Hz
+Precise freq: fA=39896.066, fApr=39936.406, fB=69995.820, fBpr=70012.813 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 194: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40055.13, fApr=40047.64, fB=69969.30, fBpr=69912.45 Hz
+Precise freq: fA=39989.641, fApr=39978.977, fB=69921.094, fBpr=69871.969 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 195: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 195) ===
+Averaged freq: fA=39951.1992, fApr=39988.4922, fB=69967.7266, fBpr=69946.5078 Hz
+Averaged frequency errors: dfA = -37.29297 Hz, dfB = 21.21875 Hz
+FLL_Update: err=-37.29, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=21.22, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+
+Coarse freq: fA=40011.35, fApr=40029.77, fB=69959.49, fBpr=69906.97 Hz
+Precise freq: fA=40058.492, fApr=40077.492, fB=69913.375, fBpr=69847.039 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 196: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40049.39, fApr=40029.77, fB=70008.59, fBpr=69954.02 Hz
+Precise freq: fA=40149.457, fApr=40128.031, fB=69908.375, fBpr=69877.539 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 197: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40032.83, fApr=40029.23, fB=69968.35, fBpr=69892.44 Hz
+Precise freq: fA=40017.523, fApr=40014.359, fB=69868.938, fBpr=69802.688 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 198: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 198) ===
+Averaged freq: fA=40075.1602, fApr=40073.2930, fB=69896.8984, fBpr=69842.4219 Hz
+Averaged frequency errors: dfA = 1.86719 Hz, dfB = 54.47656 Hz
+FLL_Update: err=1.87, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=54.48, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40046.64, fApr=40019.52, fB=69961.23, fBpr=69917.27 Hz
+Precise freq: fA=39976.125, fApr=39947.879, fB=69873.445, fBpr=69896.867 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 199: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39991.72, fApr=40034.41, fB=69993.27, fBpr=69939.32 Hz
+Precise freq: fA=39943.586, fApr=39989.480, fB=69904.422, fBpr=69904.125 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 200: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40019.58, fApr=40028.39, fB=70000.07, fBpr=69919.05 Hz
+Precise freq: fA=39960.793, fApr=39968.715, fB=69903.289, fBpr=69841.047 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 201: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 201) ===
+Averaged freq: fA=39960.1680, fApr=39968.6914, fB=69893.7188, fBpr=69880.6797 Hz
+Averaged frequency errors: dfA = -8.52344 Hz, dfB = 13.03906 Hz
+FLL_Update: err=-8.52, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=13.04, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40028.88, fApr=40027.96, fB=70029.41, fBpr=69937.94 Hz
+Precise freq: fA=40050.152, fApr=40048.516, fB=70030.188, fBpr=69968.203 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 202: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40040.35, fApr=40024.76, fB=70000.80, fBpr=69912.04 Hz
+Precise freq: fA=39967.395, fApr=39950.840, fB=70081.141, fBpr=70006.664 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 203: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40001.84, fApr=40027.90, fB=70074.87, fBpr=69922.20 Hz
+Precise freq: fA=39933.367, fApr=39961.219, fB=70034.625, fBpr=69886.688 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 204: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 204) ===
+Averaged freq: fA=39983.6367, fApr=39986.8594, fB=70048.6484, fBpr=69953.8516 Hz
+Averaged frequency errors: dfA = -3.22266 Hz, dfB = 94.79688 Hz
+FLL_Update: err=-3.22, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=94.80, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40000.39, fApr=40032.46, fB=70004.82, fBpr=69895.76 Hz
+Precise freq: fA=40056.938, fApr=40089.941, fB=70084.336, fBpr=69790.859 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 205: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40058.75, fApr=40029.08, fB=70029.30, fBpr=69902.36 Hz
+Precise freq: fA=40055.813, fApr=40023.094, fB=70142.391, fBpr=69772.078 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 206: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40032.81, fApr=40029.41, fB=69936.48, fBpr=69944.70 Hz
+
+Precise freq: fA=40021.656, fApr=40018.832, fB=69959.359, fBpr=69903.055 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 207: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 207) ===
+Averaged freq: fA=40044.8008, fApr=40043.9531, fB=70062.0234, fBpr=69822.0000 Hz
+Averaged frequency errors: dfA = 0.84766 Hz, dfB = 240.02344 Hz
+FLL_Update: err=0.85, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=240.02, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40067.38, fApr=40021.57, fB=69981.98, fBpr=69912.20 Hz
+Precise freq: fA=40069.195, fApr=40021.520, fB=69959.609, fBpr=69891.766 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 208: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39970.48, fApr=40030.27, fB=69956.52, fBpr=69899.91 Hz
+Precise freq: fA=40092.625, fApr=39947.457, fB=70024.141, fBpr=69974.000 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 209: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40006.33, fApr=40030.37, fB=69964.91, fBpr=69927.94 Hz
+Precise freq: fA=40000.555, fApr=39960.871, fB=69917.500, fBpr=69887.039 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 210: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 210) ===
+Averaged freq: fA=40054.1250, fApr=39976.6133, fB=69967.0859, fBpr=69917.6016 Hz
+Averaged frequency errors: dfA = 77.51172 Hz, dfB = 49.48438 Hz
+FLL_Update: err=77.51, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=49.48, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40105.08, fApr=40027.48, fB=69983.25, fBpr=69923.75 Hz
+Precise freq: fA=40146.008, fApr=40044.164, fB=69996.984, fBpr=69961.969 Hz
+
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 211: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40026.31, fApr=40033.72, fB=69939.91, fBpr=69917.16 Hz
+Precise freq: fA=40164.621, fApr=39959.188, fB=70023.367, fBpr=70015.172 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 212: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39988.50, fApr=40031.09, fB=70014.63, fBpr=69909.96 Hz
+Precise freq: fA=40016.953, fApr=39997.602, fB=70033.141, fBpr=69930.469 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 213: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 213) ===
+Averaged freq: fA=40109.1914, fApr=40000.3164, fB=70017.8281, fBpr=69969.2031 Hz
+Averaged frequency errors: dfA = 108.87500 Hz, dfB = 48.62500 Hz
+FLL_Update: err=108.88, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=48.63, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40027.61, fApr=40030.62, fB=69926.84, fBpr=69925.38 Hz
+Precise freq: fA=39986.297, fApr=39968.797, fB=69983.195, fBpr=69974.188 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 214: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39986.56, fApr=40029.21, fB=70007.41, fBpr=69915.78 Hz
+Precise freq: fA=39882.129, fApr=39920.531, fB=70001.617, fBpr=69929.727 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 215: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40070.28, fApr=40028.29, fB=70035.88, fBpr=69902.21 Hz
+Precise freq: fA=39998.965, fApr=39951.234, fB=69967.938, fBpr=69841.813 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 216: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 216) ===
+Averaged freq: fA=39955.7969, fApr=39946.8555, fB=69984.2500, fBpr=69915.2422 Hz
+Averaged frequency errors: dfA = 8.94141 Hz, dfB = 69.00781 Hz
+FLL_Update: err=8.94, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=69.01, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40005.91, fApr=40029.59, fB=69929.14, fBpr=69906.21 Hz
+Precise freq: fA=39912.984, fApr=39938.578, fB=69843.625, fBpr=69892.297 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 217: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40042.01, fApr=40036.17, fB=70104.70, fBpr=69932.73 Hz
+Precise freq: fA=39996.570, fApr=39989.555, fB=70031.250, fBpr=69907.195 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 218: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40005.47, fApr=40027.84, fB=70033.47, fBpr=69908.34 Hz
+Precise freq: fA=39942.555, fApr=39966.070, fB=69935.422, fBpr=69830.234 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 219: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 219) ===
+Averaged freq: fA=39950.7031, fApr=39964.7344, fB=69936.7656, fBpr=69876.5781 Hz
+Averaged frequency errors: dfA = -14.03125 Hz, dfB = 60.18750 Hz
+FLL_Update: err=-14.03, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=60.19, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40037.24, fApr=40027.77, fB=70026.11, fBpr=69909.44 Hz
+Precise freq: fA=40005.508, fApr=39994.832, fB=69905.750, fBpr=69780.883 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 220: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40036.07, fApr=40028.27, fB=69959.95, fBpr=69919.16 Hz
+Precise freq: fA=40109.461, fApr=40101.469, fB=70040.445, fBpr=69819.000 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 221: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40045.38, fApr=40031.05, fB=70002.42, fBpr=69896.39 Hz
+Precise freq: fA=40059.902, fApr=40045.078, fB=70023.688, fBpr=69861.875 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 222: Collected frequency data
+
+=== AVERAGED FREQUENCIES (Frame 222) ===
+Averaged freq: fA=40058.2930, fApr=40047.1250, fB=69989.9609, fBpr=69820.5859 Hz
+Averaged frequency errors: dfA = 11.16797 Hz, dfB = 169.37500 Hz
+FLL_Update: err=11.17, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=169.38, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40036.84, fApr=40032.34, fB=69964.10, fBpr=69920.74 Hz
+Precise freq: fA=40072.297, fApr=40068.098, fB=70082.289, fBpr=69800.859 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 223: Collected frequency data
+
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39989.88, fApr=40033.79, fB=69995.95, fBpr=69916.92 Hz
+Precise freq: fA=40084.207, fApr=40130.891, fB=69948.563, fBpr=69824.227 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 224: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40055.50, fApr=40028.46, fB=69946.21, fBpr=69922.32 Hz
+Precise freq: fA=40039.883, fApr=40009.758, fB=69856.492, fBpr=69825.250 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 225: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 225) ===
+Averaged freq: fA=40065.4609, fApr=40069.5820, fB=69962.4453, fBpr=69816.7813 Hz
+Averaged frequency errors: dfA = -4.12109 Hz, dfB = 145.66406 Hz
+FLL_Update: err=-4.12, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=145.66, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40063.39, fApr=40032.34, fB=69984.37, fBpr=69925.37 Hz
+Precise freq: fA=40128.879, fApr=40096.648, fB=69928.813, fBpr=69849.742 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 226: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40085.43, fApr=40022.82, fB=70014.49, fBpr=69922.30 Hz
+Precise freq: fA=40190.766, fApr=40126.090, fB=69911.688, fBpr=69839.703 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 227: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40086.96, fApr=40030.79, fB=69998.15, fBpr=69932.61 Hz
+Precise freq: fA=40074.316, fApr=40017.641, fB=69898.672, fBpr=69844.016 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 228: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 228) ===
+Averaged freq: fA=40131.3164, fApr=40080.1250, fB=69913.0547, fBpr=69844.4844 Hz
+Averaged frequency errors: dfA = 51.19141 Hz, dfB = 68.57031 Hz
+FLL_Update: err=51.19, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=68.57, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=39996.10, fApr=40030.74, fB=69920.84, fBpr=69922.28 Hz
+Precise freq: fA=40024.664, fApr=40064.238, fB=69913.805, fBpr=69945.703 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 229: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40072.71, fApr=40028.68, fB=70054.69, fBpr=69915.51 Hz
+Precise freq: fA=40005.477, fApr=39958.836, fB=69930.711, fBpr=70009.234 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 230: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40052.86, fApr=40028.01, fB=69998.35, fBpr=69915.48 Hz
+Precise freq: fA=39985.898, fApr=39961.047, fB=69888.328, fBpr=69876.852 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 231: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 231) ===
+Averaged freq: fA=40005.3477, fApr=39994.7070, fB=69910.9453, fBpr=69943.9297 Hz
+Averaged frequency errors: dfA = 10.64063 Hz, dfB = -32.98438 Hz
+FLL_Update: err=10.64, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=-32.98, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40008.59, fApr=40031.64, fB=69921.37, fBpr=69921.77 Hz
+Precise freq: fA=40054.195, fApr=40079.938, fB=69851.531, fBpr=69861.016 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 232: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39999.58, fApr=40028.66, fB=69912.21, fBpr=69930.80 Hz
+Precise freq: fA=40095.852, fApr=40126.078, fB=69800.586, fBpr=69851.164 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 233: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40070.02, fApr=40030.34, fB=69950.05, fBpr=69911.38 Hz
+Precise freq: fA=40059.047, fApr=40016.094, fB=69852.469, fBpr=69824.109 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 234: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 234) ===
+Averaged freq: fA=40069.6992, fApr=40074.0352, fB=69834.8672, fBpr=69845.4297 Hz
+Averaged frequency errors: dfA = -4.33594 Hz, dfB = -10.56250 Hz
+FLL_Update: err=-4.34, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=-10.56, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40057.10, fApr=40027.87, fB=69933.23, fBpr=69897.59 Hz
+Precise freq: fA=40036.637, fApr=40006.914, fB=69808.875, fBpr=69971.680 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 235: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40019.00, fApr=40028.40, fB=70013.95, fBpr=69926.29 Hz
+Precise freq: fA=39919.766, fApr=39930.887, fB=69951.734, fBpr=69947.625 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 236: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40046.48, fApr=40033.18, fB=69982.63, fBpr=69916.09 Hz
+Precise freq: fA=40010.695, fApr=39996.719, fB=69958.148, fBpr=69919.719 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 237: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 237) ===
+Averaged freq: fA=39989.0352, fApr=39978.1719, fB=69906.2500, fBpr=69946.3438 Hz
+Averaged frequency errors: dfA = 10.86328 Hz, dfB = -40.09375 Hz
+FLL_Update: err=10.86, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=-40.09, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40028.29, fApr=40032.08, fB=70007.66, fBpr=69928.95 Hz
+Precise freq: fA=39962.594, fApr=39967.352, fB=70053.297, fBpr=69969.461 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 238: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40046.74, fApr=40027.38, fB=69968.72, fBpr=69926.48 Hz
+Precise freq: fA=39940.059, fApr=39919.688, fB=69957.523, fBpr=69942.102 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 239: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40004.30, fApr=40038.49, fB=70023.14, fBpr=69905.44 Hz
+Precise freq: fA=39922.648, fApr=39959.227, fB=69949.281, fBpr=69839.750 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 240: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 240) ===
+Averaged freq: fA=39941.7695, fApr=39948.7539, fB=69986.6953, fBpr=69917.1016 Hz
+Averaged frequency errors: dfA = -6.98438 Hz, dfB = 69.59375 Hz
+FLL_Update: err=-6.98, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=69.59, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40002.28, fApr=40023.71, fB=69989.08, fBpr=69926.80 Hz
+Precise freq: fA=40018.422, fApr=40040.152, fB=69998.047, fBpr=69965.500 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 241: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39987.11, fApr=40027.31, fB=69885.45, fBpr=69902.19 Hz
+Precise freq: fA=39908.109, fApr=39949.293, fB=69959.172, fBpr=69993.852 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 242: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40033.12, fApr=40025.59, fB=70044.11, fBpr=69928.79 Hz
+Precise freq: fA=39967.281, fApr=39957.563, fB=70006.063, fBpr=69893.500 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 243: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 243) ===
+Averaged freq: fA=39964.6055, fApr=39982.3359, fB=69987.7578, fBpr=69950.9453 Hz
+Averaged frequency errors: dfA = -17.73047 Hz, dfB = 36.81250 Hz
+FLL_Update: err=-17.73, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=36.81, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40100.63, fApr=40029.72, fB=69965.89, fBpr=69929.57 Hz
+Precise freq: fA=40067.746, fApr=39992.945, fB=70066.422, fBpr=69981.531 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 244: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40058.43, fApr=40028.59, fB=70012.02, fBpr=69925.88 Hz
+Precise freq: fA=39958.445, fApr=39929.527, fB=70021.289, fBpr=69945.109 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 245: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40016.62, fApr=40027.23, fB=70006.31, fBpr=69900.55 Hz
+Precise freq: fA=39974.020, fApr=39986.988, fB=69999.391, fBpr=69897.656 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 246: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 246) ===
+Averaged freq: fA=40000.0664, fApr=39969.8164, fB=70029.0391, fBpr=69941.4297 Hz
+Averaged frequency errors: dfA = 30.25000 Hz, dfB = 87.60938 Hz
+FLL_Update: err=30.25, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=87.61, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40055.13, fApr=40027.04, fB=69954.05, fBpr=69924.05 Hz
+Precise freq: fA=40097.449, fApr=40068.055, fB=69919.000, fBpr=69920.008 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 247: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40096.52, fApr=40033.46, fB=70010.13, fBpr=69937.41 Hz
+Precise freq: fA=40028.438, fApr=39962.969, fB=70078.055, fBpr=70018.211 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 248: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39993.91, fApr=40026.68, fB=70008.24, fBpr=69929.16 Hz
+Precise freq: fA=39923.492, fApr=39960.715, fB=69960.953, fBpr=69888.875 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 249: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 249) ===
+Averaged freq: fA=40016.4609, fApr=39997.2461, fB=69986.0078, fBpr=69942.3672 Hz
+Averaged frequency errors: dfA = 19.21484 Hz, dfB = 43.64063 Hz
+FLL_Update: err=19.21, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=43.64, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=39991.95, fApr=40033.67, fB=69999.87, fBpr=69887.42 Hz
+
+Precise freq: fA=40008.695, fApr=40052.313, fB=70013.102, fBpr=69925.313 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 250: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40037.85, fApr=40029.16, fB=69952.33, fBpr=69910.84 Hz
+Precise freq: fA=39965.473, fApr=39954.801, fB=70035.781, fBpr=70010.609 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 251: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39991.34, fApr=40030.22, fB=69985.34, fBpr=69894.43 Hz
+Precise freq: fA=39922.695, fApr=39963.527, fB=69944.430, fBpr=69859.469 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 252: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 252) ===
+Averaged freq: fA=39965.6211, fApr=39990.2148, fB=69997.7734, fBpr=69931.7969 Hz
+Averaged frequency errors: dfA = -24.59375 Hz, dfB = 65.97656 Hz
+FLL_Update: err=-24.59, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=65.98, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40069.81, fApr=40023.00, fB=69918.80, fBpr=69913.36 Hz
+Precise freq: fA=40035.938, fApr=39984.902, fB=70016.930, fBpr=69792.813 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 253: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40065.85, fApr=40037.80, fB=69981.06, fBpr=69916.67 Hz
+Precise freq: fA=39965.305, fApr=39937.188, fB=69986.844, fBpr=69880.500 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 254: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40059.40, fApr=40032.86, fB=69988.38, fBpr=69914.90 Hz
+Precise freq: fA=39984.746, fApr=39958.141, fB=69923.188, fBpr=69840.250 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 255: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 255) ===
+
+Averaged freq: fA=39995.3281, fApr=39960.0781, fB=69975.6563, fBpr=69837.8516 Hz
+Averaged frequency errors: dfA = 35.25000 Hz, dfB = 137.80469 Hz
+FLL_Update: err=35.25, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=137.80, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40086.43, fApr=40031.11, fB=69998.20, fBpr=69913.32 Hz
+Precise freq: fA=40096.598, fApr=40039.766, fB=69882.578, fBpr=69989.609 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 256: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40041.42, fApr=40037.91, fB=69979.82, fBpr=69920.84 Hz
+Precise freq: fA=39955.699, fApr=39954.313, fB=69923.461, fBpr=69949.609 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 257: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39978.24, fApr=40025.44, fB=70035.73, fBpr=69916.03 Hz
+
+Precise freq: fA=39901.395, fApr=39951.992, fB=69948.484, fBpr=69854.852 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 258: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 258) ===
+Averaged freq: fA=39984.5625, fApr=39982.0234, fB=69918.1719, fBpr=69931.3516 Hz
+Averaged frequency errors: dfA = 2.53906 Hz, dfB = -13.17969 Hz
+FLL_Update: err=2.54, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=-13.18, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40024.75, fApr=40025.63, fB=70019.23, fBpr=69942.53 Hz
+Precise freq: fA=40044.973, fApr=40044.516, fB=70024.852, fBpr=69981.984 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 259: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=39997.93, fApr=40056.07, fB=69973.34, fBpr=69938.78 Hz
+Precise freq: fA=39919.625, fApr=39980.398, fB=70049.109, fBpr=70031.977 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 260: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40007.33, fApr=40030.92, fB=69983.51, fBpr=69914.25 Hz
+Precise freq: fA=40013.910, fApr=40036.473, fB=70066.391, fBpr=70000.656 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 261: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 261) ===
+Averaged freq: fA=39992.8320, fApr=40020.4648, fB=70046.7891, fBpr=70004.8750 Hz
+Averaged frequency errors: dfA = -27.63281 Hz, dfB = 41.91406 Hz
+FLL_Update: err=-27.63, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=41.91, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40066.52, fApr=40031.18, fB=69971.16, fBpr=69895.79 Hz
+Precise freq: fA=40081.055, fApr=40042.227, fB=70064.734, fBpr=69994.828 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 262: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40033.93, fApr=40024.92, fB=70036.57, fBpr=69922.68 Hz
+Precise freq: fA=40120.547, fApr=40112.031, fB=69979.602, fBpr=69893.586 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 263: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+
+Coarse freq: fA=40053.09, fApr=40031.18, fB=69980.20, fBpr=69910.45 Hz
+Precise freq: fA=40036.203, fApr=40013.555, fB=69893.273, fBpr=69837.742 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 264: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 264) ===
+Averaged freq: fA=40079.2695, fApr=40055.9375, fB=69979.2109, fBpr=69908.7188 Hz
+Averaged frequency errors: dfA = 23.33203 Hz, dfB = 70.49219 Hz
+FLL_Update: err=23.33, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=70.49, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40011.71, fApr=40030.88, fB=70037.63, fBpr=69902.69 Hz
+Precise freq: fA=40041.867, fApr=40063.125, fB=70041.203, fBpr=69931.734 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 265: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40051.53, fApr=40026.08, fB=69965.60, fBpr=69900.30 Hz
+Precise freq: fA=39982.891, fApr=39955.711, fB=70045.008, fBpr=69996.094 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 266: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40009.25, fApr=40027.55, fB=69954.38, fBpr=69919.81 Hz
+Precise freq: fA=39938.977, fApr=39959.000, fB=69904.695, fBpr=69880.156 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 267: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 267) ===
+Averaged freq: fA=39987.9102, fApr=39992.6133, fB=69996.9688, fBpr=69935.9922 Hz
+Averaged frequency errors: dfA = -4.70313 Hz, dfB = 60.97656 Hz
+FLL_Update: err=-4.70, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=60.98, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40027.21, fApr=40033.24, fB=69950.06, fBpr=69906.59 Hz
+Precise freq: fA=40086.797, fApr=40092.621, fB=70034.297, fBpr=69806.188 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 268: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40010.33, fApr=40027.34, fB=69995.72, fBpr=69914.62 Hz
+Precise freq: fA=40004.172, fApr=40021.914, fB=70111.578, fBpr=69786.602 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 269: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40053.83, fApr=40034.05, fB=69918.16, fBpr=69952.04 Hz
+Precise freq: fA=40046.500, fApr=40025.102, fB=69944.734, fBpr=69913.000 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 270: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 270) ===
+Averaged freq: fA=40045.8242, fApr=40046.5430, fB=70030.2031, fBpr=69835.2578 Hz
+Averaged frequency errors: dfA = -0.71875 Hz, dfB = 194.94531 Hz
+FLL_Update: err=-0.72, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+FLL_Update: err=194.95, Kp=0.11, Ki=0.00, out=510423550381407680000000000000000000000.00, sat_out=510423550381407680000000000000000000000.00, int=510423550381407680000000000000000000000.00
+=== FLL CONTROLLER UPDATED ===
+
+Coarse freq: fA=40021.50, fApr=40034.96, fB=70090.99, fBpr=69945.00 Hz
+Precise freq: fA=39964.426, fApr=39978.656, fB=69949.375, fBpr=69971.758 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 271: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40055.91, fApr=40030.21, fB=70083.63, fBpr=69878.89 Hz
+Precise freq: fA=39952.656, fApr=39925.406, fB=70018.141, fBpr=69887.906 Hz
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 272: Collected frequency data
+Collecting data... A:0 Apr:0 B:0 Bpr:0
+
+Coarse freq: fA=40049.31, fApr=40031.80, fB=69997.41, fBpr=69918.27 Hz
+Precise freq: fA=40007.188, fApr=39989.586, fB=69963.609, fBpr=69914.797 Hz
+
+Zero crossings: na=60, nap=60, nb=60, nbp=60
+Frame 273: Collected frequency data
+=== AVERAGED FREQUENCIES (Frame 27

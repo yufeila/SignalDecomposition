@@ -33,13 +33,13 @@
 
 /* FLL (锁频环) 控制器设计参数 */
 #define FLL_LOOP_UPDATE_RATE_HZ 20.0f   /* FLL环路更新频率(Hz)，用于计算固定的Ts */
-#define FLL_BANDWIDTH_HZ        0.05f    /* 环路带宽(Hz): 适当降低，使响应更平稳 */
+#define FLL_BANDWIDTH_HZ        0.01f    /* 环路带宽(Hz): 适当降低，使响应更平稳 */
 #define FLL_DAMPING_RATIO       0.9f    /* 阻尼比: 保持0.9以抑制过冲 */
 #define FLL_MAX_STEP_HZ         5.0f    /* 单次最大调节步进(Hz): 保持5Hz，避免剧烈跳变 */
 #define FLL_DEAD_ZONE_HZ        0.1f    /* 死区(Hz): 大幅减小，让积分器可以消除小的稳态误差 */
 
 /* 新增：多帧平均参数 */
-#define FREQ_AVERAGE_FRAMES     8       /* 平均多少帧数据，可根据需要调整(4-16) */
+#define FREQ_AVERAGE_FRAMES     3       /* 平均多少帧数据，可根据需要调整(4-16) */
 #define FLL_UPDATE_INTERVAL     FREQ_AVERAGE_FRAMES  /* 每隔多少帧更新一次FLL */
 
 /* FLL PI控制器离散化后的固定参数 */
