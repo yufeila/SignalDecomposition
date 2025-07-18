@@ -511,20 +511,20 @@ void Calibration_Frequency(void)
            fA_coarse, fApr_coarse, fB_coarse, fBpr_coarse);
 
     /* 3. 精确频率测量：使用Goertzel相位微分法 */
-    float fA_precise   = precise_frequency_measurement(buf_A,   CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fA_coarse,   &phase_tracker_A);
-    float fApr_precise = precise_frequency_measurement(buf_Apr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fApr_coarse, &phase_tracker_Apr);
-    float fB_precise   = precise_frequency_measurement(buf_B,   CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fB_coarse,   &phase_tracker_B);
-    float fBpr_precise = precise_frequency_measurement(buf_Bpr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fBpr_coarse, &phase_tracker_Bpr);
+//    float fA_precise   = precise_frequency_measurement(buf_A,   CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fA_coarse,   &phase_tracker_A);
+//    float fApr_precise = precise_frequency_measurement(buf_Apr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fApr_coarse, &phase_tracker_Apr);
+//    float fB_precise   = precise_frequency_measurement(buf_B,   CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fB_coarse,   &phase_tracker_B);
+//    float fBpr_precise = precise_frequency_measurement(buf_Bpr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fBpr_coarse, &phase_tracker_Bpr);
 
-    printf("Precise freq: fA=%.3f, fApr=%.3f, fB=%.3f, fBpr=%.3f Hz\r\n", 
-           fA_precise, fApr_precise, fB_precise, fBpr_precise);
-	printf("Zero crossings: na=%d, nap=%d, nb=%d, nbp=%d\r\n", na, nap, nb, nbp);
+//    printf("Precise freq: fA=%.3f, fApr=%.3f, fB=%.3f, fBpr=%.3f Hz\r\n", 
+//           fA_precise, fApr_precise, fB_precise, fBpr_precise);
+//	printf("Zero crossings: na=%d, nap=%d, nb=%d, nbp=%d\r\n", na, nap, nb, nbp);
     
     /* 4. 将频率测量值添加到多帧平均缓冲区 */
-    uint8_t avgA_ready   = add_frequency_measurement(&freq_averager_A,   fA_precise);
-    uint8_t avgApr_ready = add_frequency_measurement(&freq_averager_Apr, fApr_precise);
-    uint8_t avgB_ready   = add_frequency_measurement(&freq_averager_B,   fB_precise);
-    uint8_t avgBpr_ready = add_frequency_measurement(&freq_averager_Bpr, fBpr_precise);
+    uint8_t avgA_ready   = add_frequency_measurement(&freq_averager_A,   fA_coarse);
+    uint8_t avgApr_ready = add_frequency_measurement(&freq_averager_Apr, fApr_coarse);
+    uint8_t avgB_ready   = add_frequency_measurement(&freq_averager_B,   fB_coarse);
+    uint8_t avgBpr_ready = add_frequency_measurement(&freq_averager_Bpr, fBpr_coarse);
     
     frame_counter++;
     printf("Frame %lu: Collected frequency data\r\n", frame_counter);

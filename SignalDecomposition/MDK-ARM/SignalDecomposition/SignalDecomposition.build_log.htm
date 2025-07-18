@@ -47,11 +47,19 @@ compiling data_process.c...
   static float fBpr_filtered = 70000.0f;
 ..\Users\data_process.c(21): warning:  #177-D: variable "filter_init"  was declared but never referenced
   static uint8_t filter_init = 0;
-..\Users\data_process.c: 9 warnings, 0 errors
+..\Users\data_process.c(313): warning:  #177-D: variable "phase_tracker_A"  was declared but never referenced
+  static Phase_Tracker_t phase_tracker_A;
+..\Users\data_process.c(314): warning:  #177-D: variable "phase_tracker_Apr"  was declared but never referenced
+  static Phase_Tracker_t phase_tracker_Apr;
+..\Users\data_process.c(315): warning:  #177-D: variable "phase_tracker_B"  was declared but never referenced
+  static Phase_Tracker_t phase_tracker_B;
+..\Users\data_process.c(316): warning:  #177-D: variable "phase_tracker_Bpr"  was declared but never referenced
+  static Phase_Tracker_t phase_tracker_Bpr;
+..\Users\data_process.c: 13 warnings, 0 errors
 linking...
-Program Size: Code=58356 RO-data=128812 RW-data=4232 ZI-data=68280  
+Program Size: Code=57920 RO-data=128812 RW-data=4216 ZI-data=68368  
 FromELF: creating hex file...
-"SignalDecomposition\SignalDecomposition.axf" - 0 Error(s), 9 Warning(s).
+"SignalDecomposition\SignalDecomposition.axf" - 0 Error(s), 13 Warning(s).
 
 <h2>Software Packages used:</h2>
 
