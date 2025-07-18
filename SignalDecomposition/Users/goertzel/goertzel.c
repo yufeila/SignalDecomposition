@@ -95,6 +95,6 @@ void goertzel_process_f32omega(const goertzel_cfg_fomega_t *cfg,
     arm_sqrt_f32(real_part * real_part + imag_part * imag_part,mag);
     *phase = atan2f(imag_part, real_part);
 	
-	float pk_amplitude = 2.0f * (*mag) / (N_RAW); // <-- 跟你的_A_out等价
+	float pk_amplitude = 2.0f * (*mag) / (cfg->N); // <-- 跟你的_A_out等价
 	*mag = pk_amplitude;
 }

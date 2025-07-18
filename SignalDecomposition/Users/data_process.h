@@ -37,14 +37,14 @@
  * 更新周期 = (单通道点数 / ADC采样率) * 平均帧数
  * 更新频率 = 1 / 更新周期
  */
-#define FLL_ACTUAL_UPDATE_RATE_HZ (CALIBRATION_SAMPLE_FREQ / (float)(CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE * FREQ_AVERAGE_FRAMES))
-#define FLL_BANDWIDTH_HZ        0.5f    /* 环路带宽(Hz): 恢复到稍宽的范围，以获得更快的初始响应 */
+#define FLL_ACTUAL_UPDATE_RATE_HZ (CALIBRATION_SAMPLE_FREQ / (float)(FLL_UPDATE_INTERVAL * CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE * FREQ_AVERAGE_FRAMES))
+#define FLL_BANDWIDTH_HZ        0.05f    /* 环路带宽(Hz): 恢复到稍宽的范围，以获得更快的初始响应 */
 #define FLL_DAMPING_RATIO       0.9f    /* 阻尼比: 保持0.9以抑制过冲 */
-#define FLL_MAX_STEP_HZ         5.0f    /* 单次最大调节步进(Hz): 保持5Hz，避免剧烈跳变 */
+#define FLL_MAX_STEP_HZ         2.0f    /* 单次最大调节步进(Hz): 保持5Hz，避免剧烈跳变 */
 #define FLL_DEAD_ZONE_HZ        0.05f   /* 死区(Hz): 适当减小，让积分器可以消除小的稳态误差 */
 
 /* 新增：多帧平均参数 */
-#define FREQ_AVERAGE_FRAMES     3       /* 平均多少帧数据，可根据需要调整(4-16) */
+#define FREQ_AVERAGE_FRAMES     6       /* 平均多少帧数据，可根据需要调整(4-16) */
 #define FLL_UPDATE_INTERVAL     FREQ_AVERAGE_FRAMES  /* 每隔多少帧更新一次FLL */
 
 /* FLL PI控制器离散化后的固定参数 */
@@ -55,9 +55,9 @@
 #define FLL_ANTI_WINDUP_GAIN    (1.0f / FLL_KP)
 
 /* 新增：积分器保护参数 */
-#define FLL_INTEGRATOR_MAX      100.0f   /* 积分器最大值 (Hz) */
-#define FLL_INTEGRATOR_MIN      (-100.0f) /* 积分器最小值 (Hz) */
-#define FLL_RESET_THRESHOLD_HZ  0.005f    /* 误差小于此值时重置积分器 (Hz) - 调整得更小 */
+#define FLL_INTEGRATOR_MAX      20.0f   /* 积分器最大值 (Hz) */
+#define FLL_INTEGRATOR_MIN      (-20.0f) /* 积分器最小值 (Hz) */
+#define FLL_RESET_THRESHOLD_HZ  0.05f    /* 误差小于此值时重置积分器 (Hz) - 调整得更小 */
 
 
 typedef struct{

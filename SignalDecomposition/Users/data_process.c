@@ -696,6 +696,6 @@ static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_
         AD9833_WriteFTW2(*ftw);
     }
 
-    printf("FLL_Update: err=%.2f, Kp=%.2f, Ki=%.2f, out=%.2f, sat_out=%.2f, int=%.2f\n",
-           error, FLL_KP, FLL_KI, output, output_saturated, controller->integrator);
+    printf("FLL_Update: err=%.2f, Kp=%.2f, Ki=%.2f, out=%.2f, sat_out=%.2f, int=%.2f,p_term = %.2f\n",
+           error, FLL_KP, FLL_KI, output, output_saturated, controller->integrator,p_term);
 }
