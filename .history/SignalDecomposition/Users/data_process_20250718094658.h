@@ -2,7 +2,7 @@
  * @Author: yyf 17786321727@163.com
  * @Date: 2025-07-12 15:11:29
  * @LastEditors: yyf 17786321727@163.com
- * @LastEditTime: 2025-07-18 09:50:34
+ * @LastEditTime: 2025-07-18 09:44:49
  * @FilePath: /SignalDecomposition/Users/data_process.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -29,8 +29,8 @@
 /* ------------ 用户可调参数 ---------------- */
 #define CALIBRATION_SAMPLE_FREQ 600000.0f /* ADC采样率 (硬件固定) */
 #define ADCLK                   25000000.0f /* AD9833 时钟 (Hz) */
-#define MAVG                    15          /* 减少到15个周期，确保在新窗口下有足够数据 */
-#define MAX_ZC                  200         /* 增加到200，适应更长的数据窗口 */
+#define MAVG                    20          /* 用 20 个周期做平均 */
+#define MAX_ZC                  32          /* 最大零交点检测数 (32对于MAVG=20足够) */
 
 /* FLL (锁频环) 控制器设计参数 */
 #define FLL_BANDWIDTH_HZ        12.0f   /* 环路带宽(Hz): 适当提高到12Hz，增强积分作用 */

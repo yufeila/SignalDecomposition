@@ -29,8 +29,8 @@
 /* ------------ 用户可调参数 ---------------- */
 #define CALIBRATION_SAMPLE_FREQ 600000.0f /* ADC采样率 (硬件固定) */
 #define ADCLK                   25000000.0f /* AD9833 时钟 (Hz) */
-#define MAVG                    15          /* 减少到15个周期，确保在新窗口下有足够数据 */
-#define MAX_ZC                  200         /* 增加到200，适应更长的数据窗口 */
+#define MAVG                    20          /* 用 20 个周期做平均 */
+#define MAX_ZC                  32          /* 最大零交点检测数 (32对于MAVG=20足够) */
 
 /* FLL (锁频环) 控制器设计参数 */
 #define FLL_BANDWIDTH_HZ        12.0f   /* 环路带宽(Hz): 适当提高到12Hz，增强积分作用 */
