@@ -454,37 +454,32 @@ void Calibration_Frequency(void)
 
 	if(na <= MAVG || nap <= MAVG || nb <= MAVG || nbp <= MAVG) return; /* 数据不足 */
 
-    /* 2. 粗频率计算：平均 MAVG 周期 (用于确定大致频率) */
+    /* 2. 频率计算：平均 MAVG 周期 */
 	float Ta   = (zc_idx_A [na-1]  - zc_idx_A [na-1-MAVG ]) / MAVG / CALIBRATION_SAMPLE_FREQ;
     float Tap  = (zc_idx_Apr[nap-1]- zc_idx_Apr[nap-1-MAVG]) / MAVG / CALIBRATION_SAMPLE_FREQ;
 	float Tb  = (zc_idx_B [nb-1]  - zc_idx_B [nb-1-MAVG ]) / MAVG / CALIBRATION_SAMPLE_FREQ;
 	float Tbp = (zc_idx_Bpr[nbp-1]- zc_idx_Bpr[nbp-1-MAVG]) / MAVG / CALIBRATION_SAMPLE_FREQ;
 
-    float fA_coarse   = 1.0f/Ta;
-    float fApr_coarse = 1.0f/Tap;
-    float fB_coarse   = 1.0f/Tb;
-    float fBpr_coarse = 1.0f/Tbp;
+    float fA   = 1.0f/Ta;
+    float fApr = 1.0f/Tap;
+    float fB   = 1.0f/Tb;
+    float fBpr = 1.0f/Tbp;
 	
-	printf("Coarse freq: fA=%.2f, fApr=%.2f, fB=%.2f, fBpr=%.2f Hz\r\n", 
-           fA_coarse, fApr_coarse, fB_coarse, fBpr_coarse);
-
-    /* 3. 精确频率测量：使用Goertzel相位微分法 */
-    float fA_precise   = precise_frequency_measurement(buf_A,   CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fA_coarse,   &phase_tracker_A);
-    float fApr_precise = precise_frequency_measurement(buf_Apr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fApr_coarse, &phase_tracker_Apr);
-    float fB_precise   = precise_frequency_measurement(buf_B,   CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fB_coarse,   &phase_tracker_B);
-    float fBpr_precise = precise_frequency_measurement(buf_Bpr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fBpr_coarse, &phase_tracker_Bpr);
-
-    printf("Precise freq: fA=%.3f, fApr=%.3f, fB=%.3f, fBpr=%.3f Hz\r\n", 
-           fA_precise, fApr_precise, fB_precise, fBpr_precise);
+	/* 频率测量低通滤波（减少噪声） */
+    // [!!!] 注意：这里的滤波被移除了，因为 MAVG 已经提供了足够的平滑。
+    // 如果需要，可以重新引入，但MAVG是更稳定的方法。
+	
+	printf("freq_A = %.2f Hz, freq_Apr = %.2f Hz, freq_B = %.2f Hz, freq_Bpr = %.2f Hz\r\n", 
+           fA, fApr, fB, fBpr);
 	printf("Zero crossings: na=%d, nap=%d, nb=%d, nbp=%d\r\n", na, nap, nb, nbp);
 
-    /* 4. 频差计算：使用精确测量结果 */
-    float dfA = fA_precise - fApr_precise;
-    float dfB = fB_precise - fBpr_precise;
+    /* 3. 频差计算 */
+    float dfA = fA - fApr;
+    float dfB = fB - fBpr;
 	
-	printf("Precise frequency errors: dfA = %.4f Hz, dfB = %.4f Hz\r\n", dfA, dfB);
+	printf("Frequency errors: dfA = %.3f Hz, dfB = %.3f Hz\r\n", dfA, dfB);
 	
-    /* 5. 调用FLL控制器 */
+    /* 4. 调用新的FLL控制器 */
     FLL_Controller_Update(dfA, &FTW1_cur, &fll_controller_A);
     FLL_Controller_Update(dfB, &FTW2_cur, &fll_controller_B);
 }
