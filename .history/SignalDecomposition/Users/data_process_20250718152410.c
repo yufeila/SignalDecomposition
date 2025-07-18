@@ -657,7 +657,8 @@ static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_
     }
     
     /* 1.1. 积分器重置：当误差极小时，重置积分器防止长期漂移 */
-    if (fabsf(error) < FLL_RESET_THRESHOLD_HZ) {
+    const float RESET_THRESHOLD_HZ = 0.01f;  /* 误差小于此值时重置积分器 */
+    if (fabsf(error) < RESET_THRESHOLD_HZ) {
         controller->integrator = 0.0f;
     }
     
@@ -679,10 +680,12 @@ static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_
     controller->integrator += FLL_KI * error + FLL_ANTI_WINDUP_GAIN * (output_saturated - output);
     
     /* 5. 积分器硬限幅 - 防止积分器无限累积导致溢出 */
-    if (controller->integrator > FLL_INTEGRATOR_MAX) {
-        controller->integrator = FLL_INTEGRATOR_MAX;
-    } else if (controller->integrator < FLL_INTEGRATOR_MIN) {
-        controller->integrator = FLL_INTEGRATOR_MIN;
+    const float INTEGRATOR_MAX = 100.0f;  /* 积分器最大值 (Hz) */
+    const float INTEGRATOR_MIN = -100.0f; /* 积分器最小值 (Hz) */
+    if (controller->integrator > INTEGRATOR_MAX) {
+        controller->integrator = INTEGRATOR_MAX;
+    } else if (controller->integrator < INTEGRATOR_MIN) {
+        controller->integrator = INTEGRATOR_MIN;
     }
 
     /* 6. 更新 DDS 频率字 */

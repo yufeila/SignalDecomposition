@@ -49,11 +49,6 @@
 #define FLL_KI                  (FLL_OMEGA_N * FLL_OMEGA_N * FLL_TS)
 #define FLL_ANTI_WINDUP_GAIN    (1.0f / FLL_KP)
 
-/* 新增：积分器保护参数 */
-#define FLL_INTEGRATOR_MAX      100.0f   /* 积分器最大值 (Hz) */
-#define FLL_INTEGRATOR_MIN      (-100.0f) /* 积分器最小值 (Hz) */
-#define FLL_RESET_THRESHOLD_HZ  0.01f    /* 误差小于此值时重置积分器 (Hz) */
-
 
 typedef struct{
     float freq;
