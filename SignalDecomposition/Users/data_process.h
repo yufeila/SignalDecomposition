@@ -22,13 +22,16 @@
 
 #define SINC_WAVE 1
 #define TRIANGLE_WAVE 2
-#define FREQ_TUNNING 0
+#define FREQ_TUNNING 200.0
+
+#define TUNNING_SIZE_A 8
+#define TUNNING_SIZE_B 8
 
 
 /* ------------ 用户可调参数 ---------------- */
 #define CALIBRATION_SAMPLE_FREQ 600000.0f /* ADC采样率 (硬件固定) */
 #define ADCLK                   25000000.0f /* AD9833 时钟 (Hz) */
-#define MAVG                    20          /* 增加周期数以提高频率估算平滑度 */
+#define MAVG                    40          /* 增加周期数以提高频率估算平滑度 */
 #define MAX_ZC                  60         
 
 /* FLL (锁频环) 控制器设计参数 */
@@ -38,9 +41,9 @@
  * 更新频率 = 1 / 更新周期
  */
 #define FLL_ACTUAL_UPDATE_RATE_HZ (CALIBRATION_SAMPLE_FREQ / (float)(FLL_UPDATE_INTERVAL * CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE * FREQ_AVERAGE_FRAMES))
-#define FLL_BANDWIDTH_HZ        0.08f    /* 环路带宽(Hz): 恢复到稍宽的范围，以获得更快的初始响应 */
+#define FLL_BANDWIDTH_HZ        0.05f    /* 环路带宽(Hz): 恢复到稍宽的范围，以获得更快的初始响应 */
 #define FLL_DAMPING_RATIO       0.7f    /* 阻尼比: 保持0.9以抑制过冲 */
-#define FLL_MAX_STEP_HZ         2.0f    /* 单次最大调节步进(Hz): 保持5Hz，避免剧烈跳变 */
+#define FLL_MAX_STEP_HZ         10.0f    /* 单次最大调节步进(Hz): 保持5Hz，避免剧烈跳变 */
 #define FLL_DEAD_ZONE_HZ        0.2f   /* 死区(Hz): 适当减小，让积分器可以消除小的稳态误差 */
 
 /* 新增：多帧平均参数 */
@@ -57,7 +60,7 @@
 /* 新增：积分器保护参数 */
 #define FLL_INTEGRATOR_MAX      0.0f   /* 积分器最大值 (Hz) */
 #define FLL_INTEGRATOR_MIN      (-0.0f) /* 积分器最小值 (Hz) */
-#define FLL_RESET_THRESHOLD_HZ  0.05f    /* 误差小于此值时重置积分器 (Hz) - 调整得更小 */
+#define FLL_RESET_THRESHOLD_HZ  0.0f    /* 误差小于此值时重置积分器 (Hz) - 调整得更小 */
 
 /* 新增：校准停止逻辑参数 */
 #define FLL_STABLE_THRESHOLD_HZ 0.1f    /* 频率稳定判据阈值(Hz)，应小于死区 */

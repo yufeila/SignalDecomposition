@@ -12,6 +12,12 @@ static float adc_zeroed[BUF_SIZE];     /* 去直流 & 换算电压后的浮点序列 */
 Signal_t sig1, sig2;
 uint32_t FTW1_cur = 0, FTW2_cur = 0;
 static float    pllA_int = 0, pllB_int = 0;
+float freq_tunning_A[TUNNING_SIZE_A]={0,0,11.255855};
+float freq_tunning_B[TUNNING_SIZE_B];
+
+
+
+
 
 /* 频率测量滤波器状态 */
 static float fA_filtered = 40000.0f;
@@ -511,20 +517,20 @@ void Calibration_Frequency(void)
            fA_coarse, fApr_coarse, fB_coarse, fBpr_coarse);
 
     /* 3. 精确频率测量：使用Goertzel相位微分法 */
-//    float fA_precise   = precise_frequency_measurement(buf_A,   CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fA_coarse,   &phase_tracker_A);
-//    float fApr_precise = precise_frequency_measurement(buf_Apr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fApr_coarse, &phase_tracker_Apr);
-//    float fB_precise   = precise_frequency_measurement(buf_B,   CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fB_coarse,   &phase_tracker_B);
-//    float fBpr_precise = precise_frequency_measurement(buf_Bpr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fBpr_coarse, &phase_tracker_Bpr);
+    float fA_precise   = precise_frequency_measurement(buf_A,   CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fA_coarse,   &phase_tracker_A);
+    float fApr_precise = precise_frequency_measurement(buf_Apr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fApr_coarse, &phase_tracker_Apr);
+    float fB_precise   = precise_frequency_measurement(buf_B,   CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fB_coarse,   &phase_tracker_B);
+    float fBpr_precise = precise_frequency_measurement(buf_Bpr, CALIBRATION_SIGNAL_CHANNEL_BUFFER_SIZE, fBpr_coarse, &phase_tracker_Bpr);
 
-//    printf("Precise freq: fA=%.3f, fApr=%.3f, fB=%.3f, fBpr=%.3f Hz\r\n", 
-//           fA_precise, fApr_precise, fB_precise, fBpr_precise);
-//	printf("Zero crossings: na=%d, nap=%d, nb=%d, nbp=%d\r\n", na, nap, nb, nbp);
+    printf("Precise freq: fA=%.3f, fApr=%.3f, fB=%.3f, fBpr=%.3f Hz\r\n", 
+           fA_precise, fApr_precise, fB_precise, fBpr_precise);
+	printf("Zero crossings: na=%d, nap=%d, nb=%d, nbp=%d\r\n", na, nap, nb, nbp);
     
     /* 4. 将频率测量值添加到多帧平均缓冲区 */
-    uint8_t avgA_ready   = add_frequency_measurement(&freq_averager_A,   fA_coarse);
-    uint8_t avgApr_ready = add_frequency_measurement(&freq_averager_Apr, fApr_coarse);
-    uint8_t avgB_ready   = add_frequency_measurement(&freq_averager_B,   fB_coarse);
-    uint8_t avgBpr_ready = add_frequency_measurement(&freq_averager_Bpr, fBpr_coarse);
+    uint8_t avgA_ready   = add_frequency_measurement(&freq_averager_A,   fA_precise);
+    uint8_t avgApr_ready = add_frequency_measurement(&freq_averager_Apr, fApr_precise);
+    uint8_t avgB_ready   = add_frequency_measurement(&freq_averager_B,   fB_precise);
+    uint8_t avgBpr_ready = add_frequency_measurement(&freq_averager_Bpr, fBpr_precise);
     
     frame_counter++;
     printf("Frame %lu: Collected frequency data\r\n", frame_counter);
@@ -548,9 +554,9 @@ void Calibration_Frequency(void)
         
         printf("Averaged frequency errors: dfA = %.5f Hz, dfB = %.5f Hz\r\n", dfA, dfB);
         
-        /* 7. 调用FLL控制器 */
-        FLL_Controller_Update(dfA, &FTW1_cur, &fll_controller_A);
-        FLL_Controller_Update(dfB, &FTW2_cur, &fll_controller_B);
+//        /* 7. 调用FLL控制器 */
+//        FLL_Controller_Update(dfA, &FTW1_cur, &fll_controller_A);
+//        FLL_Controller_Update(dfB, &FTW2_cur, &fll_controller_B);
         
         printf("=== FLL CONTROLLER UPDATED ===\r\n");
     } else {

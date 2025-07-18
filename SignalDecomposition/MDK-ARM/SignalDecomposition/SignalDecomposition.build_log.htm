@@ -29,37 +29,45 @@ Project File Date:  07/18/2025
 Build target 'SignalDecomposition'
 compiling main.c...
 compiling data_process.c...
-..\Users\data_process.c(148): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+..\Users\data_process.c(154): warning:  #1035-D: single-precision operand implicitly converted to double-precision
       ANALYSE_ONE(f1, A1, f2, A2, sig1);
-..\Users\data_process.c(149): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+..\Users\data_process.c(155): warning:  #1035-D: single-precision operand implicitly converted to double-precision
       ANALYSE_ONE(f2, A2, f1, A1, sig2);
+..\Users\data_process.c(229): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+          AD9833_1_Config(sig1->freq + FREQ_TUNNING, AD9833_OUT_SINUS);
+..\Users\data_process.c(233): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+          AD9833_1_Config(sig1->freq + FREQ_TUNNING, AD9833_OUT_TRIANGLE);
+..\Users\data_process.c(240): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	FTW1_cur = (uint32_t)((sig1->freq + FREQ_TUNNING) * 268435456.0f / ADCLK);
+..\Users\data_process.c(245): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+          AD9833_2_Config(sig2->freq + FREQ_TUNNING, AD9833_OUT_SINUS);
+..\Users\data_process.c(249): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+          AD9833_2_Config(sig2->freq + FREQ_TUNNING, AD9833_OUT_TRIANGLE);
+..\Users\data_process.c(255): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	FTW2_cur = (uint32_t)((sig2->freq + FREQ_TUNNING) * 268435456.0f / ADCLK);
 ..\Users\data_process.c(14): warning:  #177-D: variable "pllA_int"  was declared but never referenced
   static float    pllA_int = 0, pllB_int = 0;
 ..\Users\data_process.c(14): warning:  #177-D: variable "pllB_int"  was declared but never referenced
   static float    pllA_int = 0, pllB_int = 0;
-..\Users\data_process.c(17): warning:  #177-D: variable "fA_filtered"  was declared but never referenced
+..\Users\data_process.c(23): warning:  #177-D: variable "fA_filtered"  was declared but never referenced
   static float fA_filtered = 40000.0f;
-..\Users\data_process.c(18): warning:  #177-D: variable "fApr_filtered"  was declared but never referenced
+..\Users\data_process.c(24): warning:  #177-D: variable "fApr_filtered"  was declared but never referenced
   static float fApr_filtered = 40000.0f;
-..\Users\data_process.c(19): warning:  #177-D: variable "fB_filtered"  was declared but never referenced
+..\Users\data_process.c(25): warning:  #177-D: variable "fB_filtered"  was declared but never referenced
   static float fB_filtered = 70000.0f;
-..\Users\data_process.c(20): warning:  #177-D: variable "fBpr_filtered"  was declared but never referenced
+..\Users\data_process.c(26): warning:  #177-D: variable "fBpr_filtered"  was declared but never referenced
   static float fBpr_filtered = 70000.0f;
-..\Users\data_process.c(21): warning:  #177-D: variable "filter_init"  was declared but never referenced
+..\Users\data_process.c(27): warning:  #177-D: variable "filter_init"  was declared but never referenced
   static uint8_t filter_init = 0;
-..\Users\data_process.c(313): warning:  #177-D: variable "phase_tracker_A"  was declared but never referenced
-  static Phase_Tracker_t phase_tracker_A;
-..\Users\data_process.c(314): warning:  #177-D: variable "phase_tracker_Apr"  was declared but never referenced
-  static Phase_Tracker_t phase_tracker_Apr;
-..\Users\data_process.c(315): warning:  #177-D: variable "phase_tracker_B"  was declared but never referenced
-  static Phase_Tracker_t phase_tracker_B;
-..\Users\data_process.c(316): warning:  #177-D: variable "phase_tracker_Bpr"  was declared but never referenced
-  static Phase_Tracker_t phase_tracker_Bpr;
-..\Users\data_process.c: 13 warnings, 0 errors
+..\Users\data_process.c(656): warning:  #177-D: function "FLL_Controller_Update"  was declared but never referenced
+  static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_t *controller)
+..\Users\data_process.c(316): warning:  #177-D: variable "fll_controller_B"  was declared but never referenced
+  static FLL_PI_Controller_t fll_controller_B;
+..\Users\data_process.c: 17 warnings, 0 errors
 linking...
-Program Size: Code=57920 RO-data=128812 RW-data=4216 ZI-data=68368  
+Program Size: Code=58048 RO-data=128724 RW-data=4248 ZI-data=68400  
 FromELF: creating hex file...
-"SignalDecomposition\SignalDecomposition.axf" - 0 Error(s), 13 Warning(s).
+"SignalDecomposition\SignalDecomposition.axf" - 0 Error(s), 17 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -82,7 +90,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE@6.1.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:08
+Build Time Elapsed:  00:00:10
 </pre>
 </body>
 </html>
