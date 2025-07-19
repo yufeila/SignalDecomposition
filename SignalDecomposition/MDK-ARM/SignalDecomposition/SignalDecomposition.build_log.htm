@@ -27,7 +27,6 @@ Project File Date:  07/19/2025
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil5\ARM\ARMCC\Bin'
 Build target 'SignalDecomposition'
-compiling main.c...
 compiling data_process.c...
 ..\Users\data_process.c(174): warning:  #1035-D: single-precision operand implicitly converted to double-precision
       ANALYSE_ONE(f1, A1, f2, A2, sig1);
@@ -38,17 +37,17 @@ compiling data_process.c...
 ..\Users\data_process.c(247): warning:  #1035-D: single-precision operand implicitly converted to double-precision
          phase_index_B = (uint8_t)(sig2->freq / 10000 + 0.5) - 3;
 ..\Users\data_process.c(306): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-              phase_config.freq_Hz = sig1->freq + FREQ_TUNNING_A;
-..\Users\data_process.c(338): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			AD9833_1_Config(sig1->freq + FREQ_TUNNING_A, AD9833_OUT_TRIANGLE, 0);
-..\Users\data_process.c(346): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  	FTW1_cur = (uint32_t)((sig1->freq + FREQ_TUNNING_A) * 268435456.0f / ADCLK);
-..\Users\data_process.c(385): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-              AD9833_2_Config(sig2->freq + FREQ_TUNNING_B, AD9833_OUT_SINUS, 0);
-..\Users\data_process.c(407): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+              phase_config.freq_Hz_B = sig2->freq + FREQ_TUNNING_B;
+..\Users\data_process.c(329): warning:  #1035-D: single-precision operand implicitly converted to double-precision
   			AD9833_2_Config(sig2->freq + FREQ_TUNNING_B, AD9833_OUT_TRIANGLE, 0);
-..\Users\data_process.c(414): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+..\Users\data_process.c(336): warning:  #1035-D: single-precision operand implicitly converted to double-precision
   	FTW2_cur = (uint32_t)((sig2->freq + FREQ_TUNNING_B) * 268435456.0f / ADCLK);
+..\Users\data_process.c(385): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+              phase_config.freq_Hz_A = sig1->freq + FREQ_TUNNING_A;
+..\Users\data_process.c(416): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  			AD9833_1_Config(sig1->freq + FREQ_TUNNING_A, AD9833_OUT_TRIANGLE, 0);
+..\Users\data_process.c(424): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	FTW1_cur = (uint32_t)((sig1->freq + FREQ_TUNNING_A) * 268435456.0f / ADCLK);
 ..\Users\data_process.c(14): warning:  #177-D: variable "pllA_int"  was declared but never referenced
   static float    pllA_int = 0, pllB_int = 0;
 ..\Users\data_process.c(14): warning:  #177-D: variable "pllB_int"  was declared but never referenced
@@ -63,13 +62,13 @@ compiling data_process.c...
   static float fBpr_filtered = 70000.0f;
 ..\Users\data_process.c(47): warning:  #177-D: variable "filter_init"  was declared but never referenced
   static uint8_t filter_init = 0;
-..\Users\data_process.c(812): warning:  #177-D: function "FLL_Controller_Update"  was declared but never referenced
+..\Users\data_process.c(827): warning:  #177-D: function "FLL_Controller_Update"  was declared but never referenced
   static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_t *controller)
-..\Users\data_process.c(472): warning:  #177-D: variable "fll_controller_B"  was declared but never referenced
+..\Users\data_process.c(487): warning:  #177-D: variable "fll_controller_B"  was declared but never referenced
   static FLL_PI_Controller_t fll_controller_B;
 ..\Users\data_process.c: 19 warnings, 0 errors
 linking...
-Program Size: Code=61400 RO-data=128724 RW-data=4472 ZI-data=68392  
+Program Size: Code=61408 RO-data=128792 RW-data=4472 ZI-data=68392  
 FromELF: creating hex file...
 "SignalDecomposition\SignalDecomposition.axf" - 0 Error(s), 19 Warning(s).
 
@@ -94,7 +93,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE@6.1.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:07
+Build Time Elapsed:  00:00:06
 </pre>
 </body>
 </html>

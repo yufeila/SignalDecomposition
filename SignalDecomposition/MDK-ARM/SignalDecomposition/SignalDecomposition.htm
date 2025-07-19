@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SignalDecomposition\SignalDecomposition.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SignalDecomposition\SignalDecomposition.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Jul 19 17:11:56 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Jul 19 19:31:12 2025
 <BR><P>
 <H3>Maximum Stack Usage =        720 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -487,10 +487,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Config
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Config
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDS_Output
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDS_Output
 <LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_hann_fft
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Config
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Config
 <LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
@@ -499,10 +499,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Config
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Config
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDS_Output
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDS_Output
 <LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_hann_fft
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Config
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Config
 <LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
@@ -519,21 +519,21 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Config
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Config
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDS_Output
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDS_Output
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;phase_tunning
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Config
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Config
 </UL>
 
 <P><STRONG><a name="[97]"></a>__aeabi_f2d</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, f2d.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Config
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Config
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PhaseConfig_SetAndApply
+<BR><BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PhaseConfig_SetAndApply
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;analyse_two_signals
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Signal_Info_Display
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDS_Output
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;phase_tunning
 <LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fft_top5_hann_zero_nointp
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Config
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Config
 </UL>
 
 <P><STRONG><a name="[154]"></a>__aeabi_cdcmpeq</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, cdcmple.o(.text), UNUSED)
@@ -750,8 +750,7 @@ Global Symbols
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_SetRegisterValue
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDS_Output
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDS_Output
 </UL>
 
 <P><STRONG><a name="[9a]"></a>AD9833_1_GPIO_Init</STRONG> (Thumb, 72 bytes, Stack size 32 bytes, bsp_ad9833.o(i.AD9833_1_GPIO_Init))
@@ -770,7 +769,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_SetRegisterValue
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDS_Output
+<BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDS_Output
 </UL>
 
 <P><STRONG><a name="[9e]"></a>AD9833_1_SPI_Write</STRONG> (Thumb, 168 bytes, Stack size 32 bytes, bsp_ad9833.o(i.AD9833_1_SPI_Write))
@@ -786,8 +786,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_SPI_Write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Config
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Reset
+<BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Reset
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Config
 </UL>
 
 <P><STRONG><a name="[a0]"></a>AD9833_2_Config</STRONG> (Thumb, 192 bytes, Stack size 56 bytes, bsp_ad9833.o(i.AD9833_2_Config))
@@ -800,8 +800,7 @@ Global Symbols
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_SetRegisterValue
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDS_Output
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDS_Output
 </UL>
 
 <P><STRONG><a name="[a2]"></a>AD9833_2_GPIO_Init</STRONG> (Thumb, 72 bytes, Stack size 32 bytes, bsp_ad9833.o(i.AD9833_2_GPIO_Init))
@@ -820,7 +819,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_SetRegisterValue
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDS_Output
+<BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDS_Output
 </UL>
 
 <P><STRONG><a name="[a4]"></a>AD9833_2_SPI_Write</STRONG> (Thumb, 168 bytes, Stack size 32 bytes, bsp_ad9833.o(i.AD9833_2_SPI_Write))
@@ -836,20 +836,20 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_SPI_Write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Config
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Reset
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Reset
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Config
 </UL>
 
 <P><STRONG><a name="[4]"></a>BusFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_it.o(i.BusFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(RESET)
 </UL>
-<P><STRONG><a name="[aa]"></a>DDS_Output</STRONG> (Thumb, 3740 bytes, Stack size 56 bytes, data_process.o(i.DDS_Output))
+<P><STRONG><a name="[aa]"></a>DDS_Output</STRONG> (Thumb, 3696 bytes, Stack size 56 bytes, data_process.o(i.DDS_Output))
 <BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = DDS_Output &rArr; PhaseConfig_SetAndApply &rArr; X9C503_SetResistance &rArr; X9C503_SetPos &rArr; X9C503_SetDirection &rArr; HAL_GPIO_WritePin
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_GPIO_Init
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Config
+<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Reset
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_GPIO_Init
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Reset
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_GPIO_Init
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Config
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmple
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PhaseConfig_SetAndApply
@@ -859,8 +859,8 @@ Global Symbols
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Reset
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Reset
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Config
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Config
 <LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_fabs
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Process
@@ -1107,11 +1107,11 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Process
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Config
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Config
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_ReadReg
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Reset
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Reset
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_ReadReg
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Config
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Config
 </UL>
 
 <P><STRONG><a name="[9c]"></a>HAL_GPIO_Init</STRONG> (Thumb, 938 bytes, Stack size 32 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_Init))
@@ -1725,7 +1725,7 @@ Global Symbols
 <P><STRONG><a name="[8]"></a>PendSV_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_it.o(i.PendSV_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(RESET)
 </UL>
-<P><STRONG><a name="[ae]"></a>PhaseConfig_SetAndApply</STRONG> (Thumb, 790 bytes, Stack size 136 bytes, phase_config.o(i.PhaseConfig_SetAndApply))
+<P><STRONG><a name="[ae]"></a>PhaseConfig_SetAndApply</STRONG> (Thumb, 884 bytes, Stack size 136 bytes, phase_config.o(i.PhaseConfig_SetAndApply))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = PhaseConfig_SetAndApply &rArr; X9C503_SetResistance &rArr; X9C503_SetPos &rArr; X9C503_SetDirection &rArr; HAL_GPIO_WritePin
 </UL>
 <BR>[Calls]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;X9C503_SetResistance
@@ -2229,7 +2229,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;analyse_two_signals
 </UL>
 
-<P><STRONG><a name="[5b]"></a>main</STRONG> (Thumb, 184 bytes, Stack size 16 bytes, main.o(i.main))
+<P><STRONG><a name="[5b]"></a>main</STRONG> (Thumb, 168 bytes, Stack size 16 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 720<LI>Call Chain = main &rArr; Data_Process &rArr; analyse_two_signals &rArr; fft_top5_hann_zero_nointp &rArr; arm_rfft_fast_f32 &rArr; arm_cfft_f32 &rArr; arm_cfft_radix8by4_f32 &rArr; arm_radix8_butterfly_f32
 </UL>
 <BR>[Calls]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;config_digital_potentiometer
@@ -2249,10 +2249,10 @@ Global Symbols
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Detect_KeyPress
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Process
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Reset
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_GPIO_Init
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_2_Config
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Reset
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_GPIO_Init
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AD9833_1_Config
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
