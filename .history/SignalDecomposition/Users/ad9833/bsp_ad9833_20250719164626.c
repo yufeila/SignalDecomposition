@@ -435,21 +435,16 @@ void AD9833_1_Config(float fout, uint16_t waveform, uint16_t phase)
     AD9833_1_SetRegisterValue(ctrl);                         // 清 RESET，开始振荡
 }
 
-void AD9833_2_Config(float fout, uint16_t waveform, uint16_t phase)
+void AD9833_2_Config(float fout, uint16_t waveform)
 {
     uint32_t freq = (uint32_t)(fout * 268435456.0 / FCLK); // 28-bit
     uint16_t ctrl  = AD9833_B28 | waveform;                // waveform=三角/正弦/方波
-    
-    // 相位转换：度 -> 12位相位字 (0-4095)
-    // 相位分辨率：360°/4096 = 0.0879°
-    uint16_t phase_word = (uint16_t)((phase * 4096.0f / 360.0f) + 0.5f);
-    if (phase_word > 4095) phase_word = 4095; // 限制最大值
 
     AD9833_2_SetRegisterValue(ctrl | AD9833_RESET);          // 复位 + 设波形
     HAL_Delay(1);  // 确保复位稳定
     AD9833_2_SetRegisterValue(AD9833_REG_FREQ0 | (freq & 0x3FFF));      // LSB
     AD9833_2_SetRegisterValue(AD9833_REG_FREQ0 | (freq >> 14));         // MSB
-    AD9833_2_SetRegisterValue(AD9833_REG_PHASE0 | phase_word);          // 设置相位
+    AD9833_2_SetRegisterValue(AD9833_REG_PHASE0 | 0);       // 设置相位为0
     HAL_Delay(1);  // 确保寄存器写入稳定
     AD9833_2_SetRegisterValue(ctrl);                         // 清 RESET，开始振荡
 }

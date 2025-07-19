@@ -29,7 +29,7 @@
 
 #define TUNNING_SIZE_A 8
 #define TUNNING_SIZE_B 8
-#define PHASE_TUNNING_SIZE 64
+#
 
 
 /* ------------ 用户可调参数 ---------------- */

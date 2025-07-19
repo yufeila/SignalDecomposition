@@ -95,7 +95,7 @@ void AD9833_2_SetPhase(unsigned short reg, unsigned short val);									        
 void AD9833_2_Setup(unsigned short freq,unsigned short phase,unsigned short type);	                    //选择频率、相位和波形类型
 void AD9833_2_SetFrequencyQuick(float fout,unsigned short type);	                                    //设置频率及波形类型
 
-void AD9833_1_Config(float fout, uint16_t waveform, uint16_t phase);
-void AD9833_2_Config(float fout, uint16_t waveform, uint16_t phase);
+void AD9833_1_Config(float fout, uint16_t waveform);
+void AD9833_2_Config(float fout, uint16_t waveform);
 
 #endif /* __BSP_AD9833_H */

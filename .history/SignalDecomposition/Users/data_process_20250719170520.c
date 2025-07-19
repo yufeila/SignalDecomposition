@@ -264,6 +264,8 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
         {
             //AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[0], AD9833_OUT_SINUS);
             phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[0];
+
+
         }
         else if(fabs(sig1->freq - 30000) <= 400)
         {
@@ -312,7 +314,7 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
 			g_phase_valid = 0;
 		}
 		
-		AD9833_1_Config(phase_config.freq_Hz, AD9833_OUT_SINUS, dphase);
+		AD9833_1_Config(phase_config.freq_Hz, AD9833_OUT_SINUS);
     }
     else if (sig1->wave_form == TRIANGLE_WAVE)
     {

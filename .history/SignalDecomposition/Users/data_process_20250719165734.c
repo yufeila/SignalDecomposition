@@ -16,24 +16,24 @@ float freq_tunning_A_Sinus[TUNNING_SIZE_A]={8.4,12.1,11.25,10.4,9.5,8.7,12.5,11.
 float freq_tunning_B_Sinus[TUNNING_SIZE_B]={13.05,12.55,11.95,11.3,10.8,4.9,4.3,3.80};
 float freq_tunning_A_Triangle[TUNNING_SIZE_A]={8.4,12.1,11.255855,10.3,9.5,8.7,12.5,11.6};
 float freq_tunning_B_Triangle[TUNNING_SIZE_B]={13.05,12.55,11.9,11.3,10.8,4.9,4.3,3.7};
-uint16_t phase_A_Sinus[TUNNING_SIZE_A][TUNNING_SIZE_B]=
+uint16_t phase_A_Sinus[PHASE_TUNNING_SIZE]=
 {
     /* fA' = 20kHz */
-    {0,0,0,0,0,0,0,0},
+    0,0,0,0,0,0,0,0,
     /* fA' = 30kHz */
-    {0,0,0,0,0,0,0,0},
+    0,0,0,0,0,0,0,0,
     /* fA' = 40kHz */
-    {0,0,0,0,0,0,0,0},
+    0,0,0,0,0,0,0,0,
     /* fA' = 50kHz */
-    {0,0,0,0,0,0,0,0},
+    0,0,0,0,0,0,0,0,
     /* fA' = 60kHz */
-    {0,0,0,0,0,0,0,0},
+    0,0,0,0,0,0,0,0,
     /* fA' = 70kHz */
-    {0,0,0,0,0,0,0,0},
+    0,0,0,0,0,0,0,0,
     /* fA' = 80kHz */
-    {0,0,0,0,0,0,0,0},
+    0,0,0,0,0,0,0,0,
     /* fA' = 90kHz */
-    {0,0,0,0,0,0,0,0}    
+    0,0,0,0,0,0,0,0    
 };
 
 PhaseConfig_t phase_config;
@@ -238,16 +238,7 @@ void LCD_Display_Title_Center(const char* title, uint16_t y_pos)
     LCD_ShowString(start_x, y_pos, total_width, FONT_HEIGHT, 16, (uint8_t*)title);
 }
 
-static void phase_tunning(Signal_t *sig1, Signal_t *sig2, uint16_t *dphase)
-{
-       uint8_t phase_index_A = 0;
-       uint8_t phase_index_B = 0;
-
-       phase_index_A = (uint8_t)(sig1->freq / 10000 + 0.5) - 2;
-       phase_index_B = (uint8_t)(sig2->freq / 10000 + 0.5) - 3;
-
-       *dphase = phase_A_Sinus[phase_index_A][phase_index_B];
-}
+static void phase_tunning(u)
 
 void DDS_Output(Signal_t *sig1, Signal_t *sig2)
 {
@@ -255,7 +246,6 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
     AD9833_2_GPIO_Init();
 
     uint16_t dphase = 0;
-    phase_tunning(sig1, sig2, &dphase);
 
 	/* ------- Í¨µÀ 1 ------- */
     if (sig1->wave_form == SINC_WAVE)
@@ -264,6 +254,8 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
         {
             //AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[0], AD9833_OUT_SINUS);
             phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[0];
+
+
         }
         else if(fabs(sig1->freq - 30000) <= 400)
         {
@@ -312,30 +304,30 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
 			g_phase_valid = 0;
 		}
 		
-		AD9833_1_Config(phase_config.freq_Hz, AD9833_OUT_SINUS, dphase);
+		AD9833_1_Config(phase_config.freq_Hz, AD9833_OUT_SINUS);
     }
     else if (sig1->wave_form == TRIANGLE_WAVE)
     {
 		if(fabs(sig1->freq - 20000) <= 400)
         {
-			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[0], AD9833_OUT_TRIANGLE, 0);
+			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[0], AD9833_OUT_TRIANGLE);
         }
 		else if(fabs(sig1->freq - 30000) <= 400)
-			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[1], AD9833_OUT_TRIANGLE, 0);
+			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[1], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig1->freq - 40000) <= 400)
-			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[2], AD9833_OUT_TRIANGLE, 0);
+			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[2], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig1->freq - 50000) <= 400)
-			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[3], AD9833_OUT_TRIANGLE, 0);
+			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[3], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig1->freq - 60000) <= 400)
-			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[4], AD9833_OUT_TRIANGLE, 0);
+			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[4], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig1->freq - 70000) <= 400)
-			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[5], AD9833_OUT_TRIANGLE, 0);
+			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[5], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig1->freq - 80000) <= 400)
-			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[6], AD9833_OUT_TRIANGLE, 0);
+			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[6], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig1->freq - 90000) <= 400)
-			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[7], AD9833_OUT_TRIANGLE, 0);		
+			AD9833_1_Config(sig1->freq + freq_tunning_A_Triangle[7], AD9833_OUT_TRIANGLE);		
 		else
-			AD9833_1_Config(sig1->freq + FREQ_TUNNING_A, AD9833_OUT_TRIANGLE, 0);
+			AD9833_1_Config(sig1->freq + FREQ_TUNNING_A, AD9833_OUT_TRIANGLE);
 		
     }
 	else
@@ -350,61 +342,61 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
     {
         if(fabs(sig2->freq - 30000) <= 400)
         {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[0], AD9833_OUT_SINUS, 0);
+            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[0], AD9833_OUT_SINUS);
         }
         else if(fabs(sig2->freq - 40000) <= 400)
         {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[1], AD9833_OUT_SINUS, 0);
+            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[1], AD9833_OUT_SINUS);
         }
         else if(fabs(sig2->freq - 50000) <= 400)
         {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[2], AD9833_OUT_SINUS, 0);
+            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[2], AD9833_OUT_SINUS);
         }
         else if(fabs(sig2->freq - 60000) <= 400)
         {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[3], AD9833_OUT_SINUS, 0);
+            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[3], AD9833_OUT_SINUS);
         }
         else if(fabs(sig2->freq - 70000) <= 400)
         {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[4], AD9833_OUT_SINUS, 0);
+            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[4], AD9833_OUT_SINUS);
         }
         else if(fabs(sig2->freq - 80000) <= 400)
         {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[5], AD9833_OUT_SINUS, 0);
+            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[5], AD9833_OUT_SINUS);
         }
         else if(fabs(sig2->freq - 90000) <= 400)
         {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[6], AD9833_OUT_SINUS, 0);
+            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[6], AD9833_OUT_SINUS);
         }
         else if(fabs(sig2->freq - 100000) <= 400)
         {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[7], AD9833_OUT_SINUS, 0);
+            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[7], AD9833_OUT_SINUS);
         }
         else
         {
-            AD9833_2_Config(sig2->freq + FREQ_TUNNING_B, AD9833_OUT_SINUS, 0);
+            AD9833_2_Config(sig2->freq + FREQ_TUNNING_B, AD9833_OUT_SINUS);
         }
     }
     else if (sig2->wave_form == TRIANGLE_WAVE)
     {
 		if(fabs(sig2->freq - 30000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[0], AD9833_OUT_TRIANGLE, 0);
+			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[0], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig2->freq - 40000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[1], AD9833_OUT_TRIANGLE, 0);
+			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[1], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig2->freq - 50000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[2], AD9833_OUT_TRIANGLE, 0);
+			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[2], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig2->freq - 60000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[3], AD9833_OUT_TRIANGLE, 0);
+			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[3], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig2->freq - 70000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[4], AD9833_OUT_TRIANGLE, 0);
+			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[4], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig2->freq - 80000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[5], AD9833_OUT_TRIANGLE, 0);
+			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[5], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig2->freq - 90000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[6], AD9833_OUT_TRIANGLE, 0);
+			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[6], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig2->freq - 100000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[7], AD9833_OUT_TRIANGLE, 0);
+			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[7], AD9833_OUT_TRIANGLE);
 		else
-			AD9833_2_Config(sig2->freq + FREQ_TUNNING_B, AD9833_OUT_TRIANGLE, 0);
+			AD9833_2_Config(sig2->freq + FREQ_TUNNING_B, AD9833_OUT_TRIANGLE);
 		
     }
 	else

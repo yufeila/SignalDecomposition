@@ -312,7 +312,7 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
 			g_phase_valid = 0;
 		}
 		
-		AD9833_1_Config(phase_config.freq_Hz, AD9833_OUT_SINUS, dphase);
+		AD9833_1_Config(phase_config.freq_Hz, AD9833_OUT_SINUS);
     }
     else if (sig1->wave_form == TRIANGLE_WAVE)
     {
