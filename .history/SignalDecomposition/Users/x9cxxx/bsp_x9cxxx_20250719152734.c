@@ -109,12 +109,17 @@ void X9C503_Store(void) {
 // ---- 6. 初始化（必须先在while循环开始前初始化IO） ----
 void X9C103_Init(void) {
     GPIO_InitTypeDef GPIO_InitStruct = {0};
-    __HAL_RCC_GPIOG_CLK_ENABLE();
-    GPIO_InitStruct.Pin = X9C103_INC_PIN | X9C103_UD_PIN | X9C103_CS_PIN;
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+	__HAL_RCC_GPIOC_CLK_ENABLE();
+    GPIO_InitStruct.Pin = X9C103_INC_PIN | X9C103_UD_PIN;
     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-    HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    
+    GPIO_InitStruct.Pin = X9C103_CS_PIN;
+    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 		
     X9C103_CS_HIGH();
     X9C103_INC_HIGH();
@@ -122,12 +127,12 @@ void X9C103_Init(void) {
 
 void X9C503_Init(void) {
     GPIO_InitTypeDef GPIO_InitStruct = {0};
-    __HAL_RCC_GPIOG_CLK_ENABLE();
+    __HAL_RCC_GPIOA_CLK_ENABLE();
     GPIO_InitStruct.Pin = X9C503_INC_PIN | X9C503_UD_PIN | X9C503_CS_PIN;
     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-    HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     X9C503_CS_HIGH();
     X9C503_INC_HIGH();

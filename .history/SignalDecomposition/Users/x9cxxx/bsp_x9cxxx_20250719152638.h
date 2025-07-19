@@ -2,7 +2,7 @@
  * @Author: yyf 17786321727@163.com
  * @Date: 2025-07-14 10:41:49
  * @LastEditors: yyf 17786321727@163.com
- * @LastEditTime: 2025-07-19 15:27:05
+ * @LastEditTime: 2025-07-19 15:25:51
  * @FilePath: /code/SignalDecomposition/Users/x9cxxx/bsp_x9cxxx.h
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -15,17 +15,17 @@
 // 引脚配置，可以配置称适合你的硬件
 #define X9C103_INC_GPIO_PORT    GPIOG
 #define X9C103_INC_PIN         GPIO_PIN_2
-#define X9C103_UD_GPIO_PORT    GPIOG
-#define X9C103_UD_PIN          GPIO_PIN_4
-#define X9C103_CS_GPIO_PORT    GPIOG
-#define X9C103_CS_PIN          GPIO_PIN_6
+#define X9C103_UD_GPIO_PORT    GPIOA
+#define X9C103_UD_PIN          GPIO_PIN_14
+#define X9C103_CS_GPIO_PORT    GPIOC
+#define X9C103_CS_PIN          GPIO_PIN_10
 
-#define X9C503_INC_GPIO_PORT    GPIOG
-#define X9C503_INC_PIN         GPIO_PIN_3
-#define X9C503_UD_GPIO_PORT    GPIOG
-#define X9C503_UD_PIN          GPIO_PIN_5
-#define X9C503_CS_GPIO_PORT    GPIOG
-#define X9C503_CS_PIN          GPIO_PIN_7
+#define X9C503_INC_GPIO_PORT    GPIOA
+#define X9C503_INC_PIN         GPIO_PIN_11
+#define X9C503_UD_GPIO_PORT    GPIOA
+#define X9C503_UD_PIN          GPIO_PIN_13
+#define X9C503_CS_GPIO_PORT    GPIOA
+#define X9C503_CS_PIN          GPIO_PIN_15
 
 
 

@@ -23,9 +23,9 @@
 #define X9C503_INC_GPIO_PORT    GPIOG
 #define X9C503_INC_PIN         GPIO_PIN_3
 #define X9C503_UD_GPIO_PORT    GPIOG
-#define X9C503_UD_PIN          GPIO_PIN_5
-#define X9C503_CS_GPIO_PORT    GPIOG
-#define X9C503_CS_PIN          GPIO_PIN_7
+#define X9C503_UD_PIN          GPIO_PIN_13
+#define X9C503_CS_GPIO_PORT    GPIOA
+#define X9C503_CS_PIN          GPIO_PIN_15
 
 
 
