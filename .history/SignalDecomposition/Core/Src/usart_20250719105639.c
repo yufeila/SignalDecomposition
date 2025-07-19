@@ -23,8 +23,10 @@
 /* USER CODE BEGIN 0 */
 #include <stdio.h>
 uint8_t rxBuffer[50];
-extern PhaseConfig_t phase_config;
+
+uint16_t g_phase_deg = 0;
 uint8_t g_phase_valid = 0;
+extern PhaseConfig_t phase_config;
 
 /* USER CODE END 0 */
 

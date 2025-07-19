@@ -400,14 +400,14 @@ uint8_t get_message(uint8_t *buf, uint16_t len, uint16_t *p_deg)
 //void X9C103_SetResistance(float resistance);
 //void X9C503_SetResistance(float resistance);
 
-void config_digital_potentiometer(void)
+void config_digital_potentiometer(uint16_t deg)
 {
 
-    /* 初始化数字电位器 */
-    X9C_Init();
-    /* 配置数字电位器 */
-    PhaseConfig_SetAndApply(&phase_config);
+    /* 根据相位角计算电阻值 */
 
+    X9C_Init();
+    X9C103_SetResistance(r1_103);
+    X9C503_SetResistance(r2_503);
 }
 
 void StartSampling(void)

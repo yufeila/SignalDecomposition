@@ -400,7 +400,7 @@ uint8_t get_message(uint8_t *buf, uint16_t len, uint16_t *p_deg)
 //void X9C103_SetResistance(float resistance);
 //void X9C503_SetResistance(float resistance);
 
-void config_digital_potentiometer(void)
+void config_digital_potentiometer( deg)
 {
 
     /* 初始化数字电位器 */

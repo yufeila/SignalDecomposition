@@ -226,52 +226,7 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
 	/* ------- 通道 1 ------- */
     if (sig1->wave_form == SINC_WAVE)
     {
-        if(fabs(sig1->freq - 20000) <= 400)
-        {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[0], AD9833_OUT_SINUS);
-            phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[0];
-
-        }
-        else if(fabs(sig1->freq - 30000) <= 400)
-        {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[1], AD9833_OUT_SINUS);
-            phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[1];
-        }
-        else if(fabs(sig1->freq - 40000) <= 400)
-        {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[2], AD9833_OUT_SINUS);
-            phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[2];
-        }
-        else if(fabs(sig1->freq - 50000) <= 400)
-        {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[3], AD9833_OUT_SINUS);
-            phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[3];
-        }
-        else if(fabs(sig1->freq - 60000) <= 400)
-        {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[4], AD9833_OUT_SINUS);
-            phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[4];
-        }
-        else if(fabs(sig1->freq - 70000) <= 400)
-        {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[5], AD9833_OUT_SINUS);
-            phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[5];
-        }
-        else if(fabs(sig1->freq - 80000) <= 400)
-        {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[6], AD9833_OUT_SINUS);
-            phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[6];
-        }
-        else if(fabs(sig1->freq - 90000) <= 400)
-        {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[7], AD9833_OUT_SINUS);
-            phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[7];
-        }
-        else
-        {
-            AD9833_1_Config(sig1->freq + FREQ_TUNNING_A, AD9833_OUT_SINUS);
-            phase_config.freq_Hz = sig1->freq + FREQ_TUNNING_A;
-        }
+        AD9833_1_Config(sig1->freq + FREQ_TUNNING_A, AD9833_OUT_SINUS);
     }
     else if (sig1->wave_form == TRIANGLE_WAVE)
     {
@@ -307,61 +262,27 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
 	/* ------- 通道 2 ------- */
     if (sig2->wave_form == SINC_WAVE)
     {
-        if(fabs(sig2->freq - 30000) <= 400)
-        {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[0], AD9833_OUT_SINUS);
-        }
-        else if(fabs(sig2->freq - 40000) <= 400)
-        {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[1], AD9833_OUT_SINUS);
-        }
-        else if(fabs(sig2->freq - 50000) <= 400)
-        {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[2], AD9833_OUT_SINUS);
-        }
-        else if(fabs(sig2->freq - 60000) <= 400)
-        {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[3], AD9833_OUT_SINUS);
-        }
-        else if(fabs(sig2->freq - 70000) <= 400)
-        {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[4], AD9833_OUT_SINUS);
-        }
-        else if(fabs(sig2->freq - 80000) <= 400)
-        {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[5], AD9833_OUT_SINUS);
-        }
-        else if(fabs(sig2->freq - 90000) <= 400)
-        {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[6], AD9833_OUT_SINUS);
-        }
-        else if(fabs(sig2->freq - 100000) <= 400)
-        {
-            AD9833_2_Config(sig2->freq + freq_tunning_B_Sinus[7], AD9833_OUT_SINUS);
-        }
-        else
-        {
-            AD9833_2_Config(sig2->freq + FREQ_TUNNING_B, AD9833_OUT_SINUS);
-        }
+		
+        AD9833_2_Config(sig2->freq + FREQ_TUNNING_B, AD9833_OUT_SINUS);
     }
     else if (sig2->wave_form == TRIANGLE_WAVE)
     {
 		if(fabs(sig2->freq - 30000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[0], AD9833_OUT_TRIANGLE);
+			AD9833_2_Config(sig2->freq + freq_tunning_B[0], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig2->freq - 40000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[1], AD9833_OUT_TRIANGLE);
+			AD9833_2_Config(sig2->freq + freq_tunning_B[1], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig2->freq - 50000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[2], AD9833_OUT_TRIANGLE);
+			AD9833_2_Config(sig2->freq + freq_tunning_B[2], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig2->freq - 60000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[3], AD9833_OUT_TRIANGLE);
+			AD9833_2_Config(sig2->freq + freq_tunning_B[3], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig2->freq - 70000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[4], AD9833_OUT_TRIANGLE);
+			AD9833_2_Config(sig2->freq + freq_tunning_B[4], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig2->freq - 80000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[5], AD9833_OUT_TRIANGLE);
+			AD9833_2_Config(sig2->freq + freq_tunning_B[5], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig2->freq - 90000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[6], AD9833_OUT_TRIANGLE);
+			AD9833_2_Config(sig2->freq + freq_tunning_B[6], AD9833_OUT_TRIANGLE);
 		else if(fabs(sig2->freq - 100000) <= 400)
-			AD9833_2_Config(sig2->freq + freq_tunning_B_Triangle[7], AD9833_OUT_TRIANGLE);
+			AD9833_2_Config(sig2->freq + freq_tunning_B[7], AD9833_OUT_TRIANGLE);
 		else
 			AD9833_2_Config(sig2->freq + FREQ_TUNNING_B, AD9833_OUT_TRIANGLE);
 		
@@ -400,14 +321,16 @@ uint8_t get_message(uint8_t *buf, uint16_t len, uint16_t *p_deg)
 //void X9C103_SetResistance(float resistance);
 //void X9C503_SetResistance(float resistance);
 
-void config_digital_potentiometer(void)
+void config_digital_potentiometer(uint16_t deg)
 {
+    float r1_103 = 0;
+    float r2_503 = 0;
 
-    /* 初始化数字电位器 */
+    /* 根据相位角计算电阻值 */
+
     X9C_Init();
-    /* 配置数字电位器 */
-    PhaseConfig_SetAndApply(&phase_config);
-
+    X9C103_SetResistance(r1_103);
+    X9C503_SetResistance(r2_503);
 }
 
 void StartSampling(void)

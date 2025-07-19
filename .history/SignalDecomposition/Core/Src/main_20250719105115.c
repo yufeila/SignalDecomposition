@@ -41,7 +41,6 @@
 extern uint32_t FTW1_cur;
 extern uint32_t FTW2_cur;
 uint16_t output_ready = 0;
-extern uint8_t g_phase_valid;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -128,7 +127,7 @@ int main(void)
   {
 	  if(g_phase_valid)
 	  {
-      config_digital_potentiometer();
+      config_digital_potentiometer(g_phase_deg);
       g_phase_valid = 0;
 	  }
 	  Detect_KeyPress();
