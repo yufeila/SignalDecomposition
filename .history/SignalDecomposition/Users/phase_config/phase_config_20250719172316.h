@@ -6,7 +6,7 @@
 typedef struct {
     float phi_deg;        // 目标相位（度）
     float freq_Hz_A;        // 测得A'频率（Hz）
-    float freq_Hz_B;        // 测得B'频率（Hz）
+    float freq_Hz_B;        // 测得频率（Hz）
     float R1_ohm;         // X9C503实际阻值
     float R2_ohm;         // X9C103实际阻值
     float phi_actual_deg; // 实际实现相位

@@ -17,7 +17,7 @@ void PhaseConfig_SetAndApply(PhaseConfig_t *cfg)
     float phi_rad = cfg->phi_deg * PI / 180.0f;
     float phi_rad_A = phi_rad / 2.0f * (cfg->freq_Hz_A / cfg->freq_Hz_B);
 
-    printf("phi_rad_A: %f\r\n", phi_rad_A);
+    pr
 
     // --- 1. ±ÕÊ½½üËÆ ---
     float Req = tanf(phi_rad_A / 4.0f) / w;

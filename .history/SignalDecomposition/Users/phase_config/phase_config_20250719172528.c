@@ -15,12 +15,10 @@ void PhaseConfig_SetAndApply(PhaseConfig_t *cfg)
     // --- 频率和相位 ---
     float w = 2.0f * PI * cfg->freq_Hz_A;
     float phi_rad = cfg->phi_deg * PI / 180.0f;
-    float phi_rad_A = phi_rad / 2.0f * (cfg->freq_Hz_A / cfg->freq_Hz_B);
-
-    printf("phi_rad_A: %f\r\n", phi_rad_A);
+    float phi_A = phi_rad
 
     // --- 1. 闭式近似 ---
-    float Req = tanf(phi_rad_A / 4.0f) / w;
+    float Req = tanf(phi_rad / 4.0f) / w;
     float R1 = Req / C1;
     float R2 = Req / C2;
 
@@ -47,8 +45,7 @@ void PhaseConfig_SetAndApply(PhaseConfig_t *cfg)
             if (t1 < 0 || t1 > X9C503_STEPS || t2 < 0 || t2 > X9C103_STEPS) continue;
             float R1t = (float)t1 / X9C503_STEPS * X9C503_TOTAL_RESISTANCE;
             float R2t = (float)t2 / X9C103_STEPS * X9C103_TOTAL_RESISTANCE;
-            float phi_A = 2.0f * atanf(w * R1t * C1) + 2.0f * atanf(w * R2t * C2);
-            float phi = 2.0f * phi_A * (cfg->freq_Hz_B/cfg->freq_Hz_B);
+            float phi = 2.0f * atanf(w * R1t * C1) + 2.0f * atanf(w * R2t * C2);
             float err = fabsf(phi * 180.0f / PI - cfg->phi_deg);
             if (err < best_err) {
                 best_err = err;
