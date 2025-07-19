@@ -124,12 +124,18 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  static uint8_t phase_inited = 1;
   while (1)
   {
 	  if(g_phase_valid)
 	  {
-		  config_digital_potentiometer();
-		  g_phase_valid = 0;
+		  if(phase_inited)
+		  {
+			  config_digital_potentiometer();
+			  phase_inited = 0;
+		  }
+		  
+		  //g_phase_valid = 0;
 	  }
 	  Detect_KeyPress();
 	  if(signal_decomposition_flag == 1)

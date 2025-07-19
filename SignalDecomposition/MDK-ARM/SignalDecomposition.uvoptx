@@ -152,9 +152,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>352</LineNumber>
+          <LineNumber>402</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>134229572</Address>
+          <Address>134278466</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -163,14 +163,14 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\Users\data_process.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\SignalDecomposition\../Users/data_process.c\352</Expression>
+          <Expression>\\SignalDecomposition\../Users/data_process.c\402</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>389</LineNumber>
+          <LineNumber>396</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>134278660</Address>
+          <Address>134278428</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -179,14 +179,14 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\Users\data_process.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\SignalDecomposition\../Users/data_process.c\389</Expression>
+          <Expression>\\SignalDecomposition\../Users/data_process.c\396</Expression>
         </Bp>
         <Bp>
           <Number>2</Number>
           <Type>0</Type>
-          <LineNumber>395</LineNumber>
+          <LineNumber>359</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>134278698</Address>
+          <Address>134229370</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -195,14 +195,30 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\Users\data_process.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\SignalDecomposition\../Users/data_process.c\395</Expression>
+          <Expression>\\SignalDecomposition\../Users/data_process.c\359</Expression>
         </Bp>
         <Bp>
           <Number>3</Number>
           <Type>0</Type>
+          <LineNumber>131</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134279084</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>../Core/Src/main.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\SignalDecomposition\../Core/Src/main.c\131</Expression>
+        </Bp>
+        <Bp>
+          <Number>4</Number>
+          <Type>0</Type>
           <LineNumber>250</LineNumber>
-          <EnabledFlag>0</EnabledFlag>
-          <Address>134246082</Address>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134245882</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -214,7 +230,7 @@
           <Expression>\\SignalDecomposition\../Core/Src/usart.c\250</Expression>
         </Bp>
         <Bp>
-          <Number>4</Number>
+          <Number>5</Number>
           <Type>0</Type>
           <LineNumber>345</LineNumber>
           <EnabledFlag>0</EnabledFlag>
@@ -230,7 +246,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>5</Number>
+          <Number>6</Number>
           <Type>0</Type>
           <LineNumber>382</LineNumber>
           <EnabledFlag>0</EnabledFlag>
@@ -246,7 +262,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>6</Number>
+          <Number>7</Number>
           <Type>0</Type>
           <LineNumber>388</LineNumber>
           <EnabledFlag>0</EnabledFlag>
@@ -262,9 +278,41 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>7</Number>
+          <Number>8</Number>
           <Type>0</Type>
-          <LineNumber>406</LineNumber>
+          <LineNumber>389</LineNumber>
+          <EnabledFlag>0</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>startup_stm32f407xx.s</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>9</Number>
+          <Type>0</Type>
+          <LineNumber>395</LineNumber>
+          <EnabledFlag>0</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>startup_stm32f407xx.s</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>10</Number>
+          <Type>0</Type>
+          <LineNumber>360</LineNumber>
           <EnabledFlag>0</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -274,6 +322,70 @@
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>0</BreakIfRCount>
           <Filename>..\Users\data_process.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>11</Number>
+          <Type>0</Type>
+          <LineNumber>397</LineNumber>
+          <EnabledFlag>0</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>..\Users\data_process.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>12</Number>
+          <Type>0</Type>
+          <LineNumber>403</LineNumber>
+          <EnabledFlag>0</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>..\Users\data_process.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>13</Number>
+          <Type>0</Type>
+          <LineNumber>414</LineNumber>
+          <EnabledFlag>0</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>..\Users\data_process.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>14</Number>
+          <Type>0</Type>
+          <LineNumber>137</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>../Core/Src/main.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression></Expression>
         </Bp>
@@ -1175,24 +1287,24 @@
     <File>
       <GroupNumber>5</GroupNumber>
       <FileNumber>56</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\Users\data_process.c</PathWithFileName>
-      <FilenameWithoutPath>data_process.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>5</GroupNumber>
-      <FileNumber>57</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Users\data_process.h</PathWithFileName>
       <FilenameWithoutPath>data_process.h</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>5</GroupNumber>
+      <FileNumber>57</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Users\data_process.c</PathWithFileName>
+      <FilenameWithoutPath>data_process.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

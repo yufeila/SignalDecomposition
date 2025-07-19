@@ -680,14 +680,14 @@
               <FilePath>..\Users\fft_hp_estimate\fft_hp_estimate.h</FilePath>
             </File>
             <File>
-              <FileName>data_process.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Users\data_process.c</FilePath>
-            </File>
-            <File>
               <FileName>data_process.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Users\data_process.h</FilePath>
+            </File>
+            <File>
+              <FileName>data_process.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Users\data_process.c</FilePath>
             </File>
             <File>
               <FileName>phase_config.c</FileName>

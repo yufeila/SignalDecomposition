@@ -12,12 +12,12 @@ static float adc_zeroed[BUF_SIZE];     /* 去直流 & 换算电压后的浮点序列 */
 Signal_t sig1, sig2;
 uint32_t FTW1_cur = 0, FTW2_cur = 0;
 static float    pllA_int = 0, pllB_int = 0;
-float freq_tunning_A_Sinus[TUNNING_SIZE_A]={8.4,12.1,11.255855,10.4,9.5,8.7,12.5,11.6};
+float freq_tunning_A_Sinus[TUNNING_SIZE_A]={8.4,12.1,11.25,10.4,9.5,8.7,12.5,11.6};
 float freq_tunning_B_Sinus[TUNNING_SIZE_B]={13.05,12.55,11.95,11.3,10.8,4.9,4.3,3.80};
 float freq_tunning_A_Triangle[TUNNING_SIZE_A]={8.4,12.1,11.255855,10.3,9.5,8.7,12.5,11.6};
 float freq_tunning_B_Triangle[TUNNING_SIZE_B]={13.05,12.55,11.9,11.3,10.8,4.9,4.3,3.7};
 PhaseConfig_t phase_config;
-
+extern uint8_t g_phase_valid;
 
 /* 频率测量滤波器状态 */
 static float fA_filtered = 40000.0f;
@@ -228,7 +228,7 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
     {
         if(fabs(sig1->freq - 20000) <= 400)
         {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[0], AD9833_OUT_SINUS);
+            //AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[0], AD9833_OUT_SINUS);
             phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[0];
 
         }
@@ -239,12 +239,12 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
         }
         else if(fabs(sig1->freq - 40000) <= 400)
         {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[2], AD9833_OUT_SINUS);
+            //AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[2], AD9833_OUT_SINUS);
             phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[2];
         }
         else if(fabs(sig1->freq - 50000) <= 400)
         {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[3], AD9833_OUT_SINUS);
+            //AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[3], AD9833_OUT_SINUS);
             phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[3];
         }
         else if(fabs(sig1->freq - 60000) <= 400)
@@ -254,24 +254,32 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
         }
         else if(fabs(sig1->freq - 70000) <= 400)
         {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[5], AD9833_OUT_SINUS);
+            //AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[5], AD9833_OUT_SINUS);
             phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[5];
         }
         else if(fabs(sig1->freq - 80000) <= 400)
         {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[6], AD9833_OUT_SINUS);
+            //AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[6], AD9833_OUT_SINUS);
             phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[6];
         }
         else if(fabs(sig1->freq - 90000) <= 400)
         {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[7], AD9833_OUT_SINUS);
+            //AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[7], AD9833_OUT_SINUS);
             phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[7];
         }
         else
         {
-            AD9833_1_Config(sig1->freq + FREQ_TUNNING_A, AD9833_OUT_SINUS);
+            //AD9833_1_Config(sig1->freq + FREQ_TUNNING_A, AD9833_OUT_SINUS);
             phase_config.freq_Hz = sig1->freq + FREQ_TUNNING_A;
         }
+		if(g_phase_valid)
+		{
+			/* 配置数字电位器 */
+			PhaseConfig_SetAndApply(&phase_config);
+			g_phase_valid = 0;
+		}
+			
+		AD9833_1_Config(phase_config.freq_Hz, AD9833_OUT_SINUS);
     }
     else if (sig1->wave_form == TRIANGLE_WAVE)
     {
@@ -407,8 +415,6 @@ void config_digital_potentiometer(void)
     DWT_Delay_Init();
     /* 初始化数字电位器 */
     X9C_Init();
-    /* 配置数字电位器 */
-    PhaseConfig_SetAndApply(&phase_config);
 }
 
 void StartSampling(void)
