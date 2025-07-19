@@ -27,11 +27,6 @@ void X9C103_SetDirection(uint8_t up) {
     else   X9C103_UD_LOW();
 }
 
-void X9C503_SetDirection(uint8_t up) {
-    if(up) X9C503_UD_HIGH();
-    else   X9C503_UD_LOW();
-}
-
 // ---- 3. INC 脉冲函数（负边沿有效） ----
 void X9C103_IncPulse(void) {
     X9C103_INC_HIGH();  // INC高，准备下一个脉冲
@@ -41,16 +36,8 @@ void X9C103_IncPulse(void) {
     // 下一个循环再INC高，周期t_CYC >= 2us
 }
 
-void X9C503_IncPulse(void) {
-    X9C503_INC_HIGH();  // INC高，准备下一个脉冲
-    DWT_Delay_us(1); // t_IH >= 1us
-    X9C503_INC_LOW();   // INC低，触发
-    DWT_Delay_us(1); // t_IL >= 1us
-    // 下一个循环再INC高，周期t_CYC >= 2us
-}
-
 // ---- 4. 步进设置函数 ----
-void X9C103_SetPos(uint8_t pos) {
+void X9C_SetPos(uint8_t pos) {
     X9C103_Select();
     DWT_Delay_us(0.1); // t_CI >= 100ns, 这里用0.1us
     // 步进前归零
@@ -69,39 +56,12 @@ void X9C103_SetPos(uint8_t pos) {
     X9C103_Deselect();
 }
 
-void X9C503_SetPos(uint8_t pos) {
-    X9C503_Select();
-    DWT_Delay_us(0.1); // t_CI >= 100ns, 这里用0.1us
-    // 步进前归零
-    X9C503_SetDirection(0); // 向下（归零）
-    DWT_Delay_us(3);     // t_ID >= 100ns, t_DI >= 2.9us
-    for(int i=0; i<99; i++) X9C503_IncPulse();
-
-    // 向上步进到目标值
-    X9C503_SetDirection(1);
-    DWT_Delay_us(3);     // t_ID >= 100ns, t_DI >= 2.9us
-    for(int i=0; i<pos; i++) X9C503_IncPulse();
-
-    // 完成后，保持INC为低
-    X9C503_INC_LOW();
-    DWT_Delay_us(1); // t_IC >= 1us
-    X9C503_Deselect();
-}
-
 // ---- 5. 非易失性存储写入 ----
 // 步骤：先INC=高，再CS从低拉高，等待t_CPH
 void X9C103_Store(void) {
     X9C103_INC_HIGH();
     DWT_Delay_us(1);
     X9C103_Deselect();     // CS 拉高，存储触发
-    DWT_Delay_us(20000);// 等待20ms
-    // 保持INC高电平
-}
-
-void X9C503_Store(void) {
-    X9C503_INC_HIGH();
-    DWT_Delay_us(1);
-    X9C503_Deselect();     // CS 拉高，存储触发
     DWT_Delay_us(20000);// 等待20ms
     // 保持INC高电平
 }
@@ -133,22 +93,10 @@ void X9C503_Init(void) {
     X9C503_INC_HIGH();
 }
 
-// 统一初始化函数
-void X9C_Init(void) {
-    X9C103_Init();
-    X9C503_Init();
-}
-
 void X9C103_SetPos_Store(uint8_t pos)
 {
     X9C103_SetPos(pos); // 设置步数
     X9C103_Store();     // 存储到非易失NVM
-}
-
-void X9C503_SetPos_Store(uint8_t pos)
-{
-    X9C503_SetPos(pos); // 设置步数
-    X9C503_Store();     // 存储到非易失NVM
 }
 
 /**
@@ -165,7 +113,7 @@ void X9C503_SetResistance(float resistance)
     // 目标步数，四舍五入
     uint8_t pos = (uint8_t)((resistance / r_step) + 0.5f);
 
-    X9C503_SetPos(pos);  // 修正：调用X9C503_SetPos而不是X9C103_SetPos
+    X9C103_SetPos(pos);
 }
 
 /**

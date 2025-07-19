@@ -34,15 +34,8 @@
 #define X9C103_INC_LOW()     HAL_GPIO_WritePin(X9C103_INC_GPIO_PORT, X9C103_INC_PIN, GPIO_PIN_RESET)
 #define X9C103_UD_HIGH()     HAL_GPIO_WritePin(X9C103_UD_GPIO_PORT, X9C103_UD_PIN, GPIO_PIN_SET)
 #define X9C103_UD_LOW()      HAL_GPIO_WritePin(X9C103_UD_GPIO_PORT, X9C103_UD_PIN, GPIO_PIN_RESET)
-#define X9C103_CS_HIGH()     HAL_GPIO_WritePin(X9C103_CS_GPIO_PORT, X9C103_CS_PIN, GPIO_PIN_SET)
-#define X9C103_CS_LOW()      HAL_GPIO_WritePin(X9C103_CS_GPIO_PORT, X9C103_CS_PIN, GPIO_PIN_RESET)
-
-#define X9C503_INC_HIGH()    HAL_GPIO_WritePin(X9C503_INC_GPIO_PORT, X9C503_INC_PIN, GPIO_PIN_SET)
-#define X9C503_INC_LOW()     HAL_GPIO_WritePin(X9C503_INC_GPIO_PORT, X9C503_INC_PIN, GPIO_PIN_RESET)
-#define X9C503_UD_HIGH()     HAL_GPIO_WritePin(X9C503_UD_GPIO_PORT, X9C503_UD_PIN, GPIO_PIN_SET)
-#define X9C503_UD_LOW()      HAL_GPIO_WritePin(X9C503_UD_GPIO_PORT, X9C503_UD_PIN, GPIO_PIN_RESET)
-#define X9C503_CS_HIGH()     HAL_GPIO_WritePin(X9C503_CS_GPIO_PORT, X9C503_CS_PIN, GPIO_PIN_SET)
-#define X9C503_CS_LOW()      HAL_GPIO_WritePin(X9C503_CS_GPIO_PORT, X9C503_CS_PIN, GPIO_PIN_RESET)
+#define X9C_CS_HIGH()     HAL_GPIO_WritePin(X9C_CS_GPIO_PORT_103, X9C_CS_PIN_103, GPIO_PIN_SET)
+#define X9C_CS_LOW()      HAL_GPIO_WritePin(X9C_CS_GPIO_PORT_103, X9C_CS_PIN_103, GPIO_PIN_RESET)
 
 // ---- 芯片型号选择 ----
 #define X9C103    0
@@ -55,32 +48,8 @@
 #define X9C103_STEPS            99
 
 // 相关函数声明
-void DWT_Delay_Init(void);
-void DWT_Delay_us(uint32_t us);
-
-// X9C103相关函数
-void X9C103_Init(void);
-void X9C103_Select(void);
-void X9C103_Deselect(void);
-void X9C103_SetDirection(uint8_t up);
-void X9C103_IncPulse(void);
-void X9C103_SetPos(uint8_t pos);
-void X9C103_Store(void);
-void X9C103_SetPos_Store(uint8_t pos);
-void X9C103_SetResistance(float resistance);
-
-// X9C503相关函数
-void X9C503_Init(void);
-void X9C503_Select(void);
-void X9C503_Deselect(void);
-void X9C503_SetDirection(uint8_t up);
-void X9C503_IncPulse(void);
-void X9C503_SetPos(uint8_t pos);
-void X9C503_Store(void);
-void X9C503_SetPos_Store(uint8_t pos);
-void X9C503_SetResistance(float resistance);
-
-// 统一初始化函数
 void X9C_Init(void);
+void X9C103_SetResistance(float resistance);
+void X9C503_SetResistance(float resistance);
 
 #endif /* __BSP_X9CXXX_H */
