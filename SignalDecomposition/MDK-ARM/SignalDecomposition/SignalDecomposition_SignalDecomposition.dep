@@ -5,7 +5,7 @@ F (armlib_lock_glue.c)(0x6879E626)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6879E625)
 I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x6025237E)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6879E625)
-F (../Core/Src/main.c)(0x687A35CB)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ../Users-I.\RTE\_SignalDecomposition-ID:\Keil5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="541" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DSTM32_THREAD_SAFE_STRATEGY="2"-o signaldecomposition\main.o --omf_browse signaldecomposition\main.crf --depend signaldecomposition\main.d)
+F (../Core/Src/main.c)(0x687B0B9C)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ../Users-I.\RTE\_SignalDecomposition-ID:\Keil5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="541" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DSTM32_THREAD_SAFE_STRATEGY="2"-o signaldecomposition\main.o --omf_browse signaldecomposition\main.crf --depend signaldecomposition\main.d)
 I (../Core/Inc/main.h)(0x6879E624)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6879E625)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6879E624)
@@ -52,7 +52,7 @@ I (../Users/./ad9833/bsp_ad9833.h)(0x6879E626)
 I (../Users/./x9cxxx/bsp_x9cxxx.h)(0x6879E626)
 I (../Users/./lcd/lcd.h)(0x6879E626)
 I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x60252374)
-I (../Users/./data_process.h)(0x687AF150)
+I (../Users/./data_process.h)(0x687B0C50)
 I (../Users/././key/key.h)(0x6879E626)
 I (../Users/././fft_hp_estimate/fft_hp_estimate.h)(0x687A4932)
 I (../Middlewares/ST/ARM/DSP/Inc/arm_math.h)(0x6879E626)
@@ -61,6 +61,7 @@ I (D:\Keil5\ARM\ARMCC\include\math.h)(0x60252378)
 I (D:\Keil5\ARM\ARMCC\include\float.h)(0x6025237E)
 I (D:\Keil5\ARM\ARMCC\include\limits.h)(0x60252376)
 I (../Users/././goertzel/goertzel.h)(0x6879E626)
+I (../Users/././phase_config/phase_config.h)(0x687B0A6D)
 I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x60252374)
 F (../Core/Src/gpio.c)(0x6879E624)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ../Users-I.\RTE\_SignalDecomposition-ID:\Keil5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="541" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DSTM32_THREAD_SAFE_STRATEGY="2"-o signaldecomposition\gpio.o --omf_browse signaldecomposition\gpio.crf --depend signaldecomposition\gpio.d)
 I (../Core/Inc/gpio.h)(0x6879E624)
@@ -254,7 +255,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6879E625)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6879E625)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6879E625)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6879E625)
-F (../Core/Src/usart.c)(0x6879E624)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ../Users-I.\RTE\_SignalDecomposition-ID:\Keil5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="541" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DSTM32_THREAD_SAFE_STRATEGY="2"-o signaldecomposition\usart.o --omf_browse signaldecomposition\usart.crf --depend signaldecomposition\usart.d)
+F (../Core/Src/usart.c)(0x687B15C8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ../Users-I.\RTE\_SignalDecomposition-ID:\Keil5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="541" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DSTM32_THREAD_SAFE_STRATEGY="2"-o signaldecomposition\usart.o --omf_browse signaldecomposition\usart.crf --depend signaldecomposition\usart.d)
 I (../Core/Inc/usart.h)(0x6879E624)
 I (../Core/Inc/main.h)(0x6879E624)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6879E625)
@@ -293,6 +294,22 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6879E625)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6879E625)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6879E625)
 I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x60252374)
+I (../Users/data_process.h)(0x687B0C50)
+I (../Core/Inc/tim.h)(0x6879E624)
+I (../Core/Inc/adc.h)(0x6879F746)
+I (../Users/./key/key.h)(0x6879E626)
+I (../Users/./x9cxxx/bsp_x9cxxx.h)(0x6879E626)
+I (../Users/./ad9833/bsp_ad9833.h)(0x6879E626)
+I (../Users/./fft_hp_estimate/fft_hp_estimate.h)(0x687A4932)
+I (../Middlewares/ST/ARM/DSP/Inc/arm_math.h)(0x6879E626)
+I (D:\Keil5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (D:\Keil5\ARM\ARMCC\include\math.h)(0x60252378)
+I (D:\Keil5\ARM\ARMCC\include\float.h)(0x6025237E)
+I (D:\Keil5\ARM\ARMCC\include\limits.h)(0x60252376)
+I (../Users/./goertzel/goertzel.h)(0x6879E626)
+I (../Users/./lcd/lcd.h)(0x6879E626)
+I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+I (../Users/./phase_config/phase_config.h)(0x687B0A6D)
 F (../Core/Src/stm32f4xx_it.c)(0x6879E624)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ../Users-I.\RTE\_SignalDecomposition-ID:\Keil5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="541" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DSTM32_THREAD_SAFE_STRATEGY="2"-o signaldecomposition\stm32f4xx_it.o --omf_browse signaldecomposition\stm32f4xx_it.crf --depend signaldecomposition\stm32f4xx_it.d)
 I (../Core/Inc/main.h)(0x6879E624)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6879E625)
@@ -1387,8 +1404,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6879E625)
 I (../Core/Inc/usart.h)(0x6879E624)
 I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x60252374)
 F (..\Users\fft_hp_estimate\fft_hp_estimate.h)(0x687A4932)()
-F (..\Users\data_process.c)(0x687AF999)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ../Users-I.\RTE\_SignalDecomposition-ID:\Keil5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="541" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DSTM32_THREAD_SAFE_STRATEGY="2"-o signaldecomposition\data_process.o --omf_browse signaldecomposition\data_process.crf --depend signaldecomposition\data_process.d)
-I (..\Users\data_process.h)(0x687AF150)
+F (..\Users\data_process.c)(0x687B1485)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ../Users-I.\RTE\_SignalDecomposition-ID:\Keil5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="541" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DSTM32_THREAD_SAFE_STRATEGY="2"-o signaldecomposition\data_process.o --omf_browse signaldecomposition\data_process.crf --depend signaldecomposition\data_process.d)
+I (..\Users\data_process.h)(0x687B0C50)
 I (../Core/Inc/main.h)(0x6879E624)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6879E625)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6879E624)
@@ -1440,7 +1457,49 @@ I (D:\Keil5\ARM\ARMCC\include\limits.h)(0x60252376)
 I (..\Users\./goertzel/goertzel.h)(0x6879E626)
 I (..\Users\./lcd/lcd.h)(0x6879E626)
 I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+I (..\Users\./phase_config/phase_config.h)(0x687B0A6D)
 I (D:\Keil5\ARM\ARMCC\include\ctype.h)(0x60252376)
 I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x60252374)
-F (..\Users\data_process.h)(0x687AF150)()
+F (..\Users\data_process.h)(0x687B0C50)()
+F (..\Users\phase_config\phase_config.c)(0x687B0A6D)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ../Users-I.\RTE\_SignalDecomposition-ID:\Keil5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="541" -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DSTM32_THREAD_SAFE_STRATEGY="2"-o signaldecomposition\phase_config.o --omf_browse signaldecomposition\phase_config.crf --depend signaldecomposition\phase_config.d)
+I (../Users/./x9cxxx/bsp_x9cxxx.h)(0x6879E626)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6879E625)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6879E624)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6879E625)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6879E625)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x6879E625)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6879E625)
+I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6879E625)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6879E625)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6879E625)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6879E625)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6879E625)
+I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sram.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6879E625)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6879E625)
+I (../Users/./phase_config/phase_config.h)(0x687B0A6D)
+I (D:\Keil5\ARM\ARMCC\include\math.h)(0x60252378)
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x60252374)
+F (..\Users\phase_config\phase_config.h)(0x687B0A6D)()
 F (../Middlewares/ST/ARM/DSP/Lib/arm_cortexM4lf_math.lib)(0x6879E626)()

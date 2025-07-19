@@ -128,8 +128,8 @@ int main(void)
   {
 	  if(g_phase_valid)
 	  {
-      config_digital_potentiometer();
-      g_phase_valid = 0;
+		  config_digital_potentiometer();
+		  g_phase_valid = 0;
 	  }
 	  Detect_KeyPress();
 	  if(signal_decomposition_flag == 1)

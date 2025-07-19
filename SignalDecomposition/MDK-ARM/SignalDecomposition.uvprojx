@@ -689,6 +689,16 @@
               <FileType>5</FileType>
               <FilePath>..\Users\data_process.h</FilePath>
             </File>
+            <File>
+              <FileName>phase_config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Users\phase_config\phase_config.c</FilePath>
+            </File>
+            <File>
+              <FileName>phase_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Users\phase_config\phase_config.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

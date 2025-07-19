@@ -56,4 +56,5 @@ signaldecomposition\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\math.h
 signaldecomposition\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\float.h
 signaldecomposition\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\limits.h
 signaldecomposition\main.o: ../Users/././goertzel/goertzel.h
+signaldecomposition\main.o: ../Users/././phase_config/phase_config.h
 signaldecomposition\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h

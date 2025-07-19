@@ -22,6 +22,7 @@
 
 /* USER CODE BEGIN 0 */
 #include <stdio.h>
+#include "data_process.h"
 uint8_t rxBuffer[50];
 extern PhaseConfig_t phase_config;
 uint8_t g_phase_valid = 0;
@@ -248,9 +249,11 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
         if (get_message(rxBuffer, Size, &deg_tmp)) {
             phase_config.phi_deg   = deg_tmp;   /* 存储结果 */
             g_phase_valid = 1;           /* 置标志，主循环里再清 0 */
-        }
-        //回显
-        HAL_UART_Transmit_DMA(&huart3, rxBuffer, Size);
+			uint8_t g_phase_valid_char[1] = {g_phase_valid + '0'};
+			HAL_UART_Transmit_DMA(&huart3, g_phase_valid_char, Size);
+            //回显
+			HAL_UART_Transmit_DMA(&huart3, rxBuffer, Size);
+		}
         // 重新开启接收中断
         HAL_UARTEx_ReceiveToIdle_DMA(&huart3, rxBuffer, sizeof(rxBuffer));
         __HAL_DMA_DISABLE_IT(&hdma_usart3_rx, DMA_IT_HT);

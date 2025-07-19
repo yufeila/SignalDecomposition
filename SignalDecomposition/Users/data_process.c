@@ -12,8 +12,8 @@ static float adc_zeroed[BUF_SIZE];     /* 去直流 & 换算电压后的浮点序列 */
 Signal_t sig1, sig2;
 uint32_t FTW1_cur = 0, FTW2_cur = 0;
 static float    pllA_int = 0, pllB_int = 0;
-float freq_tunning_A_Sinus[TUNNING_SIZE_A]={8.4,12.1,11.255855,10.3,9.5,8.7,12.5,11.6};
-float freq_tunning_B_Sinus[TUNNING_SIZE_B]={13.05,12.55,11.9,11.3,10.8,4.9,4.3,3.7};
+float freq_tunning_A_Sinus[TUNNING_SIZE_A]={8.4,12.1,11.255855,10.4,9.5,8.7,12.5,11.6};
+float freq_tunning_B_Sinus[TUNNING_SIZE_B]={13.05,12.55,11.95,11.3,10.8,4.9,4.3,3.80};
 float freq_tunning_A_Triangle[TUNNING_SIZE_A]={8.4,12.1,11.255855,10.3,9.5,8.7,12.5,11.6};
 float freq_tunning_B_Triangle[TUNNING_SIZE_B]={13.05,12.55,11.9,11.3,10.8,4.9,4.3,3.7};
 PhaseConfig_t phase_config;
@@ -403,6 +403,7 @@ uint8_t get_message(uint8_t *buf, uint16_t len, uint16_t *p_deg)
 void config_digital_potentiometer(void)
 {
 
+	printf("come to void config_digital_potentiometer(void)\r\n");
     /* 初始化数字电位器 */
     X9C_Init();
     /* 配置数字电位器 */

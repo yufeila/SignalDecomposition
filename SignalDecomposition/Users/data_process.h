@@ -104,7 +104,7 @@ void LCD_Display_Title_Center(const char* title, uint16_t y_pos);
 void Signal_Info_Display(Signal_t *sig1, Signal_t *sig2);
 void Update_LCD_Display(void);
 void analyse_two_signals(const uint16_t *_buf, Signal_t *sig1, Signal_t *sig2);
-void config_digital_potentiometer(uint16_t deg);
+void config_digital_potentiometer(void);
 uint8_t get_message(uint8_t *buf, uint16_t len, uint16_t *p_deg);
 void Calibration_Frequency(void);
 

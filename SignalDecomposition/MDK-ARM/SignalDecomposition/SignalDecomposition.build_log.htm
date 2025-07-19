@@ -22,51 +22,16 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 F:\Course_Project\2023H\code\Goertzel\SignalDecomposition\MDK-ARM\SignalDecomposition.uvprojx
-Project File Date:  07/18/2025
+Project File Date:  07/19/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil5\ARM\ARMCC\Bin'
 Build target 'SignalDecomposition'
-compiling data_process.c...
-..\Users\data_process.c(154): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-      ANALYSE_ONE(f1, A1, f2, A2, sig1);
-..\Users\data_process.c(155): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-      ANALYSE_ONE(f2, A2, f1, A1, sig2);
-..\Users\data_process.c(229): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-          AD9833_1_Config(sig1->freq + FREQ_TUNNING_A, AD9833_OUT_SINUS);
-..\Users\data_process.c(250): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			AD9833_1_Config(sig1->freq + FREQ_TUNNING_A, AD9833_OUT_TRIANGLE);
-..\Users\data_process.c(258): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  	FTW1_cur = (uint32_t)((sig1->freq + FREQ_TUNNING_A) * 268435456.0f / ADCLK);
-..\Users\data_process.c(264): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-          AD9833_2_Config(sig2->freq + FREQ_TUNNING_B, AD9833_OUT_SINUS);
-..\Users\data_process.c(285): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			AD9833_2_Config(sig2->freq + FREQ_TUNNING_B, AD9833_OUT_TRIANGLE);
-..\Users\data_process.c(292): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  	FTW2_cur = (uint32_t)((sig2->freq + FREQ_TUNNING_B) * 268435456.0f / ADCLK);
-..\Users\data_process.c(14): warning:  #177-D: variable "pllA_int"  was declared but never referenced
-  static float    pllA_int = 0, pllB_int = 0;
-..\Users\data_process.c(14): warning:  #177-D: variable "pllB_int"  was declared but never referenced
-  static float    pllA_int = 0, pllB_int = 0;
-..\Users\data_process.c(23): warning:  #177-D: variable "fA_filtered"  was declared but never referenced
-  static float fA_filtered = 40000.0f;
-..\Users\data_process.c(24): warning:  #177-D: variable "fApr_filtered"  was declared but never referenced
-  static float fApr_filtered = 40000.0f;
-..\Users\data_process.c(25): warning:  #177-D: variable "fB_filtered"  was declared but never referenced
-  static float fB_filtered = 70000.0f;
-..\Users\data_process.c(26): warning:  #177-D: variable "fBpr_filtered"  was declared but never referenced
-  static float fBpr_filtered = 70000.0f;
-..\Users\data_process.c(27): warning:  #177-D: variable "filter_init"  was declared but never referenced
-  static uint8_t filter_init = 0;
-..\Users\data_process.c(693): warning:  #177-D: function "FLL_Controller_Update"  was declared but never referenced
-  static void FLL_Controller_Update(float error, uint32_t *ftw, FLL_PI_Controller_t *controller)
-..\Users\data_process.c(353): warning:  #177-D: variable "fll_controller_B"  was declared but never referenced
-  static FLL_PI_Controller_t fll_controller_B;
-..\Users\data_process.c: 17 warnings, 0 errors
+compiling usart.c...
 linking...
-Program Size: Code=59580 RO-data=128724 RW-data=4280 ZI-data=68368  
+Program Size: Code=60936 RO-data=128724 RW-data=4344 ZI-data=68392  
 FromELF: creating hex file...
-"SignalDecomposition\SignalDecomposition.axf" - 0 Error(s), 17 Warning(s).
+"SignalDecomposition\SignalDecomposition.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -89,7 +54,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE@6.1.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:08
+Build Time Elapsed:  00:00:06
 </pre>
 </body>
 </html>

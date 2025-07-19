@@ -53,5 +53,6 @@ signaldecomposition\data_process.o: D:\Keil5\ARM\ARMCC\Bin\..\include\limits.h
 signaldecomposition\data_process.o: ..\Users\./goertzel/goertzel.h
 signaldecomposition\data_process.o: ..\Users\./lcd/lcd.h
 signaldecomposition\data_process.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+signaldecomposition\data_process.o: ..\Users\./phase_config/phase_config.h
 signaldecomposition\data_process.o: D:\Keil5\ARM\ARMCC\Bin\..\include\ctype.h
 signaldecomposition\data_process.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
