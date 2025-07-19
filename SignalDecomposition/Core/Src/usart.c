@@ -249,9 +249,6 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
         if (get_message(rxBuffer, Size, &deg_tmp)) {
             phase_config.phi_deg   = deg_tmp;   /* 存储结果 */
             g_phase_valid = 1;           /* 置标志，主循环里再清 0 */
-			uint8_t g_phase_valid_char[1] = {g_phase_valid + '0'};
-			HAL_UART_Transmit_DMA(&huart3, g_phase_valid_char, Size);
-            //回显
 			HAL_UART_Transmit_DMA(&huart3, rxBuffer, Size);
 		}
         // 重新开启接收中断

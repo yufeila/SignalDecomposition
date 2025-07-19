@@ -11,14 +11,14 @@
 
 #include "stm32f4xx_hal.h"
 #include "core_cm4.h"
-
+ 
 // 引脚配置，可以配置称适合你的硬件
 #define X9C103_INC_GPIO_PORT    GPIOA
-#define X9C103_INC_PIN         GPIO_PIN_10
+#define X9C103_INC_PIN         GPIO_PIN_12
 #define X9C103_UD_GPIO_PORT    GPIOA
-#define X9C103_UD_PIN          GPIO_PIN_12
-#define X9C103_CS_GPIO_PORT    GPIOA
-#define X9C103_CS_PIN          GPIO_PIN_14
+#define X9C103_UD_PIN          GPIO_PIN_14
+#define X9C103_CS_GPIO_PORT    GPIOC
+#define X9C103_CS_PIN          GPIO_PIN_10
 
 #define X9C503_INC_GPIO_PORT    GPIOA
 #define X9C503_INC_PIN         GPIO_PIN_11

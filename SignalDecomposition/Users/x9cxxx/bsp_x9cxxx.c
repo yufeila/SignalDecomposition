@@ -52,7 +52,7 @@ void X9C503_IncPulse(void) {
 // ---- 4. 步进设置函数 ----
 void X9C103_SetPos(uint8_t pos) {
     X9C103_Select();
-    DWT_Delay_us(0.1); // t_CI >= 100ns, 这里用0.1us
+    DWT_Delay_us(1); // t_CI >= 100ns, 这里用0.1us
     // 步进前归零
     X9C103_SetDirection(0); // 向下（归零）
     DWT_Delay_us(3);     // t_ID >= 100ns, t_DI >= 2.9us
@@ -71,7 +71,7 @@ void X9C103_SetPos(uint8_t pos) {
 
 void X9C503_SetPos(uint8_t pos) {
     X9C503_Select();
-    DWT_Delay_us(0.1); // t_CI >= 100ns, 这里用0.1us
+    DWT_Delay_us(1); // t_CI >= 100ns, 这里用0.1us
     // 步进前归零
     X9C503_SetDirection(0); // 向下（归零）
     DWT_Delay_us(3);     // t_ID >= 100ns, t_DI >= 2.9us
@@ -110,12 +110,17 @@ void X9C503_Store(void) {
 void X9C103_Init(void) {
     GPIO_InitTypeDef GPIO_InitStruct = {0};
     __HAL_RCC_GPIOA_CLK_ENABLE();
-    GPIO_InitStruct.Pin = X9C103_INC_PIN | X9C103_UD_PIN | X9C103_CS_PIN;
+	__HAL_RCC_GPIOC_CLK_ENABLE();
+    GPIO_InitStruct.Pin = X9C103_INC_PIN | X9C103_UD_PIN;
     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+    
+    GPIO_InitStruct.Pin = X9C103_CS_PIN;
+    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+		
     X9C103_CS_HIGH();
     X9C103_INC_HIGH();
 }
