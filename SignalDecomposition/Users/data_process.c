@@ -23,7 +23,7 @@ uint16_t phase_A_Sinus[TUNNING_SIZE_A][TUNNING_SIZE_B]=
     /* fA' = 30kHz */
     {0,0,0,0,0,0,0,0},
     /* fA' = 40kHz */
-    {0,0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,0,355},
     /* fA' = 50kHz */
     {0,0,0,0,0,0,0,0},
     /* fA' = 60kHz */
@@ -267,7 +267,7 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
         }
         else if(fabs(sig1->freq - 30000) <= 400)
         {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[1], AD9833_OUT_SINUS);
+            //AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[1], AD9833_OUT_SINUS);
             phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[1];
         }
         else if(fabs(sig1->freq - 40000) <= 400)
@@ -282,7 +282,7 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
         }
         else if(fabs(sig1->freq - 60000) <= 400)
         {
-            AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[4], AD9833_OUT_SINUS);
+            //AD9833_1_Config(sig1->freq + freq_tunning_A_Sinus[4], AD9833_OUT_SINUS);
             phase_config.freq_Hz = sig1->freq + freq_tunning_A_Sinus[4];
         }
         else if(fabs(sig1->freq - 70000) <= 400)

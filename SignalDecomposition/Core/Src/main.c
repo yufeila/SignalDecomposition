@@ -117,9 +117,9 @@ int main(void)
   printf("LCD ID:%04X\r\n", lcddev.id);
   LCD_ShowString(10, 10, 200, 16, 16, (uint8_t*)"Hello LCD!");
   AD9833_1_GPIO_Init();//IO口及AD9833寄存器初始化
-  AD9833_1_Config(10000.0,AD9833_OUT_TRIANGLE);//写输出频率10000.0Hz,输出三角波
+  AD9833_1_Config(10000.0,AD9833_OUT_TRIANGLE,0);//写输出频率10000.0Hz,输出三角波
   AD9833_2_GPIO_Init();//IO口及AD9833寄存器初始化
-  AD9833_2_Config(10000.0,AD9833_OUT_SINUS);//写输出频率10000.0Hz,输出正弦波
+  AD9833_2_Config(10000.0,AD9833_OUT_SINUS,0);//写输出频率10000.0Hz,输出正弦波
   /* USER CODE END 2 */
 
   /* Infinite loop */
