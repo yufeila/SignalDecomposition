@@ -22,7 +22,9 @@
 
 #define SINC_WAVE 1
 #define TRIANGLE_WAVE 2
-#define FREQ_TUNNING 200.0
+#define FREQ_TUNNING_A 12.1
+#define FREQ_TUNNING_B 15.0
+
 
 #define TUNNING_SIZE_A 8
 #define TUNNING_SIZE_B 8

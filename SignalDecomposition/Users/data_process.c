@@ -12,9 +12,9 @@ static float adc_zeroed[BUF_SIZE];     /* 去直流 & 换算电压后的浮点序列 */
 Signal_t sig1, sig2;
 uint32_t FTW1_cur = 0, FTW2_cur = 0;
 static float    pllA_int = 0, pllB_int = 0;
-float freq_tunning_A[TUNNING_SIZE_A]={0,0,11.255855};
-float freq_tunning_B[TUNNING_SIZE_B];
-
+float freq_tunning_A[TUNNING_SIZE_A]={8.4,12.1,11.255855,10.3,9.5,8.7,12.5,11.6};
+//float freq_tunning_B[TUNNING_SIZE_B] = {13.05,12.5,11.9,11.3,10.8,4.9,4.3,3.7};
+float freq_tunning_B[TUNNING_SIZE_B] = {13.05,12.55,11.9,11.3,10.8,4.9,4.3,3.7};
 
 
 
@@ -226,33 +226,70 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
 	/* ------- 通道 1 ------- */
     if (sig1->wave_form == SINC_WAVE)
     {
-        AD9833_1_Config(sig1->freq + FREQ_TUNNING, AD9833_OUT_SINUS);
+        AD9833_1_Config(sig1->freq + FREQ_TUNNING_A, AD9833_OUT_SINUS);
     }
     else if (sig1->wave_form == TRIANGLE_WAVE)
     {
-        AD9833_1_Config(sig1->freq + FREQ_TUNNING, AD9833_OUT_TRIANGLE);
+		if(fabs(sig1->freq - 20000) <= 400)
+			AD9833_1_Config(sig1->freq + freq_tunning_A[0], AD9833_OUT_TRIANGLE);
+		else if(fabs(sig1->freq - 30000) <= 400)
+			AD9833_1_Config(sig1->freq + freq_tunning_A[1], AD9833_OUT_TRIANGLE);
+		else if(fabs(sig1->freq - 40000) <= 400)
+			AD9833_1_Config(sig1->freq + freq_tunning_A[2], AD9833_OUT_TRIANGLE);
+		else if(fabs(sig1->freq - 50000) <= 400)
+			AD9833_1_Config(sig1->freq + freq_tunning_A[3], AD9833_OUT_TRIANGLE);
+		else if(fabs(sig1->freq - 60000) <= 400)
+			AD9833_1_Config(sig1->freq + freq_tunning_A[4], AD9833_OUT_TRIANGLE);
+		else if(fabs(sig1->freq - 70000) <= 400)
+			AD9833_1_Config(sig1->freq + freq_tunning_A[5], AD9833_OUT_TRIANGLE);
+		else if(fabs(sig1->freq - 80000) <= 400)
+			AD9833_1_Config(sig1->freq + freq_tunning_A[6], AD9833_OUT_TRIANGLE);
+		else if(fabs(sig1->freq - 90000) <= 400)
+			AD9833_1_Config(sig1->freq + freq_tunning_A[7], AD9833_OUT_TRIANGLE);		
+		else
+			AD9833_1_Config(sig1->freq + FREQ_TUNNING_A, AD9833_OUT_TRIANGLE);
+		
     }
 	else
 	{
 		AD9833_1_Reset();
 	}
 	/* 计算初始 FTW1 */
-	FTW1_cur = (uint32_t)((sig1->freq + FREQ_TUNNING) * 268435456.0f / ADCLK);
+	FTW1_cur = (uint32_t)((sig1->freq + FREQ_TUNNING_A) * 268435456.0f / ADCLK);
 
 	/* ------- 通道 2 ------- */
     if (sig2->wave_form == SINC_WAVE)
     {
-        AD9833_2_Config(sig2->freq + FREQ_TUNNING, AD9833_OUT_SINUS);
+		
+        AD9833_2_Config(sig2->freq + FREQ_TUNNING_B, AD9833_OUT_SINUS);
     }
     else if (sig2->wave_form == TRIANGLE_WAVE)
     {
-        AD9833_2_Config(sig2->freq + FREQ_TUNNING, AD9833_OUT_TRIANGLE);
+		if(fabs(sig2->freq - 30000) <= 400)
+			AD9833_2_Config(sig2->freq + freq_tunning_B[0], AD9833_OUT_TRIANGLE);
+		else if(fabs(sig2->freq - 40000) <= 400)
+			AD9833_2_Config(sig2->freq + freq_tunning_B[1], AD9833_OUT_TRIANGLE);
+		else if(fabs(sig2->freq - 50000) <= 400)
+			AD9833_2_Config(sig2->freq + freq_tunning_B[2], AD9833_OUT_TRIANGLE);
+		else if(fabs(sig2->freq - 60000) <= 400)
+			AD9833_2_Config(sig2->freq + freq_tunning_B[3], AD9833_OUT_TRIANGLE);
+		else if(fabs(sig2->freq - 70000) <= 400)
+			AD9833_2_Config(sig2->freq + freq_tunning_B[4], AD9833_OUT_TRIANGLE);
+		else if(fabs(sig2->freq - 80000) <= 400)
+			AD9833_2_Config(sig2->freq + freq_tunning_B[5], AD9833_OUT_TRIANGLE);
+		else if(fabs(sig2->freq - 90000) <= 400)
+			AD9833_2_Config(sig2->freq + freq_tunning_B[6], AD9833_OUT_TRIANGLE);
+		else if(fabs(sig2->freq - 100000) <= 400)
+			AD9833_2_Config(sig2->freq + freq_tunning_B[7], AD9833_OUT_TRIANGLE);
+		else
+			AD9833_2_Config(sig2->freq + FREQ_TUNNING_B, AD9833_OUT_TRIANGLE);
+		
     }
 	else
 	{
 		AD9833_2_Reset();
 	}
-	FTW2_cur = (uint32_t)((sig2->freq + FREQ_TUNNING) * 268435456.0f / ADCLK);
+	FTW2_cur = (uint32_t)((sig2->freq + FREQ_TUNNING_B) * 268435456.0f / ADCLK);
 
 }
 
