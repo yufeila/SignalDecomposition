@@ -256,8 +256,7 @@ void DDS_Output(Signal_t *sig1, Signal_t *sig2)
 
     uint16_t dphase = 0;
     phase_tunning(sig1, sig2, &dphase);
-
-    /* ------- 通道 2 ------- */
+    	/* ------- 通道 2 ------- */
     if (sig2->wave_form == SINC_WAVE)
     {
         if(fabs(sig2->freq - 30000) <= 400)
